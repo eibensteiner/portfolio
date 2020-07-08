@@ -1,0 +1,13 @@
+
+.badge {
+  appearance: none;
+  border: 1px solid get($color, midgrey);
+  border-radius: get($radius, sm);
+  white-space: nowrap;
+  min-height: 32px;
+  color: get($color, darkgrey);
+  background: get($color, midgrey);
+  @include padding(0 $size);
+  @include flex();
+  @include typo(false, get($font, size, xs), get($font, weight, md), false);
+}

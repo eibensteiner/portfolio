@@ -1,0 +1,44 @@
+body {
+  color: get($color, darkgrey);
+  @include typo(get($font, family), get($font, size, md), get($font, weight, sm), get($font, height, md));
+}
+
+strong {
+  font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: get($color, black);
+}
+
+h1 {
+  @include typo(false, get($font, size, xl), get($font, weight, md), get($font, height, lg));
+}
+
+h2 {
+  font-weight: 800;
+  @include typo(false, get($font, size, lg), get($font, weight, md), get($font, height, lg));
+}
+
+a {
+  color: get($color, darkgrey);
+  font-weight: 600;
+  transition: color .2s;
+  cursor: pointer;
+  white-space: nowrap;
+
+  @include viewport(sm) {
+    white-space: normal;
+  }
+
+  &:hover {
+    color: get($color, black);
+  }
+
+  i {
+    margin-right: 8px;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');

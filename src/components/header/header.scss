@@ -1,0 +1,19 @@
+header {
+  margin-top: $size*20;
+  @include flex();
+
+  img {
+    max-width: $size*15;
+    border-radius: get($radius, sm);
+  }
+
+  div {
+    margin-left: $size* 5;
+  }
+
+  h2 {
+    color: get($color, darkgrey);
+    font-weight: get($font, weight, sm);
+  }
+}
+
