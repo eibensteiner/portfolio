@@ -7,7 +7,8 @@
   min-height: 32px;
   color: get($color, darkgrey);
   background: get($color, midgrey);
+  font-size: get($font, size, 1);
+  font-weight: get($font, weight, md);
   @include padding(0 $size);
   @include flex();
-  @include typo(false, get($font, size, xs), get($font, weight, md), false);
 }

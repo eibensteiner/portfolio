@@ -1,7 +1,7 @@
 <template>
   <div class="item">
     <div class="item-left">
-      <Badge :text="this.year"></Badge>
+      <lib-badge :text="this.year"></lib-badge>
     </div>
     <div class="item-right">
       <slot></slot>
@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import Badge from "../badge/Badge";
+import LibBadge from "../badge/Badge";
 export default {
   name: "LibItem",
-  components: { Badge },
+  components: {LibBadge  },
   props: {
     year: {
       type: Number,

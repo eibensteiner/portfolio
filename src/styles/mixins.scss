@@ -26,21 +26,6 @@
   }
 }
 
-@mixin typo($family, $size, $weight, $height) {
-  @if $family {
-    font-family: $family
-  }
-  @if $size {
-    font-size: $size
-  }
-  @if $weight {
-    font-weight: $weight;
-  }
-  @if $height {
-    line-height: $height;
-  }
-}
-
 @mixin square($value) {
   width: $value;
   min-width: $value;

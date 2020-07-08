@@ -1,44 +1,58 @@
 body {
-  color: get($color, darkgrey);
-  @include typo(get($font, family), get($font, size, md), get($font, weight, sm), get($font, height, md));
+  color: get($color, grey, light);
+  font-family: get($font, family);
+  font-size: get($font, size, 2);
+  font-weight: get($font, weight, 2);
+  line-height: get($font, height, 2);
+  -webkit-font-smoothing: antialiased;
 }
 
 strong {
-  font-weight: 600;
+  font-weight: get($font, weight, 2);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  color: get($color, black);
-}
-
-h1 {
-  @include typo(false, get($font, size, xl), get($font, weight, md), get($font, height, lg));
+  font-weight: get($font, weight, 3);
+  color: get($color, white);
 }
 
 h2 {
-  font-weight: 800;
-  @include typo(false, get($font, size, lg), get($font, weight, md), get($font, height, lg));
+  font-size: get($font, size, 3);
+  font-weight: get($font, weight, 4);
+}
+
+h3 {
+  font-size: get($font, size, 2);
 }
 
 a {
-  color: get($color, darkgrey);
-  font-weight: 600;
+  color: get($color, white);
+  font-weight: get($font, weight, 2);
   transition: color .2s;
-  cursor: pointer;
-  white-space: nowrap;
-
-  @include viewport(sm) {
-    white-space: normal;
-  }
 
   &:hover {
-    color: get($color, black);
+    color: get($color, white);
   }
 
-  i {
-    margin-right: 8px;
+  &.router-link-exact-active {
+    color: get($color, white);
   }
+}
+
+i {
+  font-size: get($font, size, 4);
+}
+
+strong {
+  color: get($color, white);
+}
+
+span, a {
+  @include flex(flex-start, center, row);
+}
+
+p {
+  line-height: get($font, height, 4);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
