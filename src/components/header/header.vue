@@ -3,9 +3,9 @@
     <img src="/img/me.jpg" alt="Dominik" />
     <div>
       <h1>
-        Hey I'm Dominik
+        Because we are all humans
       </h1>
-      <h2>A coding Product Designer, based in Linz, Austria</h2>
+      <h2>I’m Dominik, a Coding Designer from Austria and a human like you. I love minimal & functional Interfaces</h2>
     </div>
   </header>
 </template>
