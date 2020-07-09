@@ -1,29 +1,4 @@
 body {
   @include flex(flex-start, center, column);
-  background: $black;
-}
-
-hr {
-  border: 1px solid get($color, midgrey);
-}
-
-.noscript {
-  margin-top: $size*20;
-  text-align: center;
-  line-height: get($font, height, lg);
-  @include flex(center, center, column);
-  @include viewport(sm) {
-    margin-top: 0;
-    hyphens: auto;
-    @include padding($size * 4);
-  }
-
-  span, strong {
-    display: block;
-    max-width: 400px;
-  }
-
-  strong {
-    margin-top: $size*2;
-  }
+  background: get($color, black);
 }

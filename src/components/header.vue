@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import LibAvatar from "../avatar";
+import LibAvatar from "./avatar";
 export default {
   name: "LibHeader",
   components: {LibAvatar}
@@ -36,14 +36,14 @@ export default {
     }
 
     h1 {
-      font-size: 48px;
+      font-size: get($font-size, 11);
     }
 
     h2 {
-      font-size: 20px;
-      color: #666666;
+      font-size: get($font-size, 5);
+      color: get($color, grey, 300);
       margin-top: 16px;
-      font-weight: 400;
+      font-weight: get($font-weight, light);
       max-width: 632px;
       line-height: 1.8;
     }

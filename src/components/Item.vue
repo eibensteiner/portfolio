@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import LibBadge from "../badge/Badge";
+import LibBadge from "./badge";
 export default {
   name: "LibItem",
   components: {LibBadge},
@@ -25,9 +25,9 @@ export default {
   .item {
     width: 100%;
     height: 560px;
-    border-radius: 8px;
-    background: #111;
-    border: 1px solid #333;
+    border-radius: get($border-radius, md);
+    background: get($color, grey, 100);
+    border: 1px solid get($color, grey, 200);
     margin-top: 40px;
     box-sizing: border-box;
     transition: all .3s;
@@ -40,7 +40,7 @@ export default {
     &:hover {
       transform: translateY(-5px);
       cursor: pointer;
-      border-color: #666;
+      border-color: get($color, grey, 300);
     }
 
     &-header {
@@ -55,12 +55,12 @@ export default {
         }
 
         i {
-          color: #666;
+          color: get($color, grey, 300);
           margin: 0 8px;
         }
 
         span {
-          color: #666;
+          color: get($color, grey, 300);
 
           &.current {
             color: #fff;
@@ -70,8 +70,8 @@ export default {
 
       h2 {
         margin-top: 16px;
-        font-size: 24px;
-        font-weight: 600;
+        font-size: get($font-size, 7);
+        font-weight: get($font-weight, bold);
       }
 
     }

@@ -23,9 +23,9 @@
 </template>
 
 <script>
-  import LibHeader from "../components/header/header";
-  import LibList from "../components/list/List";
-  import LibItem from "../components/item/Item";
+  import LibHeader from "../components/header";
+  import LibList from "../components/list";
+  import LibItem from "../components/Item";
 
   export default {
     name: "ViewHome",
@@ -51,8 +51,8 @@
     .item {
       img {
         width: 100%;
-        border-top-left-radius: 6px;
-        border-top-right-radius: 6px;
+        border-top-left-radius: get($border-radius, md);
+        border-top-right-radius: get($border-radius, md);
         max-width: 632px
       }
     }

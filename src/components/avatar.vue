@@ -11,6 +11,6 @@
 <style scoped lang="scss">
   img {
     max-width: $size*12;
-    border-radius: get($radius, 3);
+    border-radius: get($border-radius, lg);
   }
 </style>

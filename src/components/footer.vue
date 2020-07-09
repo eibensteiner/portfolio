@@ -1,15 +1,13 @@
 <template>
-  <nav>
-    
-  </nav>
+  
 </template>
 
 <script>
   export default {
-    name: "LibNavigation"
+    name: "footer"
   }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 
 </style>
