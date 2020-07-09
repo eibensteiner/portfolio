@@ -9,8 +9,11 @@
 
   .app {
     width: 100%;
-    padding-top: 160px;
+    padding-top: $size*15;
     @include flex();
+    @include viewport(sm) {
+      padding-top: $size*5;
+    }
   }
 </style>
 <script>

@@ -16,6 +16,9 @@
         </lib-item>
       </lib-list>
     </transition>
+    <transition appear appear-active-class="fade-enter">
+      <lib-footer></lib-footer>
+    </transition>
   </div>
 </template>
 
@@ -23,10 +26,11 @@
   import LibHeader from "../components/header";
   import LibList from "../components/list";
   import LibItem from "../components/Item";
+  import LibFooter from "../components/footer";
 
   export default {
     name: "ViewHome",
-    components: {LibItem, LibList, LibHeader}
+    components: {LibFooter, LibItem, LibList, LibHeader}
   }
 </script>
 
@@ -34,10 +38,9 @@
   .view {
     max-width: 864px;
     width: 100%;
-
+    @include padding($size * 3);
     @include viewport(sm) {
       hyphens: auto;
-      @include padding($size * 4);
       max-width: none;
     }
 
@@ -48,9 +51,12 @@
     .item {
       img {
         width: 100%;
-        border-top-left-radius: get($border-radius, md);
-        border-top-right-radius: get($border-radius, md);
-        max-width: 632px
+        border-top-left-radius: get($border-radius, sm);
+        border-top-right-radius: get($border-radius, sm);
+        max-width: 632px;
+        @include viewport(sm) {
+          display: none;
+        }
       }
     }
 

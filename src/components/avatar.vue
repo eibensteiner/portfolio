@@ -12,5 +12,8 @@
   img {
     max-width: $size*12;
     border-radius: get($border-radius, lg);
+    @include viewport(sm) {
+      margin-bottom: $size*8;
+    }
   }
 </style>

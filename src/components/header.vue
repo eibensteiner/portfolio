@@ -11,41 +11,45 @@
 </template>
 
 <script>
-import LibAvatar from "./avatar";
-export default {
-  name: "LibHeader",
-  components: {LibAvatar}
-};
+  import LibAvatar from "./avatar";
+
+  export default {
+    name: "LibHeader",
+    components: {LibAvatar}
+  };
 </script>
 
 <style scoped lang="scss">
   .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 104px;
+    margin-bottom: $size*13;
+    @include flex(center, center, column);
+    @include viewport(sm) {
+      margin-bottom: $size*8;
+    }
 
     div {
       margin-top: $size* 5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
       text-align: center;
+      @include flex(center, center, column);
     }
 
     h1 {
       font-size: get($font-size, 11);
+      @include viewport(sm) {
+        font-size: get($font-size, 10);
+      }
     }
 
     h2 {
       font-size: get($font-size, 5);
       color: get($color, grey, 300);
-      margin-top: 16px;
+      margin-top: $size*2;
       font-weight: get($font-weight, light);
-      max-width: 632px;
-      line-height: 1.8;
+      max-width: $size*79;
+      line-height: get($line-height, lg);
+      @include viewport(sm) {
+        font-size: get($font-size, 4);
+      }
     }
   }
 </style>
