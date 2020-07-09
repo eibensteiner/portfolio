@@ -1,6 +1,6 @@
 <template>
-  <header>
-    <img src="/img/me.jpg" alt="Dominik" />
+  <header class="header">
+    <lib-avatar></lib-avatar>
     <div>
       <h1>
         Because we are all humans
@@ -11,11 +11,41 @@
 </template>
 
 <script>
+import LibAvatar from "../avatar";
 export default {
-  name: "LibHeader"
+  name: "LibHeader",
+  components: {LibAvatar}
 };
 </script>
 
 <style scoped lang="scss">
-@import "header.scss";
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 104px;
+
+    div {
+      margin-top: $size* 5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+
+    h2 {
+      font-size: 20px;
+      color: #666666;
+      margin-top: 16px;
+      font-weight: 400;
+      max-width: 632px;
+      line-height: 1.8;
+    }
+  }
 </style>

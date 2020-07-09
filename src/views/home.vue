@@ -1,34 +1,21 @@
 <template>
   <div class="view">
     <transition appear appear-active-class="fade-enter">
-      <lib-header>
-        Servus, I’m Dominik, a Coding Designer from Austria.
-        <a href="mailto:me@dowu.xyz?subject=Request">📮 Say Hi</a>, or follow my
-        exciting journey on
-        <a href="https://twitter.com/wurmdo" target="_blank">🐦 Twitter</a> and
-        <a href="https://dribbble.com/Dowu" target="_blank">🏀 Dribbble</a>.
-        <hr />
-      </lib-header>
+      <lib-header></lib-header>
     </transition>
     <transition appear appear-active-class="fade-enter">
       <lib-list>
-        <lib-item :year="2020">
-          <h2>Building Framed</h2>
+        <lib-item>
+          <img src="/img/projects/design.jpg" alt=""/>
         </lib-item>
-        <lib-item :year="2018">
-          <h2>
-            Product Designer at
-            <a href="https://blockpit.io" target="_blank">📈 Blockpit</a>
-          </h2>
+        <lib-item>
+          <img src="/img/projects/design.jpg" alt=""/>
         </lib-item>
-        <lib-item :year="2018">
-          <h2>Graduated at UAS Upper Austria.</h2>
+        <lib-item>
+          <img src="/img/projects/design.jpg" alt=""/>
         </lib-item>
-        <lib-item :year="2017">
-          <h2>
-            UI/UX Developer at
-            <a href="https://storyclash.com" target="_blank">⚡️ Storyclash</a>
-          </h2>
+        <lib-item>
+          <img src="/img/projects/design.jpg" alt=""/>
         </lib-item>
       </lib-list>
     </transition>
@@ -48,7 +35,7 @@
 
 <style scoped lang="scss">
   .view {
-    max-width: 540px;
+    max-width: 864px;
     width: 100%;
 
     @include viewport(sm) {
@@ -57,12 +44,17 @@
       max-width: none;
     }
 
-    & > * {
-      margin: ($size * 7) 0 0 0;
-    }
-
     .fade-enter {
       animation: go 0.7s;
+    }
+
+    .item {
+      img {
+        width: 100%;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        max-width: 632px
+      }
     }
 
     @keyframes go {

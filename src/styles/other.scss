@@ -1,5 +1,6 @@
 body {
   @include flex(flex-start, center, column);
+  background: $black;
 }
 
 hr {
