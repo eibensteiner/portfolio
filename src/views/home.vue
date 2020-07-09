@@ -5,16 +5,13 @@
     </transition>
     <transition appear appear-active-class="fade-enter">
       <lib-list>
-        <lib-item>
-          <img src="/img/projects/design.jpg" alt=""/>
+        <lib-item :timeframe="{from: '2020', to: 'Current'}" :badge="{text:'Framed', variant: 'purple'}" :text="'Designing & Building the Mother of all Dashboards'">
+          <img src="/img/projects/framed.jpg" alt=""/>
         </lib-item>
-        <lib-item>
-          <img src="/img/projects/design.jpg" alt=""/>
+        <lib-item :timeframe="{from: '2020', to: 'Current'}" :badge="{text:'Blockpit', variant: 'blue'}" :text="'Designing & Building the Blockpit Webapp'">
+          <img src="/img/projects/webapp.jpg" alt=""/>
         </lib-item>
-        <lib-item>
-          <img src="/img/projects/design.jpg" alt=""/>
-        </lib-item>
-        <lib-item>
+        <lib-item :timeframe="{from: '2020', to: 'Current'}" :badge="{text:'Framed', variant: 'purple'}" :text="'Designing & Building the Blockpit Design System'">
           <img src="/img/projects/design.jpg" alt=""/>
         </lib-item>
       </lib-list>

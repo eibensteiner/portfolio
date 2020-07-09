@@ -1,0 +1,11 @@
+.text {
+  &-white {
+    color: get($color, white);
+  }
+
+  &-grey {
+    &-300 {
+      color: get($color, grey, 300);
+    }
+  }
+}
