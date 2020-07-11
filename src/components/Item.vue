@@ -1,37 +1,46 @@
 <template>
-  <div class="item">
-    <i :class="['ri-link-m', 'text-grey-300']"></i>
-    <div class="item-header">
-      <div>
-        <lib-badge :text="badge.text" :variant="badge.variant"></lib-badge>
+  <a :class="['item', isReversed ? 'reversed' : '', href ? 'link' : '']" :href="href" target="_blank">
+    <div class="item-left">
+      <div class="item-header">
         <div :class="'timeframe'">
           <span :class="'text-grey-300'">{{timeframe.from}}</span>
           <i :class="['ri-arrow-right-line', 'text-grey-300']"></i>
           <span :class="[timeframe.to === 'Current' ? 'text-white' : 'text-grey-300']">{{timeframe.to}}</span>
         </div>
+        <h2>{{heading}}</h2>
+        <lib-paragraph>{{text}}</lib-paragraph>
       </div>
-      <h2>{{text}}</h2>
+      <div v-if="href" class="item-footer">
+        <lib-button :size="'lg'" :variant="'white'">
+          View Result
+        </lib-button>
+      </div>
     </div>
-    <slot></slot>
-  </div>
+    <div class="item-right">
+      <slot></slot>
+    </div>
+  </a>
 </template>
 
 <script>
-  import LibBadge from "./badge";
+  import LibParagraph from "./paragraph";
+  import LibButton from "./button";
 
   export default {
     name: "LibItem",
-    components: {LibBadge},
+    components: {LibButton, LibParagraph},
     props: {
       timeframe: {
         from: String,
         to: String
       },
-      badge: {
-        text: String,
-        variant: String
-      },
-      text: String
+      heading: String,
+      text: String,
+      href: String,
+      isReversed : {
+        default: false,
+        type: Boolean
+      }
     }
   };
 </script>
@@ -47,62 +56,70 @@
     box-sizing: border-box;
     transition: all .3s;
     position: relative;
-    @include flex(space-between, center, column);
+    overflow: hidden;
+    @include flex(space-between, center, row);
     @include viewport(sm) {
       height: auto;
+    }
+
+    &.reversed {
+      @include flex(space-between, center, row-reverse);
     }
 
     &:first-child {
       margin-top: 0;
     }
 
-    &:hover {
-      transform: translateY(-5px);
-      cursor: pointer;
-      border-color: get($color, grey, 300);
+    &.link {
+      &:hover {
+        transform: translateY(-5px);
+        cursor: pointer;
+        border-color: transparentize(get($color, grey, 300), .5);
 
-      & > i {
-        opacity: 1;
-        visibility: visible;
+        .button {
+          border-color: transparentize(get($color, grey, 300), .5);
+        }
       }
     }
 
-    & > i {
-      position: absolute;
-      top: 40px;
-      right: 40px;
-      opacity: 0;
-      visibility: hidden;
-      transition: all .2s;
+    &-left {
+      height: 100%;
+      @include padding(56px);
+      @include flex(space-between, flex-start, column);
+      @include viewport(sm) {
+        @include padding(32px);
+      }
+    }
+
+    &-right {
+      height: calc(100% - 56px);
+      margin-top: 56px;
+      @include viewport(sm) {
+        display: none;
+      }
     }
 
     &-header {
-      margin-top: $size*5;
-      @include padding($size * 3);
-      @include flex(center, center, column);
-      @include viewport(sm) {
-        margin-top: $size*2;
+      @include flex(center, flex-start, column);
+
+      h2 {
+        font-size: get($font-size, 7);
+        font-weight: get($font-weight, bold);
+        line-height: 1.6;
+        min-width: 320px;
+        max-width: 632px;
+        @include viewport(sm) {
+          min-width: 0;
+        }
       }
 
-      & > div {
+      .paragraph {
+        margin-top: 12px;
+      }
+
+      .timeframe {
+        margin-bottom: 32px;
         @include flex();
-        @include viewport(sm) {
-          @include flex(center, center, column);
-        }
-
-        .timeframe {
-          @include flex();
-          @include viewport(sm) {
-            margin-top: $size*2;
-          }
-        }
-
-        .badge {
-          margin-right: 16px;
-          @include viewport(sm) {
-            margin: 0;
-          }
-        }
 
         i {
           margin: 0 8px;
@@ -113,14 +130,18 @@
           font-size: get($font-size, 3);
         }
       }
+    }
 
-      h2 {
-        margin-top: 16px;
-        font-size: get($font-size, 7);
-        font-weight: get($font-weight, bold);
-        line-height: get($line-height, lg);
-        max-width: 632px;
-        text-align: center;
+    &-footer {
+      margin-top: 32px;
+      width: 100%;
+      @include flex();
+      @include viewport(sm) {
+        @include flex(center, center, column);
+      }
+
+      .button {
+        width: 100%;
       }
     }
   }

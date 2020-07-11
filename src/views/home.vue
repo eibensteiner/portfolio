@@ -5,14 +5,16 @@
     </transition>
     <transition appear appear-active-class="fade-enter">
       <lib-list>
-        <lib-item :timeframe="{from: '2020', to: 'Current'}" :badge="{text:'Framed', variant: 'purple'}" :text="'Designing & Building the Mother of all Dashboards'">
-          <img src="/img/projects/framed.jpg" alt=""/>
+        <lib-item :timeframe="{from: '2020', to: 'Current'}"
+                  :heading="'Framed Design & Frontend'"
+                  :text="'With Framed you are able to share slim KPI-Dashboards with the most important Startup KPIs to anybody'">
+          <img src="/img/projects/framed.png" alt=""/>
         </lib-item>
-        <lib-item :timeframe="{from: '2020', to: 'Current'}" :badge="{text:'Blockpit', variant: 'blue'}" :text="'Designing & Building the Blockpit Webapp'">
-          <img src="/img/projects/webapp.jpg" alt=""/>
-        </lib-item>
-        <lib-item :timeframe="{from: '2020', to: 'Current'}" :badge="{text:'Framed', variant: 'purple'}" :text="'Designing & Building the Blockpit Design System'">
-          <img src="/img/projects/design.jpg" alt=""/>
+        <lib-item :timeframe="{from: '2019', to: '2020'}"
+                  :heading="'Blockpit Webapp Design & partially Frontend'"
+                  :text="'We built a whole new Interface for the Blockpit Webapp. It is now way easier to do your crypto tax calculation'"
+                  :href="'https://app.blockpit.io/dashboard'">
+          <img src="/img/projects/blockpit.png" alt=""/>
         </lib-item>
       </lib-list>
     </transition>
@@ -50,13 +52,8 @@
 
     .item {
       img {
-        width: 100%;
-        border-top-left-radius: get($border-radius, sm);
-        border-top-right-radius: get($border-radius, sm);
-        max-width: 632px;
-        @include viewport(sm) {
-          display: none;
-        }
+        height: 150%;
+        border-radius: get($border-radius, sm);
       }
     }
 

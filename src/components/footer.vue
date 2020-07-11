@@ -1,8 +1,9 @@
 <template>
   <footer :class="'footer'">
-    <a href="#" :class="'text-grey-300'">Twitter</a>
-    <a href="#" :class="'text-grey-300'">Dribbble</a>
-    <a href="#" :class="'text-grey-300'">GitHub</a>
+    <a href="https://www.linkedin.com/in/dowu/" target="_blank" :class="'text-grey-300'">LinkedIn</a>
+    <a href="https://twitter.com/wurmdo" target="_blank" :class="'text-grey-300'">Twitter</a>
+    <a href="https://dribbble.com/Dowu" target="_blank" :class="'text-grey-300'">Dribbble</a>
+    <a href="https://github.com/dowu" target="_blank" :class="'text-grey-300'">GitHub</a>
   </footer>
 </template>
 

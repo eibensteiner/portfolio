@@ -31,6 +31,9 @@
       margin-top: $size* 5;
       text-align: center;
       @include flex(center, center, column);
+      @include viewport(sm) {
+        margin-top: $size*8;
+      }
     }
 
     h1 {
