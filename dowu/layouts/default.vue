@@ -1,0 +1,20 @@
+<template>
+  <div class="root">
+    <Navigation />
+    <Nuxt />
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  & > * {
+    width: 100%;
+    max-width: 672px;
+  }
+}
+</style>
