@@ -9,10 +9,10 @@
     </div>
     <p class="footer-right">
       The copyright on this website belongs to me basically. If you want to see
-      how I built it, here is a <a>GitHub link</a> to the repository.
+      how I built it, here is a <a>GitHub link</a> to the repository. Find more details in the privacy policy.
       <br /><br />
       I’m currently not looking for a new job, but here is <a>my resume</a> if you’re
-      into that
+      into that.
     </p>
   </footer>
 </template>
