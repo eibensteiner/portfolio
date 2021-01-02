@@ -37,6 +37,12 @@ h2 {
 a {
     text-decoration: none;
     color: var(--white);
+    transition: all .2s;
+    cursor: pointer;
+
+    &:hover {
+        opacity: .8;
+    }
 }
 
 span {
@@ -46,4 +52,8 @@ span {
 p {
     line-height: 32px;
     color: var(--lightgrey);
+
+    span, a {
+        color: var(--white);
+    }
 }

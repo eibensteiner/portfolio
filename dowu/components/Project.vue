@@ -7,8 +7,8 @@
       </div>
       <div class="section-heading-right">
         <span v-if="date">
-          <span>{{ startDate }}</span> -
-          <span>{{ endDate }}</span>
+          <span>{{ date.startDate }}</span> -
+          <span>{{ date.endDate }}</span>
         </span>
       </div>
     </div>
@@ -32,9 +32,11 @@ export default {
     date: {
       startDate: {
         type: String,
+        required: true,
       },
       endDate: {
         type: String,
+        required: true,
       },
     },
   },
@@ -60,6 +62,14 @@ export default {
 
   &-right {
     text-align: right;
+
+    span {
+      line-height: 32px;
+
+      &:last-child {
+        color: var(--white);
+      }
+    }
   }
 }
 

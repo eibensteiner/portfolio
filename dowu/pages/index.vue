@@ -1,22 +1,24 @@
 <template>
   <div class="container">
-    <ContentSection
+    <Project
       :heading="'Command'"
       :subheading="'Explore any website through a lightweight and centralized navigation system'"
+      :date="{startDate: '2020', endDate: 'Now'}"
     >
       <div class="img variant-first">
         <img src="~/assets/img/command.svg" />
       </div>
-    </ContentSection>
-    <ContentSection
+    </Project>
+    <Project
       :heading="'Command'"
       :subheading="'Explore any website through a lightweight and centralized navigation system'"
+      :date="{startDate: '2020', endDate: 'Now'}"
     >
       <div class="img variant-second">
         <img src="~/assets/img/command.svg" />
       </div>
-    </ContentSection>
-    <ContentSection
+    </Project>
+    <Project
       :heading="'Command'"
       :subheading="'Explore any website through a lightweight and centralized navigation system'"
     >
@@ -42,7 +44,7 @@
           :description="'test'"
         />
       </div>
-    </ContentSection>
+    </Project>
   </div>
 </template>
 
@@ -57,7 +59,7 @@ export default Vue.extend({
     };
   },
   created: function () {
-    axios.get("https://github.com/users/dowu/repos").then((response) => {
+    axios.get('https://github.com/users/dowu/repos').then((response) => {
       this.repositories = response.data;
       console.log(this.repositories);
     });
@@ -71,8 +73,8 @@ export default Vue.extend({
   justify-content: center;
   flex-direction: column;
 
-  & > *:not(:first-child) {
-    margin-top: 104px;
+  & > * {
+    margin-bottom: 104px;
   }
 }
 
