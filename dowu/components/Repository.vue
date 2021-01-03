@@ -13,7 +13,7 @@
 
 <script lang="ts">
 export default {
-  props: ["user", "repository", "description"],
+  props: ["user", "repository", "description", "url"],
 };
 </script>
 
@@ -22,10 +22,11 @@ export default {
   text-align: left;
   display: flex;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
   position: relative;
+  height: 152px;
 
   &:not(:last-child) {
     .button {

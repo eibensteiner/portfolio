@@ -1,40 +1,32 @@
 <template>
   <div class="container">
-    <Project
-      :heading="'Command'"
-      :subheading="'Explore any website through a lightweight and centralized navigation system'"
-      :date="{startDate: '2020', endDate: 'Now'}"
-    >
-      <div class="img variant-first">
-        <img src="~/assets/img/command.svg" />
-      </div>
-    </Project>
-    <Project
-      :heading="'Command'"
-      :subheading="'Explore any website through a lightweight and centralized navigation system'"
-      :date="{startDate: '2020', endDate: 'Now'}"
-    >
-      <div class="img variant-second">
-        <img src="~/assets/img/command.svg" />
-      </div>
-    </Project>
-    <Project
-      :heading="'Command'"
-      :subheading="'Explore any website through a lightweight and centralized navigation system'"
-    >
+    <div v-for="project of projects" :key="project.slug">
+      <NuxtLink :to="{ name: 'blog-slug', params: { slug: project.slug } }">
+        <Project
+          :heading="project.title"
+          :subheading="project.description"
+        >
+          <div class="img variant-first">
+            <img :src="project.img" />
+          </div>
+        </Project>
+      </NuxtLink>
+    </div>
       <div class="grid">
         <Repository
-        v-for="repository in repositories" :key="repository.id"
+          v-for="repository in repositories"
+          :key="repository.id"
           :user="repository.owner.login"
           :repository="repository.name"
           :description="repository.description"
+          :href="repository.url"
         />
       </div>
     </Project>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from "vue";
 import axios from "axios";
 
@@ -45,9 +37,19 @@ export default Vue.extend({
     };
   },
   created: function () {
-    axios.get('https://api.github.com/users/dowu/repos').then((response) => {
+    axios.get("https://api.github.com/users/dowu/repos").then((response) => {
       this.repositories = response.data;
     });
+  },
+  async asyncData({ $content, params }) {
+    const projects = await $content("projects", params.slug)
+      .only(["title", "description", "img", "slug", "author"])
+      .sortBy("createdAt", "desc")
+      .fetch();
+
+    return {
+      projects,
+    };
   },
 });
 </script>
@@ -65,8 +67,9 @@ export default Vue.extend({
 
 .repository {
   &:last-child {
-    & > ::v-deep .repository-heading, & > ::v-deep .repository-content {
-      filter: blur(20px)
+    & > ::v-deep .repository-heading,
+    & > ::v-deep .repository-content {
+      filter: blur(20px);
     }
   }
 }

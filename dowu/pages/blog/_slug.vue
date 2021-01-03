@@ -1,6 +1,6 @@
 <template>
   <article>
-    <nuxt-content :document="article" />
+    <nuxt-content :document="thought" />
   </article>
 </template>
 
@@ -13,9 +13,9 @@ export default {
     // Set Meta Tags for this Page
   },
   async asyncData({ $content , params } : {$content: any, params: any}) {
-    const article = await $content('articles', params.slug).fetch()
+    const thought = await $content('thoughts', params.slug).fetch()
 
-      return { article }
+      return { thought }
   },
 };
 </script>

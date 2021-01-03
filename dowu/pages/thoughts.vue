@@ -1,18 +1,12 @@
 <template>
   <div class="container">
-    <h1>Blog Posts</h1>
-    <ul>
-      <li v-for="article of articles" :key="article.slug">
-        <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
-          <img :src="article.img" />
-          <div>
-            <h2>{{ article.title }}</h2>
-            <p>by {{ article.author.name }}</p>
-            <p>{{ article.description }}</p>
-          </div>
-        </NuxtLink>
-      </li>
-    </ul>
+    <div class="card" v-for="thought of thoughts" :key="thought.slug">
+      <NuxtLink :to="{ name: 'blog-slug', params: { slug: thought.slug } }">
+        <h2>{{ thought.title }}</h2>
+        <p>by {{ thought.author.name }}</p>
+        <p>{{ thought.description }}</p>
+      </NuxtLink>
+    </div>
   </div>
 </template>
 
@@ -20,14 +14,17 @@
 <script>
 export default {
   async asyncData({ $content, params }) {
-    const articles = await $content("articles", params.slug)
+    const thoughts = await $content("thoughts", params.slug)
       .only(["title", "description", "img", "slug", "author"])
-      .sortBy("createdAt", "asc")
+      .sortBy("createdAt", "desc")
       .fetch();
 
     return {
-      articles,
+      thoughts,
     };
   },
 };
 </script>
+
+<style lang="scss" scoped>
+</style>
