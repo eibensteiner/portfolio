@@ -1,28 +1,24 @@
 <template>
   <div class="container">
     <div v-for="project of projects" :key="project.slug">
-      <NuxtLink :to="{ name: 'blog-slug', params: { slug: project.slug } }">
-        <Project
-          :heading="project.title"
-          :subheading="project.description"
-        >
+      <NuxtLink :to="{ name: 'project-slug', params: { slug: project.slug } }">
+        <Project :heading="project.title" :subheading="project.description">
           <div class="img variant-first">
             <img :src="project.img" />
           </div>
         </Project>
       </NuxtLink>
     </div>
-      <div class="grid">
-        <Repository
-          v-for="repository in repositories"
-          :key="repository.id"
-          :user="repository.owner.login"
-          :repository="repository.name"
-          :description="repository.description"
-          :href="repository.url"
-        />
-      </div>
-    </Project>
+    <div class="grid">
+      <Repository
+        v-for="repository in repositories"
+        :key="repository.id"
+        :user="repository.owner.login"
+        :repository="repository.name"
+        :description="repository.description"
+        :href="repository.url"
+      />
+    </div>
   </div>
 </template>
 
