@@ -1,15 +1,33 @@
 <template>
   <div class="container">
-    
+    <h1>Blog Posts</h1>
+    <ul>
+      <li v-for="article of articles" :key="article.slug">
+        <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
+          <img :src="article.img" />
+          <div>
+            <h2>{{ article.title }}</h2>
+            <p>by {{ article.author.name }}</p>
+            <p>{{ article.description }}</p>
+          </div>
+        </NuxtLink>
+      </li>
+    </ul>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
 
-export default Vue.extend({
-    async asyncData({ $content, params }) {
-      // fetch our article here
-    }
-})
+<script>
+export default {
+  async asyncData({ $content, params }) {
+    const articles = await $content("articles", params.slug)
+      .only(["title", "description", "img", "slug", "author"])
+      .sortBy("createdAt", "asc")
+      .fetch();
+
+    return {
+      articles,
+    };
+  },
+};
 </script>

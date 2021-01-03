@@ -12,7 +12,7 @@ export default {
   head() {
     // Set Meta Tags for this Page
   },
-  async asyncData({ $content, params }) {
+  async asyncData({ $content , params } : {$content: any, params: any}) {
     const article = await $content('articles', params.slug).fetch()
 
       return { article }

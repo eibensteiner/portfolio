@@ -24,24 +24,10 @@
     >
       <div class="grid">
         <Repository
-          :user="'dowu'"
-          :repository="'command'"
-          :description="'test'"
-        />
-        <Repository
-          :user="'dowu'"
-          :repository="'command'"
-          :description="'test'"
-        />
-        <Repository
-          :user="'dowu'"
-          :repository="'command'"
-          :description="'test'"
-        />
-        <Repository
-          :user="'dowu'"
-          :repository="'command'"
-          :description="'test'"
+        v-for="repository in repositories" :key="repository.id"
+          :user="repository.owner.login"
+          :repository="repository.name"
+          :description="repository.description"
         />
       </div>
     </Project>
@@ -59,9 +45,8 @@ export default Vue.extend({
     };
   },
   created: function () {
-    axios.get('https://github.com/users/dowu/repos').then((response) => {
+    axios.get('https://api.github.com/users/dowu/repos').then((response) => {
       this.repositories = response.data;
-      console.log(this.repositories);
     });
   },
 });

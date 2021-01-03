@@ -1,8 +1,8 @@
 ---
-title: Redesigning my Portfolio
+title: My goals in 2021
 description: This is the description for the article about all the things we know
 img: https://images.unsplash.com/photo-1588065394015-68bf7e40738d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80
-alt: Article 1
+alt: Article 2
 author: 
   name: Choi
   bio: All about Choi and where he works and what he does
