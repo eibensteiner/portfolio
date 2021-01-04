@@ -1,14 +1,17 @@
 <template>
   <div class="container">
-    <div v-for="project of projects" :key="project.slug">
-      <NuxtLink :to="{ name: 'project-slug', params: { slug: project.slug } }">
-        <Project :heading="project.title" :subheading="project.description">
-          <div class="img variant-first">
-            <img :src="project.img" />
-          </div>
-        </Project>
-      </NuxtLink>
-    </div>
+    <Header
+      :heading="'Because we are all humans'"
+      :subheading="'I’m Dominik, a Coding Designer from Austria and a human like you. I love minimal & functional Interfaces. <br/> For the past few years I have worked for several Startups as a Code savvy designer. I had the chance to build products from the ground up'"
+    />
+    <Project
+      v-for="project of projects"
+      :key="project.slug"
+      :heading="project.title"
+      :subheading="project.description"
+      :img="project.img"
+      :to="{ name: 'project-slug', params: { slug: project.slug } }"
+    />
     <div class="grid">
       <Repository
         v-for="repository in repositories"
@@ -16,7 +19,7 @@
         :user="repository.owner.login"
         :repository="repository.name"
         :description="repository.description"
-        :href="repository.url"
+        :to="repository.html_url"
       />
     </div>
   </div>
@@ -32,11 +35,13 @@ export default Vue.extend({
       repositories: null,
     };
   },
+
   created: function () {
     axios.get("https://api.github.com/users/dowu/repos").then((response) => {
       this.repositories = response.data;
     });
   },
+
   async asyncData({ $content, params }) {
     const projects = await $content("projects", params.slug)
       .only(["title", "description", "img", "slug", "author"])
@@ -51,16 +56,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  & > * {
-    margin-bottom: 104px;
-  }
-}
-
 .repository {
   &:last-child {
     & > ::v-deep .repository-heading,

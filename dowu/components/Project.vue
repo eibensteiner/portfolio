@@ -1,21 +1,25 @@
 <template>
-  <section class="section">
-    <div class="section-heading">
-      <div class="section-heading-left">
-        <h2>{{ heading }}</h2>
-        <p>{{ subheading }}</p>
+  <NuxtLink :to="to">
+    <section class="section">
+      <div class="section-heading">
+        <div class="section-heading-left">
+          <h2>{{ heading }}</h2>
+          <p>{{ subheading }}</p>
+        </div>
+        <div class="section-heading-right">
+          <span v-if="date">
+            <span>{{ date.startDate }}</span> -
+            <span>{{ date.endDate }}</span>
+          </span>
+        </div>
       </div>
-      <div class="section-heading-right">
-        <span v-if="date">
-          <span>{{ date.startDate }}</span> -
-          <span>{{ date.endDate }}</span>
-        </span>
+      <div class="section-content">
+        <div class="img variant-first">
+          <img :src="img" />
+        </div>
       </div>
-    </div>
-    <div class="section-content">
-      <slot />
-    </div>
-  </section>
+    </section>
+  </NuxtLink>
 </template>
 
 <script lang="ts">
@@ -39,6 +43,8 @@ export default {
         required: true,
       },
     },
+    to: {},
+    img: {},
   },
 };
 </script>

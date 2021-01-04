@@ -1,19 +1,19 @@
 <template>
-  <div class="card repository">
-    <a class="repository-heading">
+  <a class="card repository" :href="to">
+    <div class="repository-heading">
       <span>{{ user }}</span> /
       <span>{{ repository }}</span>
-    </a>
+    </div>
     <p class="repository-content">
       {{ description }}
     </p>
     <SimpleButton :text="'View more on GitHub'" />
-  </div>
+  </a>
 </template>
 
 <script lang="ts">
 export default {
-  props: ["user", "repository", "description", "url"],
+  props: ["user", "repository", "description", "url", "to"],
 };
 </script>
 

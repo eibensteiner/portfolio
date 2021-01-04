@@ -19,7 +19,7 @@
 
 <style lang="scss" scoped>
 .footer {
-  margin-bottom: 80px;
+  margin: 120px 0 80px 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -27,6 +27,7 @@
   &-left {
     max-width: 152px;
     width: 100%;
+    margin-right: 64px;
     display: flex;
     flex-direction: column;
 

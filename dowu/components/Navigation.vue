@@ -8,7 +8,7 @@
 
 <style lang="scss" scoped>
 .navigation {
-  margin-top: 48px;
+  margin: 48px 0 96px 0;
 
   & > *:not(:first-child) {
     margin-left: 24px;
