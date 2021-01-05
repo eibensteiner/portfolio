@@ -3,6 +3,9 @@ title: Command
 description: Explore any website through a lightweight and centralized navigation system
 img: /_nuxt/assets/img/command.svg
 alt: Article 2
+date:
+  startedAt: 2020
+  endedAt: Now
 author: 
   name: Choi
   bio: All about Choi and where he works and what he does

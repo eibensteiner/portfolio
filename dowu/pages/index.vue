@@ -1,16 +1,29 @@
 <template>
   <div class="container">
     <Header
-      :heading="'Because we are all humans'"
-      :subheading="'I’m Dominik, a Coding Designer from Austria and a human like you. I love minimal & functional Interfaces. <br/> For the past few years I have worked for several Startups as a Code savvy designer. I had the chance to build products from the ground up'"
-    />
+      :title="'Because we are all humans'"
+      :subtitle="'I’m Dominik, a Coding Designer from Austria and a human like you. I love minimal & functional Interfaces. <br/><br/> For the past few years I have worked for several Startups as a Code savvy designer. I had the chance to build products from the ground up'"
+    >
+      <template v-slot:title>
+        <SimpleButton :text="'Contact me'" />
+      </template>
+    </Header>
     <Project
       v-for="project of projects"
       :key="project.slug"
       :heading="project.title"
       :subheading="project.description"
       :img="project.img"
+      :date="{
+        startDate: project.date.startedAt,
+        endDate: project.date.endedAt,
+      }"
       :to="{ name: 'project-slug', params: { slug: project.slug } }"
+    />
+    <Header
+      :title="'More recent Projects'"
+      :subtitle="'Explore any website through a lightweight and centralized navigation system'"
+      :variant="'second'"
     />
     <div class="grid">
       <Repository
@@ -44,7 +57,7 @@ export default Vue.extend({
 
   async asyncData({ $content, params }) {
     const projects = await $content("projects", params.slug)
-      .only(["title", "description", "img", "slug", "author"])
+      .only(["title", "description", "img", "slug", "date"])
       .sortBy("createdAt", "desc")
       .fetch();
 

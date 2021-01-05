@@ -1,18 +1,14 @@
 <template>
   <NuxtLink :to="to">
     <section class="section">
-      <div class="section-heading">
-        <div class="section-heading-left">
-          <h2>{{ heading }}</h2>
-          <p>{{ subheading }}</p>
-        </div>
-        <div class="section-heading-right">
-          <span v-if="date">
+      <Header :title="heading" :subtitle="subheading" :variant="'second'">
+        <template v-slot:additional v-if="date">
+          <span class="date">
             <span>{{ date.startDate }}</span> -
             <span>{{ date.endDate }}</span>
           </span>
-        </div>
-      </div>
+        </template>
+      </Header>
       <div class="section-content">
         <div class="img variant-first">
           <img :src="img" />
@@ -34,11 +30,11 @@ export default {
       required: true,
     },
     date: {
-      startDate: {
+      startedAt: {
         type: String,
         required: true,
       },
-      endDate: {
+      endedAt: {
         type: String,
         required: true,
       },
@@ -54,32 +50,13 @@ export default {
   width: 100%;
 }
 
-.section-heading {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+::v-deep .date {
+  span {
+    line-height: 32px;
 
-  &-left {
-    width: 100%;
-    max-width: 440px;
-    text-align: left;
-  }
-
-  &-right {
-    text-align: right;
-
-    span {
-      line-height: 32px;
-
-      &:last-child {
-        color: var(--white);
-      }
+    &:last-child {
+      color: var(--white);
     }
   }
-}
-
-.section-content {
-  margin-top: 48px;
 }
 </style>
