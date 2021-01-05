@@ -20,16 +20,13 @@
 <style lang="scss" scoped>
 .footer {
   margin: 120px 0 80px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  @include flex(space-between, flex-start, row);
 
   &-left {
-    max-width: 152px;
+    max-width: 160px;
     width: 100%;
     margin-right: 64px;
-    display: flex;
-    flex-direction: column;
+    @include flex(flex-start, flex-start, column);
 
     a {
       line-height: 32px;

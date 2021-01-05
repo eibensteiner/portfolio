@@ -17,7 +17,6 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    '@/assets/scss/variables.scss',
     '@/assets/scss/typo.scss',
     '@/assets/scss/main.scss'
   ],
@@ -39,7 +38,15 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/style-resources',
   ],
+
+  styleResources: {
+    scss: [
+      './assets/scss/variables.scss',
+      './assets/scss/mixins.scss'
+    ]
+  },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},

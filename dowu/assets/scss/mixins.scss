@@ -1,0 +1,34 @@
+
+@mixin viewport($value, $direction: max) {
+    $breakpoint: (
+        xs: 584px,
+        sm: 768px,
+        md: 1024px,
+        lg: 1200px,
+        xl: 1400px,
+    );
+
+    @if map-has-key($breakpoint, $value) {
+        @media (#{$direction}-width: #{map-get($breakpoint, $value)}) {
+            @content;
+        }
+    }
+}
+
+@mixin padding($padding, $box-sizing: border-box) {
+    padding: $padding;
+    box-sizing: $box-sizing;
+}
+
+@mixin flex($justify-content, $align-items, $flex-direction: row) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-direction: $flex-direction;
+}
+
+@mixin grid($min-width: 0, $max-width: 1fr, $gap: 16px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($min-width, $max-width));
+    gap: $gap;
+}

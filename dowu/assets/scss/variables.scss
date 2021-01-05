@@ -5,3 +5,30 @@
     --lightgrey: #A7A9AB;
     --white: #fff;
 }
+
+$font-size: (
+  10: 12px,
+  20: 14px,
+  30: 16px,
+  40: 18px,
+  50: 20px,
+  60: 22px,
+  70: 24px,
+  80: 26px,
+  90: 32px,
+  100: 40px,
+);
+
+$font-weight: (
+  medium: 500,
+  semi-bold: 600,
+  bold: 700,
+);
+
+$line-height: (
+  sm: 1,
+  md: 1.4,
+  lg: 1.8,
+);
+
+$nudge: 8px;

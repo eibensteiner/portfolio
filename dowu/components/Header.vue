@@ -14,8 +14,6 @@
   </header>
 </template>
 
-
-
 <script lang="ts">
 export default {
   props: {
@@ -38,24 +36,17 @@ export default {
 <style lang="scss" scoped>
 .header {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  @include flex(space-between, initial, initial);
 
   &.variant-first {
-    align-items: flex-start;
-
     & > .header-content {
-      display: flex;
-      justify-content: space-between;
+      @include flex(space-between, initial, initial);
 
       .title {
-        max-width: 152px;
+        max-width: 160px;
         width: 100%;
         margin-right: 64px;
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        flex-direction: column;
+        @include flex(flex-start, flex-start, column);
 
         & > *:not(:last-child) {
           margin-bottom: 32px;
@@ -69,16 +60,15 @@ export default {
   }
 
   &.variant-second {
-    align-items: flex-end;
     margin-bottom: 48px;
+    @include flex(space-between, flex-end, initial);
 
     .title {
-      display: flex;
-      align-items: center;
+      @include flex(initial, center, initial);
 
       & > *:not(:last-child) {
-          margin-right: 16px;
-        }
+        margin-right: 16px;
+      }
     }
 
     .subtitle {
