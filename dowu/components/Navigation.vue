@@ -14,7 +14,7 @@
     margin-left: 24px;
   }
   a {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     line-height: 24px;
 

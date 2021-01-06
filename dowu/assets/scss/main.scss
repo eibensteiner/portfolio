@@ -29,6 +29,18 @@ body {
     box-sizing: border-box;
     padding: 24px;
     border-radius: 4px;
+
+    &.error {
+        @include flex(flex-start, center, row);
+
+        img {
+            max-width: 24px;
+        }
+
+        p {
+            margin: 0 0 0 16px;
+        }
+    }
 }
 
 .grid {

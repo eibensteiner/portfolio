@@ -18,10 +18,10 @@ export default {
   border-radius: 4px;
   box-sizing: border-box;
   line-height: 36px;
-  height: 36px;
+  height: 40px;
   padding: 0 16px;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   position: relative;
 }
 </style>

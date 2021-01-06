@@ -25,7 +25,7 @@
       :subtitle="'Explore any website through a lightweight and centralized navigation system'"
       :variant="'second'"
     />
-    <div class="grid">
+    <div class="grid" v-if="repositories != null">
       <Repository
         v-for="repository in repositories"
         :key="repository.id"
@@ -34,6 +34,14 @@
         :description="repository.description"
         :to="repository.html_url"
       />
+    </div>
+    <div class="card error" v-if="repositories == 0">
+      <img src="@/assets/img/github.svg" />
+      <p>
+        There seems to be a problem with the
+        <a href="https://www.githubstatus.com" target="_blank">GitHub API</a>.
+        please try again later
+      </p>
     </div>
   </div>
 </template>
@@ -49,12 +57,19 @@ export default Vue.extend({
     };
   },
 
+  // gets repositories from GitHub API
   created: function () {
-    axios.get("https://api.github.com/users/dowu/repos").then((response) => {
-      this.repositories = response.data;
-    });
+    axios
+      .get("https://api.github.com/users/dowu/repos?per_page=4")
+      .then((response) => {
+        this.repositories = response.data;
+      })
+      .catch((error) => {
+        this.repositories = 0;
+      });
   },
 
+  // gets markdown files from /content
   async asyncData({ $content, params }) {
     const projects = await $content("projects", params.slug)
       .only(["title", "description", "img", "slug", "date"])

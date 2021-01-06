@@ -54,8 +54,8 @@ export default {
 }
 
 .thought {
-  font-size: 14px;
-  margin-top: 32px;
+  font-size: 16px;
+  margin-top: 40px;
   display: flex;
 
   .date {

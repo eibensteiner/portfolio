@@ -1,19 +1,16 @@
 <template>
   <div class="gallery">
     <div
-      class="img tabcontent"
+      :class="['img', active === 1 ? 'active' : '']"
       :style="`background-image: url('https://images.unsplash.com/photo-1588065394015-68bf7e40738d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80')`"
-      v-if="active === 1"
     ></div>
     <div
-      class="img tabcontent"
+      :class="['img', active === 2 ? 'active' : '']"
       :style="`background-image: url('https://images.unsplash.com/photo-1588065394015-68bf7e40738d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80')`"
-      v-if="active === 2"
     ></div>
     <div
-      class="img tabcontent"
+      :class="['img', active === 3 ? 'active' : '']"
       :style="`background-image: url('https://images.unsplash.com/photo-1588065394015-68bf7e40738d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80')`"
-      v-if="active === 3"
     ></div>
     <div class="pagination">
       <button @click="active = 1" :class="[active === 1 ? 'active' : '']" />
@@ -36,7 +33,7 @@ export default {
 <style lang="scss" scoped>
 .gallery {
   position: relative;
-  height: 440px;
+  height: 472px;
 }
 
 .img {
@@ -44,10 +41,22 @@ export default {
   background-size: cover;
   background-position: center;
   margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+  position: absolute;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .pagination {
-  margin-top: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   @include flex(center, center, row);
 
   button {

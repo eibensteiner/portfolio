@@ -36,7 +36,7 @@ export default {
 
   &-heading {
     span {
-      font-size: 14px;
+      font-size: 16px;
       line-height: 24px;
       font-weight: 600;
 
