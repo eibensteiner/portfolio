@@ -11,7 +11,7 @@
       </Header>
       <div class="section-content">
         <div class="img variant-first">
-          <img :src="img" />
+          <img :src="require(`~/assets/img/${img}`)" />
         </div>
       </div>
     </section>
@@ -52,8 +52,6 @@ export default {
 
 ::v-deep .date {
   span {
-    line-height: 32px;
-
     &:last-child {
       color: var(--white);
     }

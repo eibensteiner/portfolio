@@ -14,7 +14,7 @@
         >
           <span class="date">{{ formatDate(thought.createdAt) }}</span>
           <div>
-            <strong>{{ thought.title }}</strong>
+            <h4>{{ thought.title }}</h4>
             <p>{{ thought.description }}</p>
           </div>
         </NuxtLink>
@@ -54,20 +54,14 @@ export default {
 }
 
 .thought {
-  font-size: 16px;
-  margin-top: 40px;
+  margin-top: 32px;
   display: flex;
 
   .date {
     width: 48px;
+    min-width: 48px;
+    max-width: 48px;
     margin-right: 32px;
-    line-height: 24px;
-  }
-
-  & > div {
-    & > * {
-      line-height: 24px;
-    }
   }
 }
 </style>

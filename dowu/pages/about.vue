@@ -8,11 +8,30 @@
         <SimpleButton :text="'Contact me'" />
       </template>
     </Header>
-    <Gallery>
-      <div title="Tab 1">Hello From Tab 1</div>
-      <div title="Tab 2">Hello From Tab 2</div>
-      <div title="Tab 3">Hello From Tab 3</div>
-      <div title="Tab 4">Hello From Tab 4</div>
-    </Gallery>
+    <Gallery
+      :content="[
+        {
+          src: 'about/lake.jpg',
+        },
+        {
+          src: 'about/sarah.jpg',
+        },
+      ]"
+    />
+    <Questions
+      :title="'Frequently Asked'"
+      :content="[
+        {
+          question: 'Can you help me with my project?',
+          answer:
+            'I’m Dominik, a Coding Designer from Austria and a human like you. I love minimal & functional Interfaces.',
+        },
+        {
+          question: 'What’s your daily stack?',
+          answer:
+            'I’m Dominik, a Coding Designer from Austria and a human like you. I love minimal & functional Interfaces.',
+        },
+      ]"
+    />
   </div>
 </template>

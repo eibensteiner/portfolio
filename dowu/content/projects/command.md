@@ -1,7 +1,7 @@
 ---
 title: Command
 description: Explore any website through a lightweight and centralized navigation system
-img: /_nuxt/assets/img/command.svg
+img: command.svg
 alt: Article 2
 date:
   startedAt: 2020

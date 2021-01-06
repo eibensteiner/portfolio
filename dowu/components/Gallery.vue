@@ -1,30 +1,32 @@
 <template>
   <div class="gallery">
-    <div
-      :class="['img', active === 1 ? 'active' : '']"
-      :style="`background-image: url('https://images.unsplash.com/photo-1588065394015-68bf7e40738d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80')`"
-    ></div>
-    <div
-      :class="['img', active === 2 ? 'active' : '']"
-      :style="`background-image: url('https://images.unsplash.com/photo-1588065394015-68bf7e40738d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80')`"
-    ></div>
-    <div
-      :class="['img', active === 3 ? 'active' : '']"
-      :style="`background-image: url('https://images.unsplash.com/photo-1588065394015-68bf7e40738d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80')`"
-    ></div>
+    <img
+      v-for="item in content"
+      :key="item.src"
+      :class="['img', active === item.src ? 'active' : '']"
+      :src="require(`~/assets/img/${item.src}`)"
+    />
     <div class="pagination">
-      <button @click="active = 1" :class="[active === 1 ? 'active' : '']" />
-      <button @click="active = 2" :class="[active === 2 ? 'active' : '']" />
-      <button @click="active = 3" :class="[active === 3 ? 'active' : '']" />
+      <button
+        v-for="item in content"
+        :key="item.src"
+        @click="active = item.src"
+        :class="[active === item.src ? 'active' : '']"
+      ></button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    content: {
+      src: String,
+    },
+  },
   data() {
     return {
-      active: 1,
+      active: this.content[0].src, // Set first item of a array based on the entered props active
     };
   },
 };
@@ -38,12 +40,11 @@ export default {
 
 .img {
   width: 100%;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover; // emulates positioning of background-image
   margin: 0;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.2s;
+  transition: visibility, opacity 0.2s;
   position: absolute;
 
   &.active {

@@ -29,7 +29,6 @@
     @include flex(flex-start, flex-start, column);
 
     a {
-      line-height: 32px;
       font-size: 16px;
       font-weight: 600;
     }
