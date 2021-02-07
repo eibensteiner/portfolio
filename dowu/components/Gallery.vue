@@ -2,14 +2,17 @@
   <div class="gallery">
     <img
       v-for="item in content"
-      :key="item.src"
-      :class="['img', active === item.src ? 'active' : '']"
+      :key="item.id"
+      :class="[
+        'img',
+        'img-' + item.id, active === item.src ? 'active' : '',
+      ]"
       :src="require(`~/assets/img/${item.src}`)"
     />
     <div class="pagination">
       <button
         v-for="item in content"
-        :key="item.src"
+        :key="item.id"
         @click="active = item.src"
         :class="[active === item.src ? 'active' : '']"
       ></button>
@@ -22,12 +25,21 @@ export default {
   props: {
     content: {
       src: String,
+      id: Number,
     },
   },
+
   data() {
     return {
       active: this.content[0].src, // Set first item of a array based on the entered props active
     };
+  },
+
+  mounted() {
+    for (let i = 0; i < this.content.length; i++) {
+      this.content[i].id = i;
+      console.log(this.content[i].id);
+    }
   },
 };
 </script>
