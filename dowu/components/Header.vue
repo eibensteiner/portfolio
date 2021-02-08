@@ -1,20 +1,14 @@
 <template>
-  <header :class="['header', 'variant-' + variant]">
+  <header :class="['header']">
     <div class="header-content">
-      <div class="title">
-        <h1>{{ title }}</h1>
-        <slot name="title" />
-      </div>
-      <div class="subtitle">
-        <p v-html="subtitle"></p>
-        <slot name="subtitle" />
-      </div>
+      <h1 class="title">{{ title }}</h1>
+      <p class="subtitle">{{ subtitle }}</p>
     </div>
     <slot name="additional" />
   </header>
 </template>
 
-<script lang="ts">
+<script>
 export default {
   props: {
     title: {
@@ -24,10 +18,6 @@ export default {
     subtitle: {
       type: String,
       required: true,
-    },
-    variant: {
-      type: String,
-      default: "first",
     },
   },
 };

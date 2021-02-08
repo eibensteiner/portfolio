@@ -1,9 +1,17 @@
 * {
-    --black: #0b0b0c;
-    --darkgrey: #1A1A1B;
-    --midgrey: #282829;
-    --lightgrey: #A7A9AB;
-    --white: #fff;
+  // Colors
+  --white: #fff;
+  --grey000: #fafbfc;
+  --grey100: #f6f8fa;
+  --grey200: #e1e4e8;
+  --grey300: #d1d5da;
+  --grey400: #959da5;
+  --grey500: #6a737d;
+  --grey600: #586069;
+  --grey700: #444d56;
+  --grey800: #2f363d;
+  --grey900: #24292e;
+  --black: #1b1f23;
 }
 
 $font-size: (
@@ -26,9 +34,8 @@ $font-weight: (
 );
 
 $line-height: (
-  sm: 1,
-  md: 1.4,
-  lg: 1.8,
+  sm: 24px,
+  lg: 30px,
 );
 
 $nudge: 8px;

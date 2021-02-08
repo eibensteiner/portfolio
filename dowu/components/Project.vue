@@ -1,44 +1,25 @@
 <template>
-  <NuxtLink :to="to">
-    <section class="section">
-      <Header :title="heading" :subtitle="subheading" :variant="'second'">
-        <template v-slot:additional v-if="date">
-          <span class="date">
-            <span>{{ date.startDate }}</span> -
-            <span>{{ date.endDate }}</span>
-          </span>
-        </template>
-      </Header>
-      <div class="section-content">
-        <div class="img variant-first">
-          <img :src="require(`~/assets/img/${img}`)" />
-        </div>
-      </div>
-    </section>
+  <NuxtLink :to="to" class="project" :style="{ backgroundColor: '#' + color}">
+    <div class="text">
+      <h3 class="title">{{ title }}</h3>
+      <p class="subtitle">{{ subtitle }}</p>
+    </div>
+    <img :src="require(`~/assets/img/${img}`)" />
   </NuxtLink>
 </template>
 
-<script lang="ts">
+<script>
 export default {
   props: {
-    heading: {
+    title: {
       type: String,
       required: true,
     },
-    subheading: {
+    subtitle: {
       type: String,
       required: true,
     },
-    date: {
-      startedAt: {
-        type: String,
-        required: true,
-      },
-      endedAt: {
-        type: String,
-        required: true,
-      },
-    },
+    color: String,
     to: {},
     img: {},
   },
@@ -46,15 +27,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.section {
-  width: 100%;
+.project {
+  border-radius: 4px;
+  width: 50%;
+  @include padding(40px);
+
+  img {
+    margin-top: 80px;
+    max-width: 100%;
+  }
 }
 
-::v-deep .date {
-  span {
-    &:last-child {
-      color: var(--white);
-    }
-  }
+.text {
+  width: 100%;
 }
 </style>

@@ -3,9 +3,7 @@ title: Command
 description: Explore any website through a lightweight and centralized navigation system
 img: command.svg
 alt: Article 2
-date:
-  startedAt: 2020
-  endedAt: Now
+color: 1B1F23
 author: 
   name: Choi
   bio: All about Choi and where he works and what he does

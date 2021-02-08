@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600,700&display=swap");
 
 * {
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
-    -webkit-font-smoothing: antialiased;
-    line-height: 32px;
+  font-family: "Inter", sans-serif;
+  font-weight: map_get($font-weight, medium);
+  -webkit-font-smoothing: antialiased;
+  line-height: map_get($line-height, lg);
 }
 
 h1,
@@ -13,57 +13,58 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--white);
-    margin: 0;
+  color: var(--black);
+  margin: 0;
 
-    & + p {
-        color: var(--lightgrey);
-        font-weight: 500;
-        margin: 8px 0 0 0;
-    }
+  & + p {
+    color: var(--grey600);
+    font-weight: map_get($font-weight, medium);
+    margin: 8px 0 0 0;
+  }
 }
 
 h1,
 h2 {
-    line-height: 40px;
-    font-size: 26px;
-    font-weight: 700;
+  line-height: map_get($line-height, lg);
+  font-size: 20px;
+  font-weight: map_get($font-weight, bold);
 
-    & + p {
-        font-size: 16px;
-    }
+  & + p {
+    font-size: 16px;
+  }
 }
 
+h3,
 h4 {
-    font-size: 16px;
-    font-weight: 600;
+  font-size: 16px;
+  font-weight: map_get($font-weight, semi-bold);
 }
 
 a {
-    text-decoration: none;
-    color: var(--white);
-    transition: all 0.2s;
-    cursor: pointer;
+  text-decoration: none;
+  color: var(--black);
+  transition: all 0.2s;
+  cursor: pointer;
 
-    &:hover {
-        opacity: 0.8;
-    }
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 span {
-    color: var(--lightgrey);
+  color: var(--grey600);
 }
 
 p {
-    margin: 8px 0 0 0;
-    color: var(--lightgrey);
+  margin: 8px 0 0 0;
+  color: var(--grey600);
 
-    span,
-    a {
-        color: var(--white);
-    }
+  span,
+  a {
+    color: var(--black);
+  }
 }
 
 strong {
-    font-weight: 600;
+  font-weight: map_get($font-weight, semi-bold);
 }
