@@ -1,12 +1,11 @@
 <template>
   <div class="container">
+    <Header
+      :title="'Thoughts'"
+      :subtitle="'Explore any website through a lightweight and centralized navigation system'"
+      :variant="'second'"
+    />
     <section class="section">
-      <Header
-        :title="'Thoughts'"
-        :subtitle="'Explore any website through a lightweight and centralized navigation system'"
-        :variant="'second'"
-      />
-
       <div v-for="thought of thoughts" :key="thought.slug">
         <NuxtLink
           class="thought"

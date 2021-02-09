@@ -1,6 +1,5 @@
 <template>
   <div class="root">
-    <Navigation />
     <Nuxt />
     <Footer />
   </div>
@@ -8,14 +7,12 @@
 
 <style lang="scss" scoped>
 .root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  margin-top: $nudge * 16;
+  @include flex(center, center, column);
 
   & > * {
     width: 100%;
-    max-width: $nudge * 94;
+    max-width: $nudge * 106;
   }
 }
 </style>

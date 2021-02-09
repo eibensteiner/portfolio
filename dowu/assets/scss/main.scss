@@ -50,10 +50,6 @@ body {
 }
 
 .container {
-    @include flex(flex-start, center, row);
     flex-wrap: wrap;
-
-    & > *:not(:last-child) {
-        margin-bottom: 120px;
-    }
+    @include flex(center, center, row);
 }

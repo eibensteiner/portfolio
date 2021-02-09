@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="to" class="project" :style="{ backgroundColor: '#' + color}">
+  <NuxtLink :to="to" class="project" :style="{ backgroundColor: '#' + color }">
     <div class="text">
       <h3 class="title">{{ title }}</h3>
       <p class="subtitle">{{ subtitle }}</p>
@@ -28,17 +28,20 @@ export default {
 
 <style lang="scss" scoped>
 .project {
+  position: relative;
   border-radius: 4px;
-  width: 50%;
-  @include padding(40px);
+  width: calc(50% - 16px);
+  margin: 8px;
 
   img {
-    margin-top: 80px;
+    margin-top: 40px;
     max-width: 100%;
+    display: block;
   }
 }
 
 .text {
   width: 100%;
+  @include padding(40px);
 }
 </style>

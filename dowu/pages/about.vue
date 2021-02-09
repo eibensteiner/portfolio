@@ -18,20 +18,5 @@
         },
       ]"
     />
-    <Questions
-      :title="'Frequently Asked'"
-      :content="[
-        {
-          question: 'Can you help me with my project?',
-          answer:
-            'I’m Dominik, a Coding Designer from Austria and a human like you. I love minimal & functional Interfaces.',
-        },
-        {
-          question: 'What’s your daily stack?',
-          answer:
-            'I’m Dominik, a Coding Designer from Austria and a human like you. I love minimal & functional Interfaces.',
-        },
-      ]"
-    />
   </div>
 </template>
