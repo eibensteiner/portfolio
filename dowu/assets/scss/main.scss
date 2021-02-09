@@ -53,3 +53,7 @@ body {
     flex-wrap: wrap;
     @include flex(flex-start, flex-start, row);
 }
+
+.main {
+    @include flex(center, center, column);
+}

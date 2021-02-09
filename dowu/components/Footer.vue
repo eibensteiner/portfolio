@@ -9,17 +9,18 @@
     </div>
     <p class="footer-right">
       The copyright on this website belongs to me basically. If you want to see
-      how I built it, here is a <a>GitHub link</a> to the repository. Find more details in the privacy policy.
-      <br /><br />
-      I’m currently not looking for a new job, but here is <a>my resume</a> if you’re
-      into that.
+      how I built it, here is a <a>GitHub link</a> to the repository. Find more
+      details in the privacy policy. <br /><br />
+      I’m currently not looking for a new job, but here is <a>my resume</a> if
+      you’re into that.
     </p>
   </footer>
 </template>
 
 <style lang="scss" scoped>
 .footer {
-  margin: 120px 0 80px 0;
+  margin: 80px 0 80px 0;
+  max-width: $nudge * 94;
   @include flex(space-between, flex-start, row);
 
   &-left {

@@ -30,7 +30,7 @@ export default {
 .header {
   width: 100%;
   max-width: $nudge * 94;
-  margin-bottom: $nudge * 10;
+  margin: 80px 0 80px 0;
   @include flex(space-between, flex-end, row);
 
   &-left {
