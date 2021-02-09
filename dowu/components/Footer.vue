@@ -28,9 +28,8 @@
     margin-right: 64px;
     @include flex(flex-start, flex-start, column);
 
-    a {
-      font-size: 16px;
-      font-weight: 600;
+    & > *:not(:last-child) {
+      margin-bottom: 8px;
     }
   }
 

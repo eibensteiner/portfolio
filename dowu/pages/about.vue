@@ -1,9 +1,6 @@
 <template>
-  <div class="container">
-    <Header
-      :title="'Dominik Wurm'"
-      :subtitle="'Product Designer at Blockpit'"
-    >
+  <main class="main">
+    <Header :title="'Dominik Wurm'" :subtitle="'Product Designer at Blockpit'">
     </Header>
     <Gallery
       :content="[
@@ -15,5 +12,5 @@
         },
       ]"
     />
-  </div>
+  </main>
 </template>

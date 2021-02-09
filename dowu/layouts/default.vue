@@ -7,7 +7,6 @@
 
 <style lang="scss" scoped>
 .root {
-  margin-top: $nudge * 16;
   @include flex(flex-start, center, column);
 
   & > * {

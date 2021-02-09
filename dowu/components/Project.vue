@@ -15,17 +15,11 @@
 <script>
 export default {
   props: {
-    title: {
-      type: String,
-      required: true,
-    },
-    subtitle: {
-      type: String,
-      required: true,
-    },
+    title: String,
+    subtitle: String,
     color: String,
-    to: {},
-    img: {},
+    to: Object,
+    img: String,
   },
   methods: {
     setClassBasedOnContrast(color) {
@@ -46,6 +40,11 @@ export default {
   border-radius: 4px;
   width: calc(50% - 16px);
   margin: 8px;
+
+  &:nth-of-type(3n) {
+    width: 100%;
+    @include flex(space-between, flex-start, row);
+  }
 
   img {
     margin-top: 40px;

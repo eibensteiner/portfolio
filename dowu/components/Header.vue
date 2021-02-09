@@ -7,7 +7,6 @@
     <div class="header-right">
       <template v-if="!isNested">
         <NuxtLink to="/">Work</NuxtLink>
-        <NuxtLink to="/thoughts">Thoughts</NuxtLink>
         <NuxtLink to="/about">About</NuxtLink>
       </template>
       <template v-if="isNested">
@@ -41,6 +40,13 @@ export default {
   &-right {
     & > * {
       margin-left: $nudge * 3;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+
+      &:not(.nuxt-link-exact-active) {
+        color: var(--grey600);
+      }
     }
   }
 }

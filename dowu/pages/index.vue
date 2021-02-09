@@ -1,37 +1,39 @@
 <template>
-  <div class="container">
+  <main class="main">
     <Header
       :title="'Dominik Wurm'"
       :subtitle="'Product Designer at Blockpit'"
     />
-    <Project
-      v-for="project of projects"
-      :key="project.slug"
-      :title="project.title"
-      :subtitle="project.description"
-      :color="project.color"
-      :img="project.img"
-      :to="{ name: 'project-slug', params: { slug: project.slug } }"
-    />
-    <Project
-      v-for="project of projects"
-      :key="project.slug"
-      :title="project.title"
-      :subtitle="project.description"
-      :color="project.color"
-      :img="project.img"
-      :to="{ name: 'project-slug', params: { slug: project.slug } }"
-    />
-    <Project
-      v-for="project of projects"
-      :key="project.slug"
-      :title="project.title"
-      :subtitle="project.description"
-      :color="project.color"
-      :img="project.img"
-      :to="{ name: 'project-slug', params: { slug: project.slug } }"
-    />
-  </div>
+    <div class="container">
+      <Project
+        v-for="project of projects"
+        :key="project.slug"
+        :title="project.title"
+        :subtitle="project.description"
+        :color="project.color"
+        :img="project.img"
+        :to="{ name: 'project-slug', params: { slug: project.slug } }"
+      />
+      <Project
+        v-for="project of projects"
+        :key="project.slug"
+        :title="project.title"
+        :subtitle="project.description"
+        :color="project.color"
+        :img="project.img"
+        :to="{ name: 'project-slug', params: { slug: project.slug } }"
+      />
+      <Project
+        v-for="project of projects"
+        :key="project.slug"
+        :title="project.title"
+        :subtitle="project.description"
+        :color="project.color"
+        :img="project.img"
+        :to="{ name: 'project-slug', params: { slug: project.slug } }"
+      />
+    </div>
+  </main>
 </template>
 
 <script>
@@ -49,13 +51,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-::v-deep .project {
-  &:nth-of-type(3n) {
-    width: 100%;
-    @include flex(space-between, flex-start, row);
-  }
-}
-</style>
-
