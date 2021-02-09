@@ -1,5 +1,9 @@
 <template>
-  <NuxtLink :to="to" class="project" :style="{ backgroundColor: '#' + color }">
+  <NuxtLink
+    :to="to"
+    :class="['project', setClassBasedOnContrast(color)]"
+    :style="{ backgroundColor: '#' + color }"
+  >
     <div class="text">
       <h3 class="title">{{ title }}</h3>
       <p class="subtitle">{{ subtitle }}</p>
@@ -23,6 +27,16 @@ export default {
     to: {},
     img: {},
   },
+  methods: {
+    setClassBasedOnContrast(color) {
+      color = color.replace("#", "");
+      var r = parseInt(color.substr(0, 2), 16);
+      var g = parseInt(color.substr(2, 2), 16);
+      var b = parseInt(color.substr(4, 2), 16);
+      var yiq = (r * 299 + g * 587 + b * 114) / 1000;
+      return yiq >= 128 ? "background-light" : "background-dark";
+    },
+  },
 };
 </script>
 
@@ -35,8 +49,28 @@ export default {
 
   img {
     margin-top: 40px;
-    max-width: 100%;
+    width: 100%;
     display: block;
+  }
+
+  &.background-light {
+    h3 {
+      color: var(--black);
+    }
+
+    p {
+      color: var(--grey600) !important;
+    }
+  }
+
+  &.background-dark {
+    h3 {
+      color: var(--white);
+    }
+
+    p {
+      color: var(--grey400) !important;
+    }
   }
 }
 

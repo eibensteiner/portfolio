@@ -35,7 +35,7 @@
 </template>
 
 <script>
-export default{
+export default {
   // gets markdown files from /content
   async asyncData({ $content, params }) {
     const projects = await $content("projects", params.slug)
@@ -51,7 +51,6 @@ export default{
 </script>
 
 <style lang="scss" scoped>
-
 ::v-deep .project {
   &:nth-of-type(3n) {
     width: 100%;

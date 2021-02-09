@@ -1,9 +1,9 @@
 ---
-title: Command
+title: Kompass
 description: Explore any website through a lightweight and centralized navigation system
-img: command.svg
+img: kompass.svg
 alt: Article 2
-color: 1B1F23
+color: C8D4EE
 author: 
   name: Choi
   bio: All about Choi and where he works and what he does

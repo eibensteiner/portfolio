@@ -1,9 +1,9 @@
 ---
 title: Blockpit Rebranding
 description: Explore any website through a lightweight and centralized navigation system
-img: command.svg
+img: blockpit-brand.svg
 alt: Article 2
-color: C8D4EE
+color: 1B1F23
 author: 
   name: Choi
   bio: All about Choi and where he works and what he does
