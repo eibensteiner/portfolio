@@ -1,0 +1,13 @@
+body {
+    background-color: var(--grey000);
+    margin: 0;
+}
+
+.container {
+    flex-wrap: wrap;
+    @include flex(flex-start, flex-start, row);
+}
+
+.main {
+    @include flex(center, center, column);
+}
