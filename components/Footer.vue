@@ -31,6 +31,7 @@
 
     & > *:not(:last-child) {
       margin-bottom: 8px;
+      font-weight: 600;
     }
   }
 

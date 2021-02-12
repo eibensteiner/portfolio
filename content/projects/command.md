@@ -1,6 +1,6 @@
 ---
 title: Kompass
-description: Explore any website with your lightweight <span class="badge">cmd</span><span class="badge">k</span> command center. This is also a quite long subheading because I try to explain something in more words. Of course this should be no problem to handle within the project card. It's not long enought yet? Hm what could I write next to make this text overflow? Maybe something like this, or something like that? Yeah that's it, thanks for your attention.
+description: Explore any website with your lightweight <span class="badge">cmd</span><span class="badge">k</span> command center
 img: kompass.svg
 alt: Article 2
 color: C8D4EE

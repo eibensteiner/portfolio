@@ -9,7 +9,6 @@
         <h3 class="title">{{ title }}</h3>
         <p class="subtitle" v-html="subtitle"></p>
       </div>
-      <div class="overlay" :style="{ background: 'linear-gradient(to bottom, transparent, #' + color + ')' }"></div>
       <NuxtLink to="/">Case Study coming soon</NuxtLink>
     </div>
     <div class="project-right">
@@ -43,7 +42,7 @@ export default {
 <style lang="scss" scoped>
 .project {
   position: relative;
-  border-radius: 4px;
+  border-radius: 8px;
   height: 416px;
   width: 100%;
   overflow: hidden;
@@ -51,6 +50,10 @@ export default {
 
   &:not(:last-of-type) {
     margin-bottom: 40px;
+  }
+
+  &:hover {
+    transform: scale(1.01);
   }
 
   &.background-light {
@@ -96,14 +99,5 @@ export default {
       width: 100%;
     }
   }
-}
-
-.overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to top, #C8D4EE, transparent);
 }
 </style>
