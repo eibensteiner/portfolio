@@ -19,9 +19,9 @@
 
 <style lang="scss" scoped>
 .footer {
-  margin: 80px 0 80px 0;
-  max-width: $nudge * 94;
+  margin: 80px 0 136px 0;
   @include flex(space-between, flex-start, row);
+  @include padding(0 40px);
 
   &-left {
     max-width: 160px;

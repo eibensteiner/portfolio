@@ -4,11 +4,17 @@
     :class="['project', setClassBasedOnContrast(color)]"
     :style="{ backgroundColor: '#' + color }"
   >
-    <div class="text">
-      <h3 class="title">{{ title }}</h3>
-      <p class="subtitle">{{ subtitle }}</p>
+    <div class="project-left">
+      <div class="description">
+        <h3 class="title">{{ title }}</h3>
+        <p class="subtitle" v-html="subtitle"></p>
+      </div>
+      <div class="overlay" :style="{ background: 'linear-gradient(to bottom, transparent, #' + color + ')' }"></div>
+      <NuxtLink to="/">Case Study coming soon</NuxtLink>
     </div>
-    <img :src="require(`~/assets/img/${img}`)" />
+    <div class="project-right">
+      <img :src="require(`~/assets/img/${img}`)" />
+    </div>
   </NuxtLink>
 </template>
 
@@ -38,43 +44,66 @@ export default {
 .project {
   position: relative;
   border-radius: 4px;
-  width: calc(50% - 16px);
-  margin: 8px;
+  height: 416px;
+  width: 100%;
+  overflow: hidden;
+  @include flex(space-between, flex-start, row);
 
-  &:nth-of-type(3n) {
-    width: 100%;
-    @include flex(space-between, flex-start, row);
-  }
-
-  img {
-    margin-top: 40px;
-    width: 100%;
-    display: block;
+  &:not(:last-of-type) {
+    margin-bottom: 40px;
   }
 
   &.background-light {
     h3 {
-      color: var(--black);
+      color: rgba(var(--black), 1);
     }
 
-    p {
-      color: var(--grey600);
+    p,
+    a {
+      color: rgba(var(--grey600), 1);
     }
   }
 
   &.background-dark {
     h3 {
-      color: var(--white);
+      color: rgba(var(--white), 1);
     }
 
-    p {
-      color: var(--grey400);
+    p,
+    a {
+      color: rgba(var(--grey400), 1);
+    }
+  }
+
+  &-left,
+  &-right {
+    width: 50%;
+    height: 100%;
+  }
+
+  &-left {
+    position: relative;
+    margin-right: 24px;
+    @include padding(40px);
+    @include flex(space-between, flex-start, column);
+  }
+
+  &-right {
+    @include flex(flex-end, center, column);
+
+    img {
+      display: block;
+      width: 100%;
     }
   }
 }
 
-.text {
-  width: 100%;
-  @include padding(40px);
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, #C8D4EE, transparent);
 }
 </style>

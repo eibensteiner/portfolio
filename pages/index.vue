@@ -14,24 +14,6 @@
         :img="project.img"
         :to="{ name: 'project-slug', params: { slug: project.slug } }"
       />
-      <Project
-        v-for="project of projects"
-        :key="project.slug"
-        :title="project.title"
-        :subtitle="project.description"
-        :color="project.color"
-        :img="project.img"
-        :to="{ name: 'project-slug', params: { slug: project.slug } }"
-      />
-      <Project
-        v-for="project of projects"
-        :key="project.slug"
-        :title="project.title"
-        :subtitle="project.description"
-        :color="project.color"
-        :img="project.img"
-        :to="{ name: 'project-slug', params: { slug: project.slug } }"
-      />
     </div>
   </main>
 </template>

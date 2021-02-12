@@ -13,11 +13,11 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--black);
+  color: rgba(var(--black), 1);
   margin: 0;
 
   & + p {
-    color: var(--grey600);
+    color: rgba(var(--grey600), 1);
     font-weight: map_get($font-weight, medium);
     margin: 8px 0 0 0;
   }
@@ -26,25 +26,26 @@ h6 {
 h1,
 h2 {
   line-height: map_get($line-height, lg);
-  font-size: 20px;
+  font-size: 24px;
   font-weight: map_get($font-weight, bold);
 
   & + p {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
 h3,
 h4 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: map_get($font-weight, semi-bold);
 }
 
 a {
   text-decoration: none;
-  color: var(--black);
+  color: rgba(var(--black), 1);
   transition: all 0.2s;
   cursor: pointer;
+  font-size: 18px;
 
   &:hover {
     opacity: 0.8;
@@ -52,16 +53,17 @@ a {
 }
 
 span {
-  color: var(--grey600);
+  color: rgba(var(--grey600), 1);
 }
 
 p {
   margin: 8px 0 0 0;
-  color: var(--grey600);
+  color: rgba(var(--grey600), 1);
+  font-size: 18px;
 
   span,
   a {
-    color: var(--black);
+    color: rgba(var(--black), 1);
   }
 }
 

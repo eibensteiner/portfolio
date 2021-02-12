@@ -29,9 +29,9 @@ export default {
 <style lang="scss" scoped>
 .header {
   width: 100%;
-  max-width: $nudge * 94;
-  margin: 80px 0 80px 0;
+  margin: 136px 0 80px 0;
   @include flex(space-between, flex-end, row);
+  @include padding(0 40px);
 
   &-left {
     max-width: $nudge * 46;
@@ -40,12 +40,12 @@ export default {
   &-right {
     & > * {
       margin-left: $nudge * 3;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 600;
       line-height: 24px;
 
       &:not(.nuxt-link-exact-active) {
-        color: var(--grey600);
+        color: rgba(var(--grey600), 1);
       }
     }
   }
