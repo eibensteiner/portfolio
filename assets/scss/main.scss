@@ -4,7 +4,7 @@ body {
 }
 
 .badge {
-    display: block;
+    display: inline-block;
     user-select: none;
     white-space: nowrap;
     min-width: 24px;
@@ -13,7 +13,6 @@ body {
     line-height: 24px;
     text-align: center;
     text-transform: capitalize;
-    cursor: pointer;
     border: 1px solid rgba(var(--grey300), 1);
     color: rgba(var(--black), 1);
     background-color: rgba(var(--grey100), 1);
@@ -22,11 +21,22 @@ body {
     & + .badge {
         margin-left: 4px;
     }
+
+    &-group {
+        display: inline-block;
+        margin: 0 4px;
+    }
 }
 
 .container {
     flex-wrap: wrap;
     @include flex(flex-start, flex-start, row);
+
+    &.grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
 }
 
 .main {

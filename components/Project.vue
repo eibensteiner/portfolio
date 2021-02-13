@@ -95,12 +95,6 @@ export default {
 
     .cta {
       font-weight: 600;
-      @include flex(center, center, row);
-
-      & > ::v-deep span {
-        margin: 0 8px;
-        @include flex(center, center, row);
-      }
     }
   }
 

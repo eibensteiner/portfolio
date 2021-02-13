@@ -12,7 +12,8 @@
       how I built it, here is a <a>GitHub link</a> to the repository. Find more
       details in the privacy policy. <br /><br />
       I’m currently not looking for a new job, but here is <a>my resume</a> if
-      you’re into that.
+      you’re into that. <br /><br />
+      Hit <span class="badge-group"><span class="badge">⌘</span><span class="badge">p</span></span> to find the secret party.
     </p>
   </footer>
 </template>
@@ -42,6 +43,10 @@
   &-right {
     width: 100%;
     margin: 0;
+
+    & > * {
+      display: inline-block;
+    }
   }
 }
 </style>
