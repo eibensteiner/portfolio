@@ -1,6 +1,7 @@
 ---
 title: Kompass
-description: Explore any website with your lightweight <span class="badge">cmd</span><span class="badge">k</span> command center
+subtitle: Explore any website with a lightweight and personalized command center
+cta: Hit <span><span class="badge">⌘</span><span class="badge">k</span></span> to try it
 img: kompass.svg
 alt: Article 2
 color: C8D4EE

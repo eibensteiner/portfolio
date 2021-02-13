@@ -7,9 +7,9 @@
     <div class="project-left">
       <div class="description">
         <h3 class="title">{{ title }}</h3>
-        <p class="subtitle" v-html="subtitle"></p>
+        <p class="subtitle">{{ subtitle }}</p>
       </div>
-      <NuxtLink to="/">Case Study coming soon</NuxtLink>
+      <div class="cta" v-html="cta"></div>
     </div>
     <div class="project-right">
       <img :src="require(`~/assets/img/${img}`)" />
@@ -25,6 +25,7 @@ export default {
     color: String,
     to: Object,
     img: String,
+    cta: String,
   },
   methods: {
     setClassBasedOnContrast(color) {
@@ -57,7 +58,8 @@ export default {
   }
 
   &.background-light {
-    h3 {
+    h3,
+    .cta {
       color: rgba(var(--black), 1);
     }
 
@@ -68,7 +70,8 @@ export default {
   }
 
   &.background-dark {
-    h3 {
+    h3,
+    .cta {
       color: rgba(var(--white), 1);
     }
 
@@ -89,6 +92,16 @@ export default {
     margin-right: 24px;
     @include padding(40px);
     @include flex(space-between, flex-start, column);
+
+    .cta {
+      font-weight: 600;
+      @include flex(center, center, row);
+
+      & > ::v-deep span {
+        margin: 0 8px;
+        @include flex(center, center, row);
+      }
+    }
   }
 
   &-right {

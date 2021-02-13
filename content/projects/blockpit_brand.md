@@ -1,6 +1,7 @@
 ---
 title: Blockpit Rebranding
-description: Explore any website through a lightweight and centralized navigation system
+subtitle: Explore any website through a lightweight and centralized navigation system
+cta: Case Study coming soon
 img: blockpit-brand.svg
 alt: Article 2
 color: 1B1F23

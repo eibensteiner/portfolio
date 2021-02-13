@@ -9,7 +9,8 @@
         v-for="project of projects"
         :key="project.slug"
         :title="project.title"
-        :subtitle="project.description"
+        :subtitle="project.subtitle"
+        :cta="project.cta"
         :color="project.color"
         :img="project.img"
         :to="{ name: 'project-slug', params: { slug: project.slug } }"
@@ -23,7 +24,7 @@ export default {
   // gets markdown files from /content
   async asyncData({ $content, params }) {
     const projects = await $content("projects", params.slug)
-      .only(["title", "description", "img", "slug", "color"])
+      .only(["title", "subtitle", "cta", "img", "slug", "color"])
       .sortBy("createdAt", "desc")
       .fetch();
 
