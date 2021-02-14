@@ -31,7 +31,7 @@ export default {
   width: 100%;
   margin: 136px 0 80px 0;
   @include flex(space-between, flex-end, row);
-  @include padding(0 40px);
+  @include padding(0 32px);
 
   &-left {
     max-width: $nudge * 46;

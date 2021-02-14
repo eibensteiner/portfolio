@@ -22,7 +22,7 @@
 .footer {
   margin: 80px 0 136px 0;
   @include flex(space-between, flex-start, row);
-  @include padding(0 40px);
+  @include padding(0 32px);
 
   &-left {
     max-width: 160px;

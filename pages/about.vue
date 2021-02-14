@@ -39,6 +39,7 @@
         </div>
       </div>
     </div>
+    <project-summary/>
   </main>
 </template>
 
@@ -46,7 +47,7 @@
 .container {
   .container {
     margin-top: 64px;
-    @include padding(0 40px);
+    @include padding(0 32px);
   }
 }
 

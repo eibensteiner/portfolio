@@ -90,7 +90,7 @@ export default {
   &-left {
     position: relative;
     margin-right: 24px;
-    @include padding(40px);
+    @include padding(32px);
     @include flex(space-between, flex-start, column);
 
     .cta {
