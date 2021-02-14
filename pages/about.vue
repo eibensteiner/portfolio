@@ -39,7 +39,6 @@
         </div>
       </div>
     </div>
-    <project-summary/>
   </main>
 </template>
 

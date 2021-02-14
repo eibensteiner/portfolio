@@ -17,8 +17,7 @@
 
       <h3 class="title">Problem</h3>
       <p class="subtitle">
-        How can we collect feedback that is specific, measurable, and
-        actionable?
+        {{ problem }}
       </p>
     </div>
     <div class="project-summary-element">
@@ -38,8 +37,7 @@
 
       <h3 class="title">Solution</h3>
       <p class="subtitle">
-        How can we collect feedback that is specific, measurable, and
-        actionable?
+        {{ solution }}
       </p>
     </div>
     <div class="project-summary-element">
@@ -59,15 +57,20 @@
 
       <h3 class="title">My Role</h3>
       <p class="subtitle">
-        How can we collect feedback that is specific, measurable, and
-        actionable?
+        {{ role }}
       </p>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    problem: String,
+    solution: String,
+    role: String,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
