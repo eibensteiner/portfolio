@@ -1,19 +1,23 @@
 <template>
   <div class="project-pagination">
-    <div class="project-pagination-element">
-      <h3 class="title">Problem</h3>
-
+    <div v-if="previous" class="project-pagination-element">
+      <h3 class="title">{{ previous.title }}</h3>
       <p class="subtitle">Previous</p>
     </div>
-    <div class="project-pagination-element">
-      <h3 class="title">Solution</h3>
+    <div v-if="next" class="project-pagination-element">
+      <h3 class="title">{{ next.title }}</h3>
       <p class="subtitle">Next</p>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    previous: Object,
+    next: Object,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
