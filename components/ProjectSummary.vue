@@ -75,6 +75,7 @@ export default {
 
 <style lang="scss" scoped>
 .project-summary {
+  margin-top: 40px;
   background-color: rgba(var(--white), 1);
   border: 1px solid rgba(var(--grey200), 1);
   border-radius: 6px;
