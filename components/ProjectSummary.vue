@@ -80,6 +80,7 @@ export default {
   border: 1px solid rgba(var(--grey200), 1);
   border-radius: 6px;
   width: 100%;
+  overflow: hidden;
   @include flex(center, center, row);
 
   &-element {

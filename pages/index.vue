@@ -13,7 +13,7 @@
         :cta="project.cta"
         :color="project.color"
         :img="project.img"
-        :to="{ name: 'project-slug', params: { slug: project.slug } }"
+        :to="{ name: 'projects-slug', params: { slug: project.slug } }"
       />
     </div>
   </main>

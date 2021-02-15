@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink
+  <nuxt-link
     :to="to"
     :class="['project', setClassBasedOnContrast(color)]"
     :style="{ backgroundColor: '#' + color }"
@@ -14,7 +14,7 @@
     <div class="project-right">
       <img :src="require(`~/assets/img/${img}`)" />
     </div>
-  </NuxtLink>
+  </nuxt-link>
 </template>
 
 <script>

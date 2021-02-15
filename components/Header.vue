@@ -6,11 +6,11 @@
     </div>
     <div class="header-right">
       <template v-if="!isNested">
-        <NuxtLink to="/">Work</NuxtLink>
-        <NuxtLink to="/about">About</NuxtLink>
+        <nuxt-link to="/">Work</nuxt-link>
+        <nuxt-link to="/about">About</nuxt-link>
       </template>
       <template v-if="isNested">
-        <NuxtLink to="/about">Go Back</NuxtLink>
+        <nuxt-link to="/about">Go Back</nuxt-link>
       </template>
     </div>
   </header>
