@@ -14,30 +14,7 @@
           through a lightweight and centralized navigation system
         </p>
       </div>
-      <div class="container grid">
-        <div class="about-left">
-          <h3 class="title">My Experience</h3>
-          <p class="subtitle">
-            Explore any website through a lightweight and centralized navigation
-            system. Explore any website through a lightweight and centralized
-            navigation system. Explore any website through a lightweight and
-            centralized navigation system. Explore any website through a
-            lightweight and centralized navigation system. Explore any website
-            through a lightweight and centralized navigation system
-          </p>
-        </div>
-        <div class="about-right">
-          <h3 class="title">My Education</h3>
-          <p class="subtitle">
-            Explore any website through a lightweight and centralized navigation
-            system. Explore any website through a lightweight and centralized
-            navigation system. Explore any website through a lightweight and
-            centralized navigation system. Explore any website through a
-            lightweight and centralized navigation system. Explore any website
-            through a lightweight and centralized navigation system
-          </p>
-        </div>
-      </div>
+      <carousel />
     </div>
   </main>
 </template>

@@ -9,10 +9,9 @@
     </div>
     <p class="footer-right">
       The copyright on this website belongs to me basically. If you want to see
-      how I built it, here is a <a>GitHub link</a> to the repository. Find more
+      how I built it, <a>here is the source code</a>. Find more
       details in the privacy policy. <br /><br />
-      I’m currently not looking for a new job, but here is <a>my resume</a> if
-      you’re into that. <br /><br />
+      You can contact me if you got an interesting opportunity for me. Here's my <a>my resume</a>.<br /><br />
       Hit <span class="badge-group"><span class="badge">⌘</span><span class="badge">p</span></span> to find the secret party.
     </p>
   </footer>
