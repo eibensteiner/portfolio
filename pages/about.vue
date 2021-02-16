@@ -8,20 +8,33 @@
         <p>
           Explore any website through a lightweight and centralized navigation
           system. Explore any website through a lightweight and centralized
-          navigation system. 
+          navigation system.
 
-          <br/><br/>
-          
-          Explore any website through a lightweight and
-          centralized navigation system. Explore any website through a
-          lightweight and centralized navigation system. Explore any website
-          through a lightweight and centralized navigation system
+          <br /><br />
+
+          Explore any website through a lightweight and centralized navigation
+          system. Explore any website through a lightweight and centralized
+          navigation system. Explore any website through a lightweight and
+          centralized navigation system
         </p>
       </div>
-      <carousel />
+      <carousel :slides="slides" />
     </div>
   </main>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      slides: [
+        { title: "testtitle", subtitle: "subtitle" },
+        { title: "testtitle 2", subtitle: "subtitle 2" },
+      ],
+    };
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .container {

@@ -2,65 +2,26 @@
   <div class="project-summary">
     <div class="project-summary-element">
       <hooper ref="carousel" @slide="updateCarousel">
-        <slide>
-          <h3 class="title">I love dogs (way) more than cats</h3>
-          <p class="subtitle">
-            I’m currently not looking for a new job, but here is my resume if
-            you’re into that. If you want to see how I built it, here is a
-            GitHub link to the repository. I’m currently not looking for a new
-            job, but here is my resume if you’re into that.
-          </p>
-        </slide>
-        <slide>
-          <h3 class="title">I love dogs (way) more than cats</h3>
-          <p class="subtitle">
-            I’m currently not looking for a new job, but here is my resume if
-            you’re into that. If you want to see how I built it, here is a
-            GitHub link to the repository. I’m currently not looking for a new
-            job, but here is my resume if you’re into that.
-          </p>
-        </slide>
-        <slide>
-          <h3 class="title">I love dogs (way) more than cats</h3>
-          <p class="subtitle">
-            I’m currently not looking for a new job, but here is my resume if
-            you’re into that. If you want to see how I built it, here is a
-            GitHub link to the repository. I’m currently not looking for a new
-            job, but here is my resume if you’re into that.
-          </p>
+        <slide
+          v-for="slide in slides"
+          :key="slide.length"
+          :class="isLastSlide ? 'blurred' : ''"
+        >
+          <h3 class="title">{{ slide.title }}</h3>
+          <p class="subtitle">{{ slide.subtitle }}</p>
         </slide>
       </hooper>
 
       <div class="pagination">
-        <svg
-          @click.prevent="slidePrev"
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M6.52398 9.1666H16.6673V10.8333H6.52398L10.994 15.3033L9.81565 16.4816L3.33398 9.99993L9.81565 3.51826L10.994 4.6966L6.52398 9.1666Z"
-            fill="#586069"
-          />
-        </svg>
-        <span
-          ><span>{{ carouselData }}</span> of 1.000</span
-        >
-        <svg
-          @click.prevent="slideNext"
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M13.4773 9.1666L9.00732 4.6966L10.1857 3.51826L16.6673 9.99993L10.1857 16.4816L9.00732 15.3033L13.4773 10.8333H3.33398V9.1666H13.4773Z"
-            fill="#586069"
-          />
-        </svg>
+        <arrow-left @onclick="slidePrev" />
+        <span>
+          <span>{{ slideIndex }}</span>
+          of 1.000
+        </span>
+        <arrow-right
+          @onclick="slideNext"
+          :class="isLastSlide ? 'disabled' : ''"
+        />
       </div>
     </div>
   </div>
@@ -74,15 +35,14 @@ export default {
     Slide,
     HooperPagination,
   },
+  props: {
+    slides: Array,
+  },
   data() {
     return {
-      carouselData: 0,
+      slideIndex: 0,
+      isLastSlide: false,
     };
-  },
-  watch: {
-    carouselData() {
-      this.$refs.carousel.slideTo(this.carouselData);
-    },
   },
   methods: {
     slidePrev() {
@@ -92,7 +52,13 @@ export default {
       this.$refs.carousel.slideNext();
     },
     updateCarousel(payload) {
-      this.carouselData = payload.currentSlide + 1;
+      this.slideIndex = payload.currentSlide + 1;
+      this.checkIfLastSlide();
+    },
+    checkIfLastSlide() {
+      if (this.slideIndex === this.slides.length) {
+        this.isLastSlide = true;
+      } else this.isLastSlide = false;
     },
   },
 };
