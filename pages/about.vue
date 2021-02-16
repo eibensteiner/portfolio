@@ -8,7 +8,11 @@
         <p>
           Explore any website through a lightweight and centralized navigation
           system. Explore any website through a lightweight and centralized
-          navigation system. Explore any website through a lightweight and
+          navigation system. 
+
+          <br/><br/>
+          
+          Explore any website through a lightweight and
           centralized navigation system. Explore any website through a
           lightweight and centralized navigation system. Explore any website
           through a lightweight and centralized navigation system

@@ -29,6 +29,7 @@ body {
 }
 
 .container {
+    width: 100%;
     flex-wrap: wrap;
     @include flex(flex-start, flex-start, row);
 
