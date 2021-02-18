@@ -113,10 +113,12 @@ export default {
   }
 
   &-slide {
-    transition: filter .3s;
+    opacity: 1;
+    transition: opacity 0.2s;
+    transition-delay: .1s;
 
     &:not(.is-active) {
-      filter: blur(50px)
+      opacity: 0;
     }
   }
 }
