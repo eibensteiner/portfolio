@@ -72,11 +72,11 @@ export default {
   border-radius: 6px;
   width: 100%;
   overflow: hidden;
+  @include padding(32px);
   @include flex(center, center, row);
 
   &-element {
     width: 100%;
-    @include padding(32px);
 
     &:not(:last-child) {
       border-right: 1px solid rgba(var(--grey200), 1);
@@ -108,6 +108,16 @@ export default {
 
   &-track {
     display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &-slide {
+    transition: filter .3s;
+
+    &:not(.is-active) {
+      filter: blur(50px)
+    }
   }
 }
 
@@ -115,7 +125,6 @@ export default {
   flex-shrink: 0;
   height: 100%;
   margin: 0;
-  padding: 0;
   list-style: none;
 }
 .hooper-progress {
