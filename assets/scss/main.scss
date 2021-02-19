@@ -1,66 +1,73 @@
 body {
-    background-color: rgba(var(--grey000), 1);
-    margin: 0;
+  background-color: rgba(var(--grey000), 1);
+  margin: 0;
 }
 
 .badge {
+  display: inline-block;
+  user-select: none;
+  white-space: nowrap;
+  min-width: 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  text-transform: capitalize;
+  border: 1px solid rgba(var(--grey300), 1);
+  color: rgba(var(--black), 1);
+  background-color: rgba(var(--grey100), 1);
+  box-shadow: 0 1px 0 0 rgba(var(--grey400), 0.4);
+
+  & + .badge {
+    margin-left: 4px;
+  }
+
+  &-group {
     display: inline-block;
-    user-select: none;
-    white-space: nowrap;
-    min-width: 24px;
-    border-radius: 4px;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    text-transform: capitalize;
-    border: 1px solid rgba(var(--grey300), 1);
-    color: rgba(var(--black), 1);
-    background-color: rgba(var(--grey100), 1);
-    box-shadow: 0 1px 0 0 rgba(var(--grey400), 0.4);
-
-    & + .badge {
-        margin-left: 4px;
-    }
-
-    &-group {
-        display: inline-block;
-        margin: 0 4px;
-    }
+    margin: 0 4px;
+  }
 }
 
 .container {
-    width: 100%;
-    flex-wrap: wrap;
-    @include flex(flex-start, flex-start, row);
+  width: 100%;
+  flex-wrap: wrap;
+  @include flex(flex-start, flex-start, row);
 
-    &.grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-    }
+  &.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
 }
 
 .main {
-    @include flex(center, center, column);
+  @include flex(center, center, column);
+
+  & > .container {
+    animation: fade 0.6s;
+  }
 }
 
 svg {
+  path {
+    transition: fill 0.2s;
+  }
+
+  &.disabled {
     path {
-        transition: fill 0.2s;
+      fill: rgba(var(--grey200), 1);
     }
-
-    &.disabled {
-        path {
-            fill: rgba(var(--grey200), 1);
-        }
-    }
+  }
 }
 
-.page-enter-active,
-.page-leave-active {
-    transition: opacity .2s;
-}
-.page-enter,
-.page-leave-active {
+@keyframes fade {
+  from {
     opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }

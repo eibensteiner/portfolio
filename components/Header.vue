@@ -1,17 +1,16 @@
 <template>
   <header class="header">
-    {{ $route.name }}
     <div class="header-left">
       <h1 class="title">{{ title }}</h1>
-      <p class="subtitle">{{ subtitle }}</p>
+      <p v-html="subtitle"></p>
     </div>
     <div class="header-right">
-      <template v-if="!isNested">
+      <template v-if="$route.name === 'index' || $route.name === 'about'">
         <nuxt-link to="/">Work</nuxt-link>
         <nuxt-link to="/about">About</nuxt-link>
       </template>
-      <template v-if="isNested">
-        <nuxt-link to="/about">Go Back</nuxt-link>
+      <template v-if="$route.name != 'index' && $route.name != 'about'">
+        <nuxt-link to="/">Go Back</nuxt-link>
       </template>
     </div>
   </header>
@@ -22,7 +21,6 @@ export default {
   props: {
     title: String,
     subtitle: String,
-    isNested: false,
   },
 };
 </script>
