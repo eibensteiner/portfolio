@@ -28,8 +28,16 @@ export default {
   data() {
     return {
       slides: [
-        { title: "I love dogs (way) more than cats", subtitle: "I’m currently not looking for a new job, but here is my resume if you’re into that. If you want to see how I built it, here is a GitHub link to the repository. Im currently not looking for a new job, but here is my resume if you’re into that." },
-        { title: "Another super title", subtitle: "I’m currently not looking for a new job, but here is my resume if you’re into that. If you want to see how I built it, here is a GitHub link to the repository. Im currently not looking for a new job, but here is my resume if you’re into that." },
+        {
+          title: "I love dogs (way) more than cats",
+          subtitle:
+            "I’m currently not looking for a new job, but here is my resume if you’re into that. If you want to see how I built it, here is a GitHub link to the repository. Im currently not looking for a new job, but here is my resume if you’re into that.",
+        },
+        {
+          title: "Another super title",
+          subtitle:
+            "I’m currently not looking for a new job, but here is my resume if you’re into that. If you want to see how I built it, here is a GitHub link to the repository. Im currently not looking for a new job, but here is my resume if you’re into that.",
+        },
       ],
     };
   },
@@ -37,6 +45,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .container {
   .container {
     margin-top: 64px;

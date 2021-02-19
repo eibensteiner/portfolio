@@ -1,5 +1,6 @@
 <template>
   <header class="header">
+    {{ $route.name }}
     <div class="header-left">
       <h1 class="title">{{ title }}</h1>
       <p class="subtitle">{{ subtitle }}</p>

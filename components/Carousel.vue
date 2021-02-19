@@ -13,7 +13,10 @@
       </hooper>
 
       <div class="pagination">
-        <arrow-left @onclick="slidePrev" />
+        <arrow-left
+          @onclick="slidePrev"
+          :class="isFirstSlide ? 'disabled' : ''"
+        />
         <span>
           <span>{{ slideIndex }}</span>
           of 1.000
@@ -42,6 +45,7 @@ export default {
     return {
       slideIndex: 0,
       isLastSlide: false,
+      isFirstSlide: true,
     };
   },
   methods: {
@@ -53,12 +57,18 @@ export default {
     },
     updateCarousel(payload) {
       this.slideIndex = payload.currentSlide + 1;
+      this.checkIfFirstSlide();
       this.checkIfLastSlide();
     },
     checkIfLastSlide() {
       if (this.slideIndex === this.slides.length) {
         this.isLastSlide = true;
       } else this.isLastSlide = false;
+    },
+    checkIfFirstSlide() {
+      if (this.slideIndex === 1) {
+        this.isFirstSlide = true;
+      } else this.isFirstSlide = false;
     },
   },
 };

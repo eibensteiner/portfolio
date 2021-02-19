@@ -43,3 +43,24 @@ body {
 .main {
     @include flex(center, center, column);
 }
+
+svg {
+    path {
+        transition: fill 0.2s;
+    }
+
+    &.disabled {
+        path {
+            fill: rgba(var(--grey200), 1);
+        }
+    }
+}
+
+.page-enter-active,
+.page-leave-active {
+    transition: opacity .2s;
+}
+.page-enter,
+.page-leave-active {
+    opacity: 0;
+}
