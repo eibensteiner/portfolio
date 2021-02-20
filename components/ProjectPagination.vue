@@ -1,16 +1,16 @@
 <template>
   <div class="project-pagination">
+    <nuxt-link :to="next.path" v-if="next" class="project-pagination-element">
+      <h5 class="title">{{ next.title }}</h5>
+      <p class="subtitle">Newer<arrow-left /></p>
+    </nuxt-link>
     <nuxt-link
       :to="previous.path"
       v-if="previous"
       class="project-pagination-element"
     >
-      <h3 class="title">{{ previous.title }} <arrow-left /></h3>
-      <p class="subtitle">Previous</p>
-    </nuxt-link>
-    <nuxt-link :to="next.path" v-if="next" class="project-pagination-element">
-      <h3 class="title">{{ next.title }} <arrow-right /></h3>
-      <p class="subtitle">Next</p>
+      <h5 class="title">{{ previous.title }}</h5>
+      <p class="subtitle">Older<arrow-right /></p>
     </nuxt-link>
   </div>
 </template>
@@ -36,7 +36,7 @@ export default {
   &-element {
     transition: background-color 0.2s;
     width: 100%;
-    @include padding(32px);
+    @include padding(24px 32px);
 
     &:not(:last-child) {
       border-right: 1px solid rgba(var(--grey200), 1);
@@ -44,6 +44,11 @@ export default {
 
     &:hover {
       background-color: rgba(var(--grey000), 1);
+    }
+
+    p {
+      font-weight: 500;
+      @include flex(space-between, center, row);
     }
   }
 }

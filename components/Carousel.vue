@@ -100,7 +100,7 @@ export default {
 
 .pagination {
   user-select: none;
-  font-size: 18px;
+  font-size: 1.125rem;
   margin-top: 32px;
   @include flex(flex-start, center, row);
 

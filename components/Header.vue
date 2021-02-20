@@ -10,14 +10,19 @@
         <nuxt-link to="/about">About</nuxt-link>
       </template>
       <template v-if="$route.name != 'index' && $route.name != 'about'">
-        <nuxt-link to="/">Go Back</nuxt-link>
+        <nuxt-link to="/">
+          <arrow-left />
+          Go Back
+        </nuxt-link>
       </template>
     </div>
   </header>
 </template>
 
 <script>
+import ArrowLeft from "./icons/ArrowLeft.vue";
 export default {
+  components: { ArrowLeft },
   props: {
     title: String,
     subtitle: String,
@@ -28,7 +33,7 @@ export default {
 <style lang="scss" scoped>
 .header {
   width: 100%;
-  margin: 136px 0 80px 0;
+  margin: 136px 0 64px 0;
   @include flex(space-between, flex-end, row);
   @include padding(0 32px);
 
@@ -37,14 +42,19 @@ export default {
   }
 
   &-right {
+    @include flex(center, center, row);
+
     & > * {
       margin-left: $nudge * 3;
-      font-size: 18px;
-      font-weight: 600;
       line-height: 24px;
+      @include flex(center, center, row);
 
       &:not(.nuxt-link-exact-active) {
         color: rgba(var(--grey600), 1);
+      }
+
+      svg {
+        margin-right: 8px;
       }
     }
   }

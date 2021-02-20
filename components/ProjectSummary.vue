@@ -15,7 +15,7 @@
         />
       </svg>
 
-      <h3 class="title">Problem</h3>
+      <h5 class="title">Problem</h5>
       <p class="subtitle">
         {{ problem }}
       </p>
@@ -35,7 +35,7 @@
         />
       </svg>
 
-      <h3 class="title">Solution</h3>
+      <h5 class="title">Solution</h5>
       <p class="subtitle">
         {{ solution }}
       </p>
@@ -55,7 +55,7 @@
         />
       </svg>
 
-      <h3 class="title">My Role</h3>
+      <h5 class="title">My Role</h5>
       <p class="subtitle">
         {{ role }}
       </p>
@@ -75,7 +75,7 @@ export default {
 
 <style lang="scss" scoped>
 .project-summary {
-  margin-top: 40px;
+  margin-top: 32px;
   background-color: rgba(var(--white), 1);
   border: 1px solid rgba(var(--grey200), 1);
   border-radius: 6px;
@@ -85,7 +85,7 @@ export default {
 
   &-element {
     width: 100%;
-    @include padding(32px);
+    @include padding(32px 32px 24px 32px);
 
     &:not(:last-child) {
       border-right: 1px solid rgba(var(--grey200), 1);

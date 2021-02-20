@@ -50,7 +50,7 @@ export default {
   @include flex(space-between, flex-start, row);
 
   &:not(:last-of-type) {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
 
   &:hover {

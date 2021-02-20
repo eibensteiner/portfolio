@@ -9,17 +9,22 @@
     </div>
     <p class="footer-right">
       The copyright on this website belongs to me basically. If you want to see
-      how I built it, <a>here is the source code</a>. Find more
-      details in the privacy policy. <br /><br />
-      You can contact me if you got an interesting opportunity for me. Here's my <a>my resume</a>.<br /><br />
-      Hit <span class="badge-group"><span class="badge">⌘</span><span class="badge">p</span></span> to find the secret party.
+      how I built it, <a>here is the source code</a>. Find more details in the
+      privacy policy. <br /><br />
+      You can contact me if you got an interesting opportunity for me. Here's my
+      <a>my resume</a>.<br /><br />
+      Hit
+      <span class="badge-group"
+        ><span class="badge">⌘</span><span class="badge">p</span></span
+      >
+      to find the secret party.
     </p>
   </footer>
 </template>
 
 <style lang="scss" scoped>
 .footer {
-  margin: 80px 0 136px 0;
+  margin: 64px 0 136px 0;
   @include flex(space-between, flex-start, row);
   @include padding(0 32px);
 
@@ -30,11 +35,8 @@
     @include flex(flex-start, flex-start, column);
 
     & > * {
-      font-weight: 600;
-
       &:not(:last-child) {
-      margin-bottom: 8px;
-
+        margin-bottom: 8px;
       }
     }
   }

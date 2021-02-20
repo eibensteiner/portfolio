@@ -15,26 +15,38 @@ h6 {
   margin: 0;
 
   & + p {
-    color: rgba(var(--grey600), 1);
-    margin: 4px 0 0 0;
+    color: rgba(var(--grey700), 1);
   }
+}
+
+h1, h2, h3, h4 {
+  line-height: map_get($line-height, md);
 }
 
 h1,
 h2 {
-  line-height: map_get($line-height, lg);
-  font-size: 22px;
+  font-size: 1.424rem;
   font-weight: map_get($font-weight, semi-bold);
 
   & + p {
-    font-size: 18px;
+    margin-top: 0.694rem;
   }
 }
 
 h3,
 h4 {
-  font-size: 18px;
+  font-size: 1.266rem;
   font-weight: map_get($font-weight, semi-bold);
+}
+
+h5 {
+  font-weight: map_get($font-weight, semi-bold);
+  font-size: 1.125rem;
+  line-height: map_get($line-height, lg);
+
+  & + p {
+    margin-top: 0;
+  }
 }
 
 a {
@@ -42,21 +54,23 @@ a {
   color: rgba(var(--black), 1);
   transition: all 0.2s;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: map_get($font-weight, medium);
 }
 
 span {
-  color: rgba(var(--grey600), 1);
+  color: rgba(var(--grey700), 1);
 }
 
 p {
-  margin: 4px 0 0 0;
-  color: rgba(var(--grey600), 1);
-  font-size: 18px;
+  color: rgba(var(--grey700), 1);
   letter-spacing: -0.33px;
+  font-size: 1.125rem;
+  margin: 0.702rem 0 0 0;
 
   span,
-  a {
+  a,
+  strong {
     color: rgba(var(--black), 1);
   }
 
@@ -71,7 +85,7 @@ p {
 }
 
 strong {
-  font-weight: map_get($font-weight, semi-bold);
+  font-weight: map_get($font-weight, medium);
 }
 
 pre {
@@ -89,16 +103,15 @@ code {
 }
 
 code {
-  line-height: map_get($line-height, sm);
+  line-height: map_get($line-height, md);
   font-family: inherit;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: "Roboto Mono", monospace;
-  font-weight: 400;
+  font-weight: map_get($font-weight, regular);
 
   .token {
     line-height: inherit;
     font-family: inherit;
-
     color: rgba(var(--grey700), 1) !important;
   }
 
@@ -112,7 +125,7 @@ code {
   .token.atrule,
   .token.attr-value,
   .token.keyword {
-    font-weight: 600;
+    font-weight: map_get($font-weight, medium);
     color: rgba(var(--black), 1) !important;
   }
 
@@ -123,5 +136,9 @@ code {
   .token.string,
   .token.variable {
     color: rgba(var(--grey400), 1) !important;
+  }
+
+  .token.comment {
+    color: rgba(var(--grey300), 1) !important;
   }
 }

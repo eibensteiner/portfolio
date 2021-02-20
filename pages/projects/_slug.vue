@@ -48,7 +48,7 @@ export default {
 }
 
 ::v-deep .nuxt-content {
-  margin: 64px 0;
+  margin: 48px 0;
 
   & > * {
     &:not(img) {
@@ -60,9 +60,19 @@ export default {
     }
   }
 
-  & > p {
+  & > h1,
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6 {
+    margin: 3rem 0 0 0;
+  }
+
+  & > p,
+  & > div {
     &:not(:last-child) {
-      margin-bottom: 40px;
+      margin-bottom: 1.602rem;
     }
   }
 }
