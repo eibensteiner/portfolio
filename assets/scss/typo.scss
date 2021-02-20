@@ -1,8 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600,700&display=swap");
-
 * {
   font-family: "Inter", sans-serif;
-  font-weight: map_get($font-weight, medium);
+  font-weight: map_get($font-weight, regular);
   -webkit-font-smoothing: antialiased;
   line-height: map_get($line-height, lg);
 }
@@ -18,16 +16,15 @@ h6 {
 
   & + p {
     color: rgba(var(--grey600), 1);
-    font-weight: map_get($font-weight, medium);
-    margin: 8px 0 0 0;
+    margin: 4px 0 0 0;
   }
 }
 
 h1,
 h2 {
   line-height: map_get($line-height, lg);
-  font-size: 24px;
-  font-weight: map_get($font-weight, bold);
+  font-size: 22px;
+  font-weight: map_get($font-weight, semi-bold);
 
   & + p {
     font-size: 18px;
@@ -53,16 +50,78 @@ span {
 }
 
 p {
-  margin: 8px 0 0 0;
+  margin: 4px 0 0 0;
   color: rgba(var(--grey600), 1);
   font-size: 18px;
+  letter-spacing: -0.33px;
 
   span,
   a {
     color: rgba(var(--black), 1);
   }
+
+  code {
+    margin: 0 4px;
+    border-radius: 4px;
+    display: inline-block;
+    line-height: 24px;
+    border: 1px solid rgba(var(--grey200), 1) !important;
+    @include padding(0 6px);
+  }
 }
 
 strong {
   font-weight: map_get($font-weight, semi-bold);
+}
+
+pre {
+  border-radius: 6px;
+  margin: 0 !important;
+  border: 1px solid rgba(var(--grey200), 1) !important;
+  @include padding(12px 16px !important);
+}
+
+pre,
+code {
+  background: rgba(var(--grey100), 1) !important;
+  text-shadow: none !important;
+  color: rgba(var(--black), 1);
+}
+
+code {
+  line-height: map_get($line-height, sm);
+  font-family: inherit;
+  font-size: 16px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+
+  .token {
+    line-height: inherit;
+    font-family: inherit;
+
+    color: rgba(var(--grey700), 1) !important;
+  }
+
+  .token.attr-name,
+  .token.class-name,
+  .token.function,
+  .token.tag {
+    color: rgba(var(--black), 1) !important;
+  }
+
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword {
+    font-weight: 600;
+    color: rgba(var(--black), 1) !important;
+  }
+
+  .token.builtin,
+  .token.number,
+  .token.operator,
+  .token.punctuation,
+  .token.string,
+  .token.variable {
+    color: rgba(var(--grey400), 1) !important;
+  }
 }
