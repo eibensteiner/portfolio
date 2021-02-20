@@ -1,6 +1,6 @@
 <template>
   <main class="main">
-    <Header :title="'Dominik Wurm'" :subtitle="'Product Designer at Blockpit'">
+    <Header :title="'Dominik Wurm'" :subtitle="{text: 'Product Designer at Blockpit'}">
     </Header>
     <div class="container">
       <img src="@/assets/img/about/sarah.jpg" />

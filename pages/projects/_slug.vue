@@ -1,6 +1,8 @@
 <template>
   <main class="main">
-    <Header :title="project.title" :subtitle="project.subtitle" />
+    <Header 
+    :title="project.title" 
+    :subtitle="{date: project.createdAt, url:project.url}"/>
     <div class="container">
       <div
         class="project-image"

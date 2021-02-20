@@ -2,7 +2,13 @@
   <header class="header">
     <div class="header-left">
       <h1 class="title">{{ title }}</h1>
-      <p v-html="subtitle"></p>
+      <p v-if="subtitle.text">{{ subtitle.text }}</p>
+      <p v-if="subtitle.date && subtitle.url">
+        {{ formatDate(subtitle.date) }},
+        <a :href="'https://' + subtitle.url" target="_blank">
+          {{ subtitle.url }}
+        </a>
+      </p>
     </div>
     <div class="header-right">
       <template v-if="$route.name === 'index' || $route.name === 'about'">
@@ -25,7 +31,17 @@ export default {
   components: { ArrowLeft },
   props: {
     title: String,
-    subtitle: String,
+    subtitle: {
+      text: String,
+      url: String,
+      date: Date,
+    },
+  },
+  methods: {
+    formatDate(date) {
+      const options = { year: "numeric", month: "short", day: "numeric" };
+      return new Date(date).toLocaleDateString("en", options);
+    },
   },
 };
 </script>

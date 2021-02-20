@@ -2,7 +2,7 @@
   <main class="main">
     <Header
       :title="'Dominik Wurm'"
-      :subtitle="'Product Designer at Blockpit'"
+      :subtitle="{text: 'Product Designer at Blockpit'}"
     />
     <div class="container">
       <Project
