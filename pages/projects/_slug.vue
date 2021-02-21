@@ -74,7 +74,7 @@ export default {
   & > p,
   & > div {
     &:not(:last-child) {
-      margin-bottom: 1.602rem;
+      margin-bottom: 2rem;
     }
   }
 }

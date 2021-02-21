@@ -1,3 +1,5 @@
+// Our Type Scale is based on https://type-scale.com/?size=16&scale=1.125&text=A%20Visual%20Type%20Scale&font=Inter&fontweight=400&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false
+
 * {
   font-family: "Inter", sans-serif;
   font-weight: map_get($font-weight, regular);
@@ -66,21 +68,22 @@ p {
   color: rgba(var(--grey700), 1);
   letter-spacing: -0.33px;
   font-size: 1.125rem;
-  margin: 0.702rem 0 0 0;
+  margin: 1rem 0 0 0;
 
-  span,
-  a,
-  strong {
+  a {
     color: rgba(var(--black), 1);
+    text-decoration: underline;
+    text-underline-offset: 1px;
+    text-decoration-color: rgba(var(--grey300), 1);
   }
 
   code {
     margin: 0 4px;
     border-radius: 4px;
     display: inline-block;
-    line-height: 24px;
+    line-height: 28px;
     border: 1px solid rgba(var(--grey200), 1) !important;
-    @include padding(0 6px);
+    @include padding(0 8px);
   }
 }
 
@@ -103,7 +106,6 @@ code {
 }
 
 code {
-  line-height: map_get($line-height, md);
   font-family: inherit;
   font-size: 1rem;
   font-family: "Roboto Mono", monospace;
