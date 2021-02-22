@@ -14,16 +14,8 @@
 </template>
 
 <script>
+import Icon from "./Icon.vue";
 export default {
-  props: {
-    size: {
-      type: String,
-      default: "sm",
-    },
-    color: {
-      type: String,
-      default: "black",
-    },
-  },
+  extends: Icon,
 };
 </script>

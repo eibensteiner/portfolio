@@ -1,6 +1,7 @@
 <template>
   <svg
     :class="['icon', 'size-' + size, 'color-' + color]"
+    @click="$emit('onclick')"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
     fill="currentColor"
@@ -14,16 +15,8 @@
 </template>
 
 <script>
+import Icon from "./Icon.vue";
 export default {
-  props: {
-    size: {
-      type: String,
-      default: "sm",
-    },
-    color: {
-      type: String,
-      default: "black",
-    },
-  },
+  extends: Icon,
 };
 </script>

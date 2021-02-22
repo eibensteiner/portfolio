@@ -17,7 +17,7 @@
       </template>
       <template v-if="$route.name != 'index' && $route.name != 'about'">
         <nuxt-link to="/">
-          <arrow-left />
+          <arrow-left-icon />
           Go Back
         </nuxt-link>
       </template>
@@ -67,8 +67,8 @@ export default {
         color: rgba(var(--grey-600), 1);
       }
 
-      svg {
-        margin-right: 8px;
+      .icon {
+        margin-right: 12px;
       }
     }
   }
