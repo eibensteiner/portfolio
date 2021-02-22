@@ -26,9 +26,7 @@
 </template>
 
 <script>
-import ArrowLeft from "./icons/ArrowLeft.vue";
 export default {
-  components: { ArrowLeft },
   props: {
     title: String,
     subtitle: {
@@ -66,7 +64,7 @@ export default {
       @include flex(center, center, row);
 
       &:not(.nuxt-link-exact-active) {
-        color: rgba(var(--grey600), 1);
+        color: rgba(var(--grey-600), 1);
       }
 
       svg {

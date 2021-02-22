@@ -65,7 +65,7 @@ export default {
 
     p,
     a {
-      color: rgba(var(--grey600), 1);
+      color: rgba(var(--grey-600), 1);
     }
   }
 
@@ -77,7 +77,7 @@ export default {
 
     p,
     a {
-      color: rgba(var(--grey400), 1);
+      color: rgba(var(--grey-400), 1);
     }
   }
 

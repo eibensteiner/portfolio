@@ -1,5 +1,5 @@
 body {
-  background-color: rgba(var(--grey000), 1);
+  background-color: rgba(var(--grey-000), 1);
   margin: 0;
 }
 
@@ -13,10 +13,10 @@ body {
   line-height: 24px;
   text-align: center;
   text-transform: capitalize;
-  border: 1px solid rgba(var(--grey300), 1);
+  border: 1px solid rgba(var(--grey-300), 1);
   color: rgba(var(--black), 1);
   background-color: rgba(var(--white), 1);
-  box-shadow: 0 1px 0 0 rgba(var(--grey300), 0.3);
+  box-shadow: 0 1px 0 0 rgba(var(--grey-300), 0.3);
 
   & + .badge {
     margin-left: 4px;
@@ -48,14 +48,35 @@ body {
   }
 }
 
-svg {
+.card {
+  background-color: rgba(var(--white), 1);
+  border: 1px solid rgba(var(--grey-200), 1);
+  border-radius: 6px;
+  width: 100%;
+  overflow: hidden;
+  @include flex(center, center, row);
+}
+
+.icon {
+  &.size {
+    &-sm {
+      width: 16px;
+      height: 16px;
+    }
+
+    &-lg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
   path {
     transition: fill 0.2s;
   }
 
   &.disabled {
     path {
-      fill: rgba(var(--grey200), 1);
+      fill: rgba(var(--grey-200), 1);
     }
   }
 }
@@ -69,5 +90,40 @@ svg {
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+.color {
+  &-grey {
+    &-000 {
+      color: rgba(var(--grey-000), 1);
+    }
+    &-100 {
+      color: rgba(var(--grey-100), 1);
+    }
+    &-200 {
+      color: rgba(var(--grey-200), 1);
+    }
+    &-300 {
+      color: rgba(var(--grey-300), 1);
+    }
+    &-400 {
+      color: rgba(var(--grey-400), 1);
+    }
+    &-500 {
+      color: rgba(var(--grey-500), 1);
+    }
+    &-600 {
+      color: rgba(var(--grey-600), 1);
+    }
+    &-700 {
+      color: rgba(var(--grey-700), 1);
+    }
+    &-800 {
+      color: rgba(var(--grey-800), 1);
+    }
+    &-900 {
+      color: rgba(var(--grey-900), 1);
+    }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="project-summary">
+  <div class="project-summary card">
     <div class="project-summary-element">
       <hooper ref="carousel" @slide="updateCarousel">
         <slide
@@ -13,7 +13,7 @@
       </hooper>
 
       <div class="pagination">
-        <arrow-left
+        <arrow-left-icon
           @onclick="slidePrev"
           :class="isFirstSlide ? 'disabled' : ''"
         />
@@ -21,7 +21,7 @@
           <span>{{ slideIndex }}</span>
           of 1.000
         </span>
-        <arrow-right
+        <arrow-right-icon
           @onclick="slideNext"
           :class="isLastSlide ? 'disabled' : ''"
         />
@@ -77,13 +77,6 @@ export default {
 <style lang="scss" scoped>
 .project-summary {
   margin-top: 64px;
-  background-color: rgba(var(--white), 1);
-  border: 1px solid rgba(var(--grey200), 1);
-  border-radius: 6px;
-  width: 100%;
-  overflow: hidden;
-  @include padding(32px);
-  @include flex(center, center, row);
 
   &:focus-within {
     outline: -webkit-focus-ring-color auto 1px;
@@ -91,10 +84,7 @@ export default {
 
   &-element {
     width: 100%;
-
-    &:not(:last-child) {
-      border-right: 1px solid rgba(var(--grey200), 1);
-    }
+    @include padding(32px);
   }
 }
 

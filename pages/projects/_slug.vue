@@ -68,7 +68,7 @@ export default {
   & > h4,
   & > h5,
   & > h6 {
-    margin: 3rem 0 0 0;
+    margin: 4rem 0 0 0;
   }
 
   & > p,

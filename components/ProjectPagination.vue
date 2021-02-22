@@ -1,8 +1,8 @@
 <template>
-  <div class="project-pagination">
+  <div class="project-pagination card">
     <nuxt-link :to="next.path" v-if="next" class="project-pagination-element">
       <h5 class="title">{{ next.title }}</h5>
-      <p class="subtitle">Newer<arrow-left /></p>
+      <p class="subtitle">Newer<arrow-left-icon /></p>
     </nuxt-link>
     <nuxt-link
       :to="previous.path"
@@ -10,7 +10,7 @@
       class="project-pagination-element"
     >
       <h5 class="title">{{ previous.title }}</h5>
-      <p class="subtitle">Older<arrow-right /></p>
+      <p class="subtitle">Older<arrow-right-icon /></p>
     </nuxt-link>
   </div>
 </template>
@@ -26,24 +26,17 @@ export default {
 
 <style lang="scss" scoped>
 .project-pagination {
-  background-color: rgba(var(--white), 1);
-  border: 1px solid rgba(var(--grey200), 1);
-  border-radius: 6px;
-  width: 100%;
-  overflow: hidden;
-  @include flex(center, center, row);
-
   &-element {
     transition: background-color 0.2s;
     width: 100%;
     @include padding(24px 32px);
 
     &:not(:last-child) {
-      border-right: 1px solid rgba(var(--grey200), 1);
+      border-right: 1px solid rgba(var(--grey-200), 1);
     }
 
     &:hover {
-      background-color: rgba(var(--grey000), 1);
+      background-color: rgba(var(--grey-000), 1);
     }
 
     p {
