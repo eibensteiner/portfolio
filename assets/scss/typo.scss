@@ -21,7 +21,10 @@ h6 {
   }
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   line-height: map_get($line-height, md);
 }
 
@@ -84,6 +87,21 @@ p {
     line-height: 28px;
     border: 1px solid rgba(var(--grey-200), 1) !important;
     @include padding(0 8px);
+  }
+
+  & + h1,
+  & + h2,
+  & + h3,
+  & + h4,
+  & + h5,
+  & + h6 {
+    margin: 4rem 0 0 0;
+  }
+
+  & + p {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
   }
 }
 

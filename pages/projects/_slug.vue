@@ -62,15 +62,6 @@ export default {
     }
   }
 
-  & > h1,
-  & > h2,
-  & > h3,
-  & > h4,
-  & > h5,
-  & > h6 {
-    margin: 4rem 0 0 0;
-  }
-
   & > p,
   & > div {
     &:not(:last-child) {
