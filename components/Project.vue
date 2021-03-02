@@ -6,7 +6,7 @@
       v-for="project of projects"
       :key="project.slug"
     >
-      <div class="overlay">
+      <div class="overlay" v-if="!project.locked">
         <arrow-right-icon :color="'grey-600'" />
       </div>
       <div class="img" :style="{ backgroundColor: '#' + project.color }">
@@ -37,6 +37,9 @@ export default {
 .projects {
   margin-top: 48px;
   @include padding(0 32px);
+  @include viewport(sm) {
+    margin-top: 32px;
+  }
 
   &-element {
     height: 100%;
@@ -46,6 +49,9 @@ export default {
 
     &:not(:first-child) {
       margin-top: 24px;
+      @include viewport(sm) {
+        margin-top: 8px;
+      }
     }
 
     &:hover {
@@ -78,12 +84,14 @@ export default {
       }
     }
 
-    h5 {
+    .title {
       @include flex(flex-start, center, row);
     }
 
-    .description {
-      margin-left: 40px;
+    .subtitle {
+      @include viewport(sm) {
+        display: none;
+      }
     }
 
     .img {
@@ -93,7 +101,11 @@ export default {
       border-radius: 4px;
       transition: transform 0.2s;
       position: relative;
+      margin-right: 40px;
       @include flex(center, center, row);
+      @include viewport(sm) {
+        display: none;
+      }
 
       .icon {
         width: 24px;
@@ -124,6 +136,9 @@ export default {
       rgba(var(--grey-000), 1)
     );
     @include flex(flex-end, center, row);
+    @include viewport(sm) {
+      opacity: 1;
+    }
 
     .icon {
       transition: transform 0.2s;

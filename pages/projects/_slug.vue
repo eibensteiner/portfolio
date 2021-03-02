@@ -25,9 +25,6 @@
 
 <script>
 export default {
-  head() {
-    // Set Meta Tags for this Page
-  },
   async asyncData({ $content, params }) {
     const project = await $content("projects", params.slug).fetch();
     const [previous, next] = await $content("projects")

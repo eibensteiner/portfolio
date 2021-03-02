@@ -9,9 +9,9 @@
       <div class="container-inner">
         <p>
           Since 2018 I'm working as a Product & Brand Designer at
-          <a>Blockpit</a>, supporting thousands of Users with their crypto taxes. As one
-          of the very first employees I had the chance to shape the overall
-          design strategy of the startup. <br /><br />
+          <a>Blockpit</a>, supporting thousands of Users with their crypto
+          taxes. As one of the very first employees I had the chance to shape
+          the overall design strategy of the startup. <br /><br />
           Before that I was a UX Engineer at <a>Storyclash</a> and graduated
           from the <a>University of Applied Sciences Upper Austria</a>.
         </p>
@@ -34,39 +34,43 @@
         </p>
       </div>
       <hr />
-      <!--<carousel :slides="slides" />-->
     </div>
   </main>
 </template>
 
 <script>
 export default {
+  head: {
+    title: "Dominik Wurm",
+    meta: [
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        hid: "description",
+        name: "description",
+        content: "my website description",
+      },
+    ],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+  },
+
   // gets markdown files from /content
   async asyncData({ $content, params }) {
     const projects = await $content("projects", params.slug)
-      .only(["title", "subtitle", "cta", "img", "thumbnail", "locked", "slug", "color"])
+      .only([
+        "title",
+        "subtitle",
+        "img",
+        "thumbnail",
+        "locked",
+        "slug",
+        "color",
+      ])
       .sortBy("createdAt", "desc")
       .fetch();
 
     return {
       projects,
-    };
-  },
-
-  data() {
-    return {
-      slides: [
-        {
-          title: "I love dogs (way) more than cats",
-          subtitle:
-            "I’m currently not looking for a new job, but here is my resume if you’re into that. If you want to see how I built it, here is a GitHub link to the repository. Im currently not looking for a new job, but here is my resume if you’re into that.",
-        },
-        {
-          title: "Another super title",
-          subtitle:
-            "I’m currently not looking for a new job, but here is my resume if you’re into that. If you want to see how I built it, here is a GitHub link to the repository. Im currently not looking for a new job, but here is my resume if you’re into that.",
-        },
-      ],
     };
   },
 };

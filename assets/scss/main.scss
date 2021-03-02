@@ -5,7 +5,7 @@ body {
 
 * {
   &::selection {
-    background-color: rgba(var(--grey-200), .6);
+    background-color: rgba(var(--grey-200), 0.6);
   }
 }
 
@@ -56,6 +56,9 @@ hr {
   border-bottom: none;
   border-left: none;
   margin: 40px 0;
+  @include viewport(sm) {
+    margin: 32px 0;
+  }
 }
 
 blockquote {

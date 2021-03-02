@@ -47,6 +47,9 @@ export default {
   margin: 136px 0 64px 0;
   @include flex(space-between, flex-end, row);
   @include padding(0 32px);
+  @include viewport(sm) {
+    margin-top: 32px;
+  }
 
   &-left {
     max-width: $nudge * 46;
