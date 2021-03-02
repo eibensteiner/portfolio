@@ -1,48 +1,40 @@
 <template>
   <main class="main">
     <Header
-      :title="'Dominik Wurm'"
-      :subtitle="{ text: 'Product Designer at Blockpit' }"
+      :title="'I\'m Dominik, a coding Designer from Austria, striving for visual clarity, simplicity and minimalism.'"
     >
     </Header>
-    <div class="container">
-      <img src="@/assets/img/about/sarah.jpg" />
-      <div class="container">
+    <div class="container-outer">
+      <hr />
+      <div class="container-inner">
         <p>
-          Explore any website through a lightweight and centralized navigation
-          system. Explore any website through a lightweight and centralized
-          navigation system.
+          Since 2018 I'm working as a Product & Brand Designer at
+          <a>Blockpit</a>, supporting +15k Users with their crypto taxes. As one
+          of the very first employees I had the chance to shape the overall
+          design strategy of the startup. <br /><br />
+          Before that I was a UX Engineer at <a>Storyclash</a> and graduated
+          from the <a>University of Applied Sciences Upper Austria</a>.
         </p>
+      </div>
+      <hr />
+      <div class="container-inner">
+        <h5>Selected Work</h5>
         <p>
-          Explore any <code>website</code> through a lightweight and centralized
-          navigation system. Explore any website through a lightweight and
-          centralized navigation system. Explore <a>any website</a> through a
-          lightweight and centralized navigation system
-        </p>
-        <h5>Projects</h5>
-        <p>
-          Explore any website through a lightweight and centralized navigation
-          system. Explore any website <code>through a lightweight</code> and
-          centralized <a>navigation system</a>. Explore any website through a
-          lightweight and centralized navigation system
+          You can find some of my recent work below. I'm currently working
+          intensively to transform projects i worked on into case studies.
         </p>
       </div>
       <project :projects="projects" />
-      <div class="container">
-        <p>
-          Explore any website through a lightweight and centralized navigation
-          system. Explore any website through a lightweight and centralized
-          navigation system.
-        </p>
+      <hr />
+      <div class="container-inner">
         <h5>Some more facts about me</h5>
         <p>
-          Explore any website through a lightweight and centralized navigation
-          system. Explore any website through a lightweight and centralized
-          navigation system. Explore any website through a lightweight and
-          centralized navigation system
+          Besides my work you can find me travelling the austrian alps or
+          northern europe. Furthermore I'm a bit of a coffee & football junkie.
         </p>
       </div>
-      <carousel :slides="slides" />
+      <hr />
+      <!--<carousel :slides="slides" />-->
     </div>
   </main>
 </template>
@@ -52,7 +44,7 @@ export default {
   // gets markdown files from /content
   async asyncData({ $content, params }) {
     const projects = await $content("projects", params.slug)
-      .only(["title", "subtitle", "cta", "img", "slug", "color"])
+      .only(["title", "subtitle", "cta", "img", "thumbnail", "slug", "color"])
       .sortBy("createdAt", "desc")
       .fetch();
 
@@ -81,20 +73,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  .container {
-    margin-top: 64px;
-    @include padding(0 32px);
-  }
+.container-inner {
+  @include padding(0 32px);
 }
 
-img {
-  position: relative;
-  border-radius: 8px;
-  height: 416px;
-  width: 100%;
-  overflow: hidden;
-  object-fit: cover;
-  @include flex(space-between, flex-start, row);
+::v-deep .header {
+  margin-bottom: 0 !important;
+
+  &-left {
+    max-width: none !important;
+  }
 }
 </style>

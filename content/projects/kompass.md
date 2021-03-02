@@ -3,6 +3,7 @@ title: Kompass
 subtitle: Explore any website with a lightweight and personalized command center
 cta: Hit <span class="badge-group"><span class="badge">⌘</span><span class="badge">k</span></span> to try it
 img: kompass.svg
+thumbnail: kompass-thumbnail.svg
 url: kompass.com
 alt: Article 2
 color: C8D4EE
@@ -19,117 +20,36 @@ summary:
   role: How can we collect feedback that is specific, measurable, and actionable?
 ---
 
-I had an idea for caching SVG paths. Not the usual kind of async request caching of remote SVGs, but local re-use of DOM elements that have already rendered.
+**Kompass is a UI component for Vue to improve both Accessibility as well as Efficiency for Power Users. I realized the project together with Frederic Köberl in Early 2021.**
 
-SVG's `<use>` element allows re-use of an existing DOM element, without manually duplicating the node. It works like this:
+## Internet vs Accessibility
 
-```html{1,3-5}
-<span class="badge-group">
-  <span class="badge">⌘</span>
-  <span class="badge">k</span>
-</span>
-```
+Have you ever wondered why we are mainly using the Mouse as an input method while browsing through the web? Yes? 
 
-### Setup
+Well it seems that Developers are building their products mainly for people who can use a mouse without thinking about people who can’t.
 
-When using an icon set like Feather in React, I prefer to use a <a>higher-order component (HOC)</a> and a generic `Icon` component to render each icon with consistent properties. We'll use this HOC to demonstrate SVG caching:
+Studies are showing a quite similar picture. The Nucleus Research Institure, for example, found out that about [70% of all websites lack in terms of accessibility](https://accessibility.deque.com/nucleus-accessibility-research-2019). Even only 1% of the internet fits most widely used accessibility standards.
 
-Each icon is simply the SVG contents wrapped with the HOC:
+And this despite the fact that there are more than 7 million people with visual disabilities in the USA alone, according to the National Federation of the Blind.
 
-```js{1,3-5}
-const ArrowLeft = withIcon('<path d="M21 12H3m0 0l6.146-6M3 12l6.146 6" />')
-```
 
-### Caching
+## A Usability Framework
 
-We'll use React context to add an icon cache. First, create a new context and the appropriate hook to access it:
+With Kompass we wanted to tackle this problem by providing a Usability Framework to improve the whole UX of a Product or Website by applying Ben Shneiderman’s "Eight Golden Rules of Interface Design“.
 
-```js{1,3-5}
-export const IconCache = React.createContext(null)
-export const useIconCache = () => React.useContext(IconCache)
-```
+A Solution that works for both Power Users and People with disabilities, by integrating our everyday comparse in the process: the keyboard.
 
-Setup the provider at the application root. The cache will be a plain, empty object where each key is the icon string and each value is the cached id.
+By hitting the keyboard shortcut `⌘ K` Kompass appears as a CLI Overlay for your Website. It contains the most important commands of the website and is completely useable via keyboard.
 
-```js{1,3-5}
-const App = () => (
-  <IconCache.Provider value={{}}>{/* ... */}</IconCache.Provider>
-)
-```
+These commands are hierarchically structured, can be filtered by searching them and are even executable by it’s very own keyboard shortcuts. Globally.
 
-Inside of `Icon`, read the cache from context and check if this icon has a cached id. If not, generate the new id and add it to the cache:
+You want to link to external pages like your Twitter profile? Open Kompass.
 
-Generate a stable id by hashing the icon using the fnv1a 1 algorithm (commonly used in CSS-in-JS libraries) and then converting it to hexadecimal for a smaller string:
+You want to execute simple scripts like copying a email address? Open Kompass.
 
-```js{1,3-5}
-import hash from 'fnv1a'
-```
+You want to navigate through the pages of a website? Open Kompass.
 
-If we have a cached id, we can render the <use> tag instead of inserting the entire icon again. If this icon has not rendered before, wrap it in a group tag and attach the unique id.
 
-### Conclusion
+## The Team
 
-Here's our new `withIcon` HOC with caching:
-
-```js{1,3-5}
-import { memo } from 'react'
-import hash from 'fnv1a'
-export const IconCache = React.createContext({})
-export const useIconCache = () => React.useContext(IconCache)
-const withIcon = icon => {
-  const Icon = props => {
-    const { size = 24, color = 'currentColor' } = props
-    const cache = useIconCache()
-    const cachedId = cache[icon]
-    let id
-    if (!cachedId) {
-      id = 'icon-' + hash(icon).toString(16)
-      cache[icon] = id
-    }
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        width={size}
-        height={size}
-        stroke="currentColor"
-        style={{
-          color
-        }}
-        dangerouslySetInnerHTML={{
-          __html: cachedId
-            ? `<use href="#${cachedId}" />`
-            : `<g id="${id}">${icon}</g>`
-        }}
-      />
-    )
-  }
-  return memo(Icon)
-}
-export default withIcon
-```
-
-Rendering the same icon multiple times will reuse existing DOM elements, decreasing the size of your HTML:
-
-```jsx{1,3-5}
-/* React */
-<IconCache.Provider value={{}}>
-  <ArrowLeft />
-  <ArrowLeft />
-  <ArrowLeft />
-</IconCache.Provider>
-/* HTML Output:
-  <svg>
-    <g id="icon-dacb5a47"><path d="M21 12H3m0 0l6.146-6M3 12l6.146 6" /></g>
-  </svg>
-  <svg>
-    <use href="#icon-dacb5a47" />
-  </svg>
-  <svg>
-    <use href="#icon-dacb5a47" />
-  </svg>
-*/
-```
-
-In this example, the cached <span class="badge-group"><span class="badge">⌘</span><span class="badge">k</span></span> version is about 40% fewer characters!
-
-Here's a live demo and the demo source code.
+The team consisted of me and Frederic Köberl. While I was mainly responsible for the conceptual part and the prototyping as well as the actual designing, Frederic helped me out, to turn the idea in a solid working component.

@@ -3,7 +3,7 @@
     <Header 
     :title="project.title" 
     :subtitle="{date: project.createdAt, url:project.url}"/>
-    <div class="container">
+    <div class="container-outer">
       <div
         class="project-image"
         :style="{ backgroundColor: '#' + project.color }"
@@ -43,14 +43,18 @@ export default {
 <style lang="scss" scoped>
 .project-image {
   border-radius: 8px;
-  height: 416px;
+  height: 200px;
   width: 100%;
   overflow: hidden;
-  @include flex(flex-end, flex-end, row);
+  @include flex(center, center, row);
 }
 
 ::v-deep .nuxt-content {
   margin: 48px 0;
+
+  &-container {
+    width: 100%;
+  }
 
   & > * {
     &:not(img) {
@@ -60,6 +64,15 @@ export default {
     &:first-child {
       margin-top: 0;
     }
+  }
+
+  & > h1,
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6 {
+    margin: 4rem 0 0 0;
   }
 
   & > p,

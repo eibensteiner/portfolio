@@ -28,22 +28,21 @@ body {
   }
 }
 
-.container {
+.container-outer {
   width: 100%;
   flex-wrap: wrap;
   @include flex(flex-start, flex-start, row);
 
-  &.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+  & > hr {
+    margin-left: 32px;
+    margin-right: 32px;
   }
 }
 
 .main {
   @include flex(center, center, column);
 
-  & > .container {
+  & > .container-outer {
     animation: fade 0.6s;
   }
 }
@@ -102,4 +101,21 @@ body {
       color: rgba(var(--grey-900), 1);
     }
   }
+}
+
+hr {
+  width: 100%;
+  border-top: 1px solid rgba(var(--grey-200), 1);
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  margin: 40px 0;
+}
+
+blockquote {
+  margin-left: 0;
+  padding-left: 24px;
+  font-style: italic;
+  color: rgba(var(--black), 1);
+  border-left: 3px solid rgba(var(--grey-200), 1);
 }

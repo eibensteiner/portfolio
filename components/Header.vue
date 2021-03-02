@@ -2,25 +2,22 @@
   <header class="header">
     <div class="header-left">
       <h1 class="title">{{ title }}</h1>
-      <p v-if="subtitle.text">{{ subtitle.text }}</p>
-      <p v-if="subtitle.date && subtitle.url">
+      <p v-if="subtitle && subtitle.text">{{ subtitle.text }}</p>
+      <p v-if="subtitle && subtitle.date && subtitle.url">
         {{ formatDate(subtitle.date) }},
         <a :href="'https://' + subtitle.url" target="_blank">
           {{ subtitle.url }}
         </a>
       </p>
     </div>
-    <div class="header-right">
-      <template v-if="$route.name === 'index' || $route.name === 'about'">
-        <nuxt-link to="/">Work</nuxt-link>
-        <nuxt-link to="/about">About</nuxt-link>
-      </template>
-      <template v-if="$route.name != 'index' && $route.name != 'about'">
-        <nuxt-link to="/">
-          <arrow-left-icon />
-          Go Back
-        </nuxt-link>
-      </template>
+    <div
+      class="header-right"
+      v-if="$route.name != 'index' && $route.name != 'about'"
+    >
+      <nuxt-link to="/">
+        <arrow-left-icon />
+        Go Back
+      </nuxt-link>
     </div>
   </header>
 </template>

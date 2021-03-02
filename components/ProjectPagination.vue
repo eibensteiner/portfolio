@@ -9,7 +9,7 @@
       v-if="previous"
       class="project-pagination-element"
     >
-      <h5 class="title">{{ previous.title }}</h5>
+      <h5 class="title condensed">{{ previous.title }}</h5>
       <p class="subtitle">Older<arrow-right-icon /></p>
     </nuxt-link>
   </div>

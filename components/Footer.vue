@@ -24,14 +24,14 @@
 
 <style lang="scss" scoped>
 .footer {
-  margin: 64px 0 136px 0;
+  margin: 0 0 136px 0;
   @include flex(space-between, flex-start, row);
   @include padding(0 32px);
 
   &-left {
-    max-width: 160px;
+    max-width: 112px;
     width: 100%;
-    margin-right: 64px;
+    margin-right: 40px;
     @include flex(flex-start, flex-start, column);
 
     & > * {

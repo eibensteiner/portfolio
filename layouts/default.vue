@@ -11,7 +11,7 @@
 
   & > * {
     width: 100%;
-    max-width: $nudge * 103;
+    max-width: 704px;
   }
 }
 </style>
