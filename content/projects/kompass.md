@@ -1,16 +1,12 @@
 ---
 title: Kompass
 subtitle: Explore any website with a lightweight and personalized command center
-cta: Hit <span class="badge-group"><span class="badge">⌘</span><span class="badge">k</span></span> to try it
 img: kompass.svg
 thumbnail: kompass-thumbnail.svg
 url: kompass.com
 alt: Article 2
 color: C8D4EE
-author: 
-  name: Choi
-  bio: All about Choi and where he works and what he does
-  img: https://images.unsplash.com/photo-1534471770828-9bde524ee634?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60
+locked: true
 tags: 
   - nuxtjs
   - web development

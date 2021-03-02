@@ -2,7 +2,7 @@
   <div class="projects">
     <nuxt-link
       :to="{ name: 'projects-slug', params: { slug: project.slug } }"
-      :class="['projects-element']"
+      :class="['projects-element', project.locked ? 'locked' : '']"
       v-for="project of projects"
       :key="project.slug"
     >
@@ -11,6 +11,7 @@
       </div>
       <div class="img" :style="{ backgroundColor: '#' + project.color }">
         <img :src="require(`~/assets/img/${project.img}`)" />
+        <lock-icon v-if="project.locked" :color="'white'" />
       </div>
       <div class="description">
         <h5 class="title condensed">
@@ -44,7 +45,7 @@ export default {
     @include flex(flex-start, center, row);
 
     &:not(:first-child) {
-      margin-top: 32px;
+      margin-top: 24px;
     }
 
     &:hover {
@@ -58,6 +59,22 @@ export default {
 
       .icon {
         transform: translateX(0px);
+      }
+    }
+
+    &.locked {
+      pointer-events: none;
+      user-select: none;
+
+      .description {
+        opacity: 0.3;
+        filter: blur(3px);
+      }
+
+      .img {
+        img {
+          filter: blur(3px);
+        }
       }
     }
 
@@ -75,12 +92,21 @@ export default {
       height: 88px;
       border-radius: 4px;
       transition: transform 0.2s;
+      position: relative;
       @include flex(center, center, row);
-    }
 
-    .icon {
-      transition: transform 0.2s;
-      transform: translateX(-4px);
+      .icon {
+        width: 24px;
+        height: 24px;
+        background-color: rgba(var(--black), 1);
+        border: 2px solid rgba(var(--grey-000), 1);
+        border-radius: 6px;
+        position: absolute;
+        right: -4px;
+        bottom: -4px;
+        transform: rotate(6deg);
+        @include padding(4px);
+      }
     }
   }
 
@@ -98,6 +124,11 @@ export default {
       rgba(var(--grey-000), 1)
     );
     @include flex(flex-end, center, row);
+
+    .icon {
+      transition: transform 0.2s;
+      transform: translateX(-4px);
+    }
   }
 }
 </style>

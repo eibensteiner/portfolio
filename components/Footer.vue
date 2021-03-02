@@ -8,16 +8,10 @@
       <a href="#">Mail</a>
     </div>
     <p class="footer-right">
-      The copyright on this website belongs to me basically. If you want to see
-      how I built it, <a>here is the source code</a>. Find more details in the
-      privacy policy. <br /><br />
-      You can contact me if you got an interesting opportunity for me. Here's my
-      <a>my resume</a>.<br /><br />
-      Hit
-      <span class="badge-group"
-        ><span class="badge">⌘</span><span class="badge">p</span></span
-      >
-      to find the secret party.
+      You can find the <a>source code of this website</a> here if you want to see how i built it. Due to it's privacy friendly design, it isn't tracking your behaviour.
+      <br /><br />
+      You can <a>contact me</a> anytime if you got an interesting opportunity for me. Here's my
+      <a>my resume</a>.
     </p>
   </footer>
 </template>

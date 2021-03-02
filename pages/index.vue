@@ -9,7 +9,7 @@
       <div class="container-inner">
         <p>
           Since 2018 I'm working as a Product & Brand Designer at
-          <a>Blockpit</a>, supporting +15k Users with their crypto taxes. As one
+          <a>Blockpit</a>, supporting thousands of Users with their crypto taxes. As one
           of the very first employees I had the chance to shape the overall
           design strategy of the startup. <br /><br />
           Before that I was a UX Engineer at <a>Storyclash</a> and graduated
@@ -18,7 +18,7 @@
       </div>
       <hr />
       <div class="container-inner">
-        <h5>Selected Work</h5>
+        <h5 class="condensed">Selected Work</h5>
         <p>
           You can find some of my recent work below. I'm currently working
           intensively to transform projects i worked on into case studies.
@@ -27,7 +27,7 @@
       <project :projects="projects" />
       <hr />
       <div class="container-inner">
-        <h5>Some more facts about me</h5>
+        <h5 class="condensed">Some more facts about me</h5>
         <p>
           Besides my work you can find me travelling the austrian alps or
           northern europe. Furthermore I'm a bit of a coffee & football junkie.
@@ -44,7 +44,7 @@ export default {
   // gets markdown files from /content
   async asyncData({ $content, params }) {
     const projects = await $content("projects", params.slug)
-      .only(["title", "subtitle", "cta", "img", "thumbnail", "slug", "color"])
+      .only(["title", "subtitle", "cta", "img", "thumbnail", "locked", "slug", "color"])
       .sortBy("createdAt", "desc")
       .fetch();
 

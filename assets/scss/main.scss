@@ -3,28 +3,9 @@ body {
   margin: 0;
 }
 
-.badge {
-  display: inline-block;
-  user-select: none;
-  white-space: nowrap;
-  min-width: 24px;
-  border-radius: 4px;
-  font-size: 1rem;
-  line-height: 24px;
-  text-align: center;
-  text-transform: capitalize;
-  border: 1px solid rgba(var(--grey-300), 1);
-  color: rgba(var(--black), 1);
-  background-color: rgba(var(--white), 1);
-  box-shadow: 0 1px 0 0 rgba(var(--grey-300), 0.3);
-
-  & + .badge {
-    margin-left: 4px;
-  }
-
-  &-group {
-    display: inline-block;
-    margin: 0 4px;
+* {
+  &::selection {
+    background-color: rgba(var(--grey-200), .6);
   }
 }
 
@@ -65,41 +46,6 @@ body {
   to {
     opacity: 1;
     transform: none;
-  }
-}
-
-.color {
-  &-grey {
-    &-000 {
-      color: rgba(var(--grey-000), 1);
-    }
-    &-100 {
-      color: rgba(var(--grey-100), 1);
-    }
-    &-200 {
-      color: rgba(var(--grey-200), 1);
-    }
-    &-300 {
-      color: rgba(var(--grey-300), 1);
-    }
-    &-400 {
-      color: rgba(var(--grey-400), 1);
-    }
-    &-500 {
-      color: rgba(var(--grey-500), 1);
-    }
-    &-600 {
-      color: rgba(var(--grey-600), 1);
-    }
-    &-700 {
-      color: rgba(var(--grey-700), 1);
-    }
-    &-800 {
-      color: rgba(var(--grey-800), 1);
-    }
-    &-900 {
-      color: rgba(var(--grey-900), 1);
-    }
   }
 }
 

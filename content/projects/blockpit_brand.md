@@ -1,14 +1,10 @@
 ---
 title: Blockpit Rebranding
 subtitle: Explore any website through a lightweight and centralized navigation system
-cta: Case Study coming soon
 img: blockpit.svg
 alt: Article 2
 color: 1B1F23
-author: 
-  name: Choi
-  bio: All about Choi and where he works and what he does
-  img: https://images.unsplash.com/photo-1534471770828-9bde524ee634?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60
+locked: true
 tags: 
   - nuxtjs
   - web development
@@ -125,6 +121,6 @@ Rendering the same icon multiple times will reuse existing DOM elements, decreas
 */
 ```
 
-In this example, the cached <span class="badge-group"><span class="badge">⌘</span><span class="badge">k</span></span> version is about 40% fewer characters!
+In this example, the cached <badge :text="'⌘'"></badge><badge :text="'p'"></badge> version is about 40% fewer characters!
 
 Here's a live demo and the demo source code.
