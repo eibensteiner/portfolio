@@ -1,0 +1,45 @@
+* {
+  // Colors
+  --white: 255, 255, 255;
+  --grey-000: 250, 251, 252;
+  --grey-100: 246, 248, 250;
+  --grey-200: 225, 228, 232;
+  --grey-300: 209, 213, 218;
+  --grey-400: 149, 157, 165;
+  --grey-500: 106, 115, 125;
+  --grey-600: 88, 96, 105;
+  --grey-700: 68, 77, 86;
+  --grey-800: 47, 54, 61;
+  --grey-900: 36, 41, 46;
+  --black: 27, 31, 35;
+
+  // Type Scale
+  --scale-1: .555rem;
+  --scale-2: .624rem;
+  --scale-3: .702rem;
+  --scale-4: .79rem;
+  --scale-5: .889rem;
+  --scale-6: 1rem;
+  --scale-7: 1.125rem;
+  --scale-8: 1.266rem;
+  --scale-9: 1.424rem;
+  --scale-10: 1.602rem;
+  --scale-11: 1.802rem;
+  --scale-12: 2.027rem;
+  --scale-13: 2.281rem;
+}
+
+$font-weight: (
+  regular: 400,
+  medium: 500,
+  semi-bold: 600,
+  bold: 700,
+);
+
+$line-height: (
+  sm: 28px,
+  md: 1.5rem,
+  lg: 2rem,
+);
+
+$nudge: 8px;

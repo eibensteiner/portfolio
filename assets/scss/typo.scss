@@ -1,0 +1,169 @@
+// Our Type Scale is based on https://type-scale.com/?size=16&scale=1.125&text=A%20Visual%20Type%20Scale&font=Inter&fontweight=400&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false
+
+* {
+  font-family: "Inter", sans-serif;
+  font-weight: map_get($font-weight, regular);
+  -webkit-font-smoothing: antialiased;
+  line-height: map_get($line-height, lg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: rgba(var(--black), 1);
+  margin: 0 0 1rem 0;
+
+  &.condensed {
+    margin-bottom: 0.25rem;
+  }
+
+  & + p {
+    color: rgba(var(--grey-700), 1);
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: map_get($line-height, md);
+}
+
+h1,
+h2 {
+  font-size: 1.424rem;
+  font-weight: map_get($font-weight, semi-bold);
+  line-height: 2.5rem;
+  margin-bottom: 0;
+
+  & + p {
+    margin-top: 0.694rem;
+  }
+}
+
+h3,
+h4 {
+  font-size: 1.125rem;
+  font-weight: map_get($font-weight, semi-bold);
+}
+
+h5 {
+  font-weight: map_get($font-weight, semi-bold);
+  font-size: 1rem;
+  line-height: map_get($line-height, lg);
+
+  & + p {
+    margin-top: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: rgba(var(--black), 1);
+  transition: all 0.2s;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: map_get($font-weight, medium);
+}
+
+span {
+  color: rgba(var(--grey-700), 1);
+}
+
+p {
+  color: rgba(var(--grey-700), 1);
+  letter-spacing: -0.33px;
+  font-size: 1rem;
+  margin: 0;
+
+  a {
+    color: rgba(var(--black), 1);
+    text-decoration: underline;
+    text-underline-offset: 1px;
+    text-decoration-color: rgba(var(--grey-300), 1);
+  }
+
+  code {
+    margin: 0 4px;
+    border-radius: 4px;
+    display: inline-block;
+    line-height: 28px;
+    border: 1px solid rgba(var(--grey-200), 1) !important;
+    @include padding(0 8px);
+  }
+
+  & + h1,
+  & + h2,
+  & + h3,
+  & + h4,
+  & + h5,
+  & + h6 {
+    margin: 4rem 0 1rem 0 !important;
+  }
+
+  & + p {
+    margin: 2rem 0 0 0 !important;
+  }
+}
+
+strong {
+  font-weight: map_get($font-weight, medium);
+}
+
+pre {
+  border-radius: 6px;
+  margin: 0 !important;
+  border: 1px solid rgba(var(--grey-200), 1) !important;
+  @include padding(12px 16px !important);
+}
+
+pre,
+code {
+  background: rgba(var(--grey-100), 1) !important;
+  text-shadow: none !important;
+  color: rgba(var(--black), 1);
+  line-height: map_get($line-height, md);
+}
+
+code {
+  font-family: inherit;
+  font-size: 0.889rem;
+  font-family: "Roboto Mono", monospace;
+  font-weight: map_get($font-weight, regular);
+
+  .token {
+    line-height: inherit;
+    font-family: inherit;
+    color: rgba(var(--grey-700), 1) !important;
+  }
+
+  .token.attr-name,
+  .token.class-name,
+  .token.function,
+  .token.tag {
+    color: rgba(var(--black), 1) !important;
+  }
+
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword {
+    font-weight: map_get($font-weight, medium);
+    color: rgba(var(--black), 1) !important;
+  }
+
+  .token.builtin,
+  .token.number,
+  .token.operator,
+  .token.punctuation,
+  .token.string,
+  .token.variable {
+    color: rgba(var(--grey-500), 1) !important;
+  }
+
+  .token.comment {
+    color: rgba(var(--grey-400), 1) !important;
+  }
+}
