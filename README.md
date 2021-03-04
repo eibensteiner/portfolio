@@ -1,20 +1,19 @@
-# dowu
+# portfolio
+My portfolio is currently under development, but it's built with the following stack:
+* [Vue.js](https://reactjs.org/) – I love the simplicity and extensibility of Vue.js.
+* [Nuxt.js](https://nextjs.org/) – Nuxt.js is a Framework built on top of Vue.js.
 
-## Build Setup
 
-```bash
-# install dependencies
-$ npm install
+## Local development
+To try it live install all dependencies first with
+```sh
+npm install
+```
+Afterwards you can run it locally with
 
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+```sh
+npm run dev
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Feedback, Typos and more
+If you find something please let me know by opening a PR.
