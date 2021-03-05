@@ -9,11 +9,28 @@
       <div class="container-inner">
         <p>
           Since 2018 I'm working as a Product & Brand Designer at
-          <a href="https://blockpit.io" target="_blank">Blockpit</a>, supporting thousands of Users with their crypto
-          taxes. As one of the very first employees I had the chance to shape
-          the overall design strategy of the startup. <br /><br />
-          Before that I was a UX Engineer at <a href="https://storyclash.com" target="_blank">Storyclash</a> and graduated
-          from the <a href="https://www.fh-ooe.at/en/hagenberg-campus/" target="_blank">University of Applied Sciences Upper Austria</a>.
+          <a
+            href="https://blockpit.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Blockpit</a
+          >, supporting thousands of Users with their crypto taxes. As one of
+          the very first employees I had the chance to shape the overall design
+          strategy of the startup. <br /><br />
+          Before that I was a UX Engineer at
+          <a
+            href="https://storyclash.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Storyclash</a
+          >
+          and graduated from the
+          <a
+            href="https://www.fh-ooe.at/en/hagenberg-campus/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >University of Applied Sciences Upper Austria</a
+          >.
         </p>
       </div>
       <hr />
