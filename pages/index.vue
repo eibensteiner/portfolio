@@ -44,12 +44,18 @@
       <project :projects="projects" />
       <hr />
       <div class="container-inner">
-        <h5 class="condensed">Some more facts about me</h5>
+        <h5 class="condensed">My Thoughts</h5>
         <p>
           Besides my work you can find me travelling the austrian alps or
           northern europe. Furthermore I'm a bit of a coffee & football junkie.
         </p>
       </div>
+      <nuxt-link
+        :to="{ name: 'thoughts-slug', params: { slug: thought.slug } }"
+        :class="[thought.locked ? 'locked' : '']"
+        v-for="thought of thoughts"
+        :key="thought.slug"
+      >{{ thought.title }}</nuxt-link>
       <hr />
     </div>
   </main>
@@ -72,8 +78,13 @@ export default {
       .sortBy("createdAt", "desc")
       .fetch();
 
+    const thoughts = await $content("thoughts", params.slug)
+      .only(["title", "locked", "slug"])
+      .sortBy("createdAt", "desc")
+      .fetch();
+
     return {
-      projects,
+      projects, thoughts
     };
   },
 };

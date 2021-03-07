@@ -4,6 +4,9 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
+    htmlAttrs: {
+      lang: 'en'
+    },
     title: "Dominik Wurm",
     meta: [
       { charset: "utf-8" },
@@ -13,6 +16,51 @@ export default {
         name: "description",
         content: "my website description",
       },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: "my website description"
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: "my website description"
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: "my website description"
+      },
+      {
+        hid: 'twitter:image:alt',
+        name: 'twitter:image:alt',
+        content: "my website description"
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: "my website description"
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: "my website description"
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: "my website description"
+      },
+      {
+        hid: 'og:image:secure_url',
+        property: 'og:image:secure_url',
+        content: "my website description"
+      },
+      {
+        hid: 'og:image:alt',
+        property: 'og:image:alt',
+        content: "my website description"
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicons/apple-touch-icon.png' },

@@ -25,6 +25,19 @@
 
 <script>
 export default {
+    head() {
+    return {
+      title: this.project.title,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.project.subtitle,
+        },
+      ],
+    };
+  },
+
   async asyncData({ $content, params }) {
     const project = await $content("projects", params.slug).fetch();
     const [previous, next] = await $content("projects")

@@ -3,6 +3,7 @@
     <div class="header-left">
       <h1 class="title">{{ title }}</h1>
       <p v-if="subtitle && subtitle.text">{{ subtitle.text }}</p>
+      <p v-if="subtitle && subtitle.date&& !subtitle.url">{{ formatDate(subtitle.date) }}</p>
       <p v-if="subtitle && subtitle.date && subtitle.url">
         {{ formatDate(subtitle.date) }},
         <a :href="'https://' + subtitle.url" target="_blank"  rel="noopener noreferrer">
