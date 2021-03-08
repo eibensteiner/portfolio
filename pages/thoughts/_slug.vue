@@ -49,10 +49,6 @@ export default {
     &:not(img) {
       @include padding(0 32px);
     }
-
-    &:first-child {
-      margin-top: 0;
-    }
   }
 
   & > h1,
@@ -61,25 +57,9 @@ export default {
   & > h4,
   & > h5,
   & > h6 {
-    margin: 3rem 0 0 0;
-
     a {
       display: none;
     }
-  }
-
-  & > * {
-    &:not(:last-child) {
-      margin: 0 0 2rem 0;
-    }
-  }
-
-  & > blockquote {
-    margin-left: 32px !important;
-  }
-
-  & > h2 {
-    font-size: var(--scale-8);
   }
 }
 </style>

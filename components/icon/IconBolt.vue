@@ -1,6 +1,6 @@
 <template>
   <svg
-    :class="['icon', 'size-' + size, 'color-' + color]"
+    :class="['icon', 'icon-bolt', 'size-' + size, 'color-' + color]"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
     fill="currentColor"
