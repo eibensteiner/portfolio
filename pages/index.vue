@@ -1,7 +1,9 @@
 <template>
   <main class="main">
     <Header
-      :title="'I\'m Dominik, a coding Designer from Austria, striving for visual clarity, simplicity and minimalism.'"
+      :title="
+        'I\'m Dominik, a coding Designer from Austria, striving for visual clarity, simplicity and minimalism.'
+      "
     >
     </Header>
     <div class="container-outer">
@@ -49,20 +51,24 @@
           Besides my work you can find me travelling the austrian alps or
           northern europe. Furthermore I'm a bit of a coffee & football junkie.
         </p>
+        <nuxt-link
+          :to="{ name: 'thoughts-slug', params: { slug: thought.slug } }"
+          :class="[thought.locked ? 'locked' : '']"
+          v-for="thought of thoughts"
+          :key="thought.slug"
+          >{{ thought.title }}
+          <arrow-right-icon :color="'grey-600'" />
+        </nuxt-link>
       </div>
-      <nuxt-link
-        :to="{ name: 'thoughts-slug', params: { slug: thought.slug } }"
-        :class="[thought.locked ? 'locked' : '']"
-        v-for="thought of thoughts"
-        :key="thought.slug"
-      >{{ thought.title }}</nuxt-link>
       <hr />
     </div>
   </main>
 </template>
 
 <script>
+import ArrowRightIcon from "~/components/icons/ArrowRightIcon.vue";
 export default {
+  components: { ArrowRightIcon },
   // gets markdown files from /content
   async asyncData({ $content, params }) {
     const projects = await $content("projects", params.slug)
@@ -84,7 +90,8 @@ export default {
       .fetch();
 
     return {
-      projects, thoughts
+      projects,
+      thoughts,
     };
   },
 };
@@ -96,8 +103,6 @@ export default {
 }
 
 ::v-deep .header {
-  margin-bottom: 0 !important;
-
   &-left {
     max-width: none !important;
   }

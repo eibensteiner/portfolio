@@ -41,8 +41,6 @@ export default {
 }
 
 ::v-deep .nuxt-content {
-  margin: 48px 0;
-
   &-container {
     width: 100%;
   }
@@ -63,14 +61,25 @@ export default {
   & > h4,
   & > h5,
   & > h6 {
-    margin: 4rem 0 0 0;
+    margin: 3rem 0 0 0;
+
+    a {
+      display: none;
+    }
   }
 
-  & > p,
-  & > div {
+  & > * {
     &:not(:last-child) {
-      margin-bottom: 2rem;
+      margin: 0 0 2rem 0;
     }
+  }
+
+  & > blockquote {
+    margin-left: 32px !important;
+  }
+
+  & > h2 {
+    font-size: var(--scale-8);
   }
 }
 </style>

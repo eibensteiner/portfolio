@@ -62,8 +62,8 @@ hr {
 }
 
 blockquote {
-  margin-left: 0;
-  padding-left: 24px;
+  padding-left: 24px !important;
+  margin: inherit 0 inherit 32px;
   font-style: italic;
   color: rgba(var(--black), 1);
   border-left: 3px solid rgba(var(--grey-200), 1);

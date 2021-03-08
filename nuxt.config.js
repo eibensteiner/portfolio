@@ -14,52 +14,52 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: "my website description",
+        content: "I\'m Dominik, a coding Designer from Austria, striving for visual clarity, simplicity and minimalism.",
       },
       {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: "my website description"
+        content: "I\'m Dominik, a coding Designer from Austria, striving for visual clarity, simplicity and minimalism."
       },
       {
         hid: 'twitter:description',
         name: 'twitter:description',
-        content: "my website description"
+        content: "I\'m Dominik, a coding Designer from Austria, striving for visual clarity, simplicity and minimalism."
       },
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: "my website description"
+        content: "/img/shareimage.jpg"
       },
       {
         hid: 'twitter:image:alt',
         name: 'twitter:image:alt',
-        content: "my website description"
+        content: "I\'m Dominik, a coding Designer from Austria, striving for visual clarity, simplicity and minimalism."
       },
       {
         hid: 'og:title',
         property: 'og:title',
-        content: "my website description"
+        content: "I\'m Dominik, a coding Designer from Austria, striving for visual clarity, simplicity and minimalism."
       },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: "my website description"
+        content: "I\'m Dominik, a coding Designer from Austria, striving for visual clarity, simplicity and minimalism."
       },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: "my website description"
+        content: "/img/shareimage.jpg"
       },
       {
         hid: 'og:image:secure_url',
         property: 'og:image:secure_url',
-        content: "my website description"
+        content: "/img/shareimage.jpg"
       },
       {
         hid: 'og:image:alt',
         property: 'og:image:alt',
-        content: "my website description"
+        content: "I\'m Dominik, a coding Designer from Austria, striving for visual clarity, simplicity and minimalism."
       }
     ],
     link: [

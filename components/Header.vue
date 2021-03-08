@@ -1,24 +1,29 @@
 <template>
   <header class="header">
-    <div class="header-left">
-      <h1 class="title">{{ title }}</h1>
-      <p v-if="subtitle && subtitle.text">{{ subtitle.text }}</p>
-      <p v-if="subtitle && subtitle.date&& !subtitle.url">{{ formatDate(subtitle.date) }}</p>
-      <p v-if="subtitle && subtitle.date && subtitle.url">
-        {{ formatDate(subtitle.date) }},
-        <a :href="'https://' + subtitle.url" target="_blank"  rel="noopener noreferrer">
-          {{ subtitle.url }}
-        </a>
-      </p>
-    </div>
+    <h1 class="title">{{ title }}</h1>
     <div
-      class="header-right"
+      class="header-meta"
       v-if="$route.name != 'index' && $route.name != 'about'"
     >
       <nuxt-link to="/">
-        <arrow-left-icon />
+        <arrow-left-icon :color="'grey-600'" />
         Go Back
       </nuxt-link>
+      <p v-if="subtitle && subtitle.text">{{ subtitle.text }}</p>
+      <p v-if="subtitle && subtitle.date && !subtitle.url">
+        {{ formatDate(subtitle.date) }}
+      </p>
+
+      <p v-if="subtitle && subtitle.date && subtitle.url">
+        {{ formatDate(subtitle.date) }},
+        <a
+          :href="'https://' + subtitle.url"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ subtitle.url }}
+        </a>
+      </p>
     </div>
   </header>
 </template>
@@ -45,31 +50,29 @@ export default {
 <style lang="scss" scoped>
 .header {
   width: 100%;
-  margin: 136px 0 64px 0;
-  @include flex(space-between, flex-end, row);
+  margin-top: 136px;
   @include padding(0 32px);
   @include viewport(sm) {
     margin-top: 32px;
   }
 
-  &-left {
-    max-width: $nudge * 46;
-  }
-
-  &-right {
-    @include flex(center, center, row);
+  &-meta {
+    margin-top: 8px;
+    @include flex(flex-start, flex-end, row);
 
     & > * {
-      margin-left: $nudge * 3;
-      line-height: 24px;
-      @include flex(center, center, row);
+      white-space: nowrap;
 
-      &:not(.nuxt-link-exact-active) {
-        color: rgba(var(--grey-600), 1);
+      &:not(:last-child) {
+        margin-right: 16px;
+        padding-right: 16px;
+        border-right: 1px solid rgba(var(--grey-200), 1);
       }
+    }
 
+    & > a {
       .icon {
-        margin-right: 12px;
+        margin: 0 12px 0 0 !important;
       }
     }
   }
