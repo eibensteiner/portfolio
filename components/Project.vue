@@ -7,11 +7,11 @@
       :key="project.slug"
     >
       <div class="overlay" v-if="!project.locked">
-        <arrow-right-icon :color="'grey-600'" />
+        <icon-arrow-right :color="'grey-600'" />
       </div>
       <div class="img" :style="{ backgroundColor: '#' + project.color }">
         <img :src="require(`~/assets/img/${project.img}`)" />
-        <lock-icon v-if="project.locked" :color="'white'" />
+        <icon-lock v-if="project.locked" :color="'white'" />
       </div>
       <div class="description">
         <h5 class="title condensed">

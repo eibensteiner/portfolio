@@ -57,7 +57,7 @@
           v-for="thought of thoughts"
           :key="thought.slug"
           >{{ thought.title }}
-          <arrow-right-icon :color="'grey-600'" />
+          <icon-arrow-right :color="'grey-600'" />
         </nuxt-link>
       </div>
       <hr />
@@ -66,9 +66,7 @@
 </template>
 
 <script>
-import ArrowRightIcon from "~/components/icons/ArrowRightIcon.vue";
 export default {
-  components: { ArrowRightIcon },
   // gets markdown files from /content
   async asyncData({ $content, params }) {
     const projects = await $content("projects", params.slug)

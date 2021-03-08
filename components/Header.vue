@@ -6,7 +6,7 @@
       v-if="$route.name != 'index' && $route.name != 'about'"
     >
       <nuxt-link to="/">
-        <arrow-left-icon :color="'grey-600'" />
+        <icon-arrow-left :color="'grey-600'" />
         Go Back
       </nuxt-link>
       <p v-if="subtitle && subtitle.text">{{ subtitle.text }}</p>
