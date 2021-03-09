@@ -71,9 +71,6 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
-  generate: {
-    exclude: [/^\/projects/]
-  },
   sitemap: {
     hostname: 'https://dowu.xyz',
     routes() {
