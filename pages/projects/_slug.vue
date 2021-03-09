@@ -41,7 +41,6 @@ export default {
   async asyncData({ $content, params }) {
     const project = await $content("projects", params.slug).fetch();
     const [previous, next] = await $content("projects")
-      .only(["title", "slug"])
       .sortBy("createdAt", "asc")
       .surround(params.slug)
       .fetch();

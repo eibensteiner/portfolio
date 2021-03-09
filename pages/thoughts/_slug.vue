@@ -10,15 +10,40 @@
 </template>
 
 <script>
+import getMeta from "../../utils/getMeta";
+
 export default {
+  computed: {
+    meta() {
+      const metaData = {
+        type: "article",
+        title: this.thought.title,
+        description: this.thought.subtitle,
+        url: `${this.$config.baseUrl}/thoughts/${this.$route.params.slug}`,
+        mainImage: this.thought.image,
+      };
+      return getMeta(metaData);
+    },
+  },
   head() {
     return {
       title: this.thought.title,
       meta: [
+        ...this.meta,
         {
-          hid: "description",
-          name: "description",
-          content: this.thought.title,
+          property: "article:published_time",
+          content: this.thought.createdAt,
+        },
+        {
+          property: "article:modified_time",
+          content: this.thought.updatedAt,
+        },
+      ],
+      link: [
+        {
+          hid: "canonical",
+          rel: "canonical",
+          href: `https://dowu.xyz/thoughts${this.$route.params.slug}`,
         },
       ],
     };
