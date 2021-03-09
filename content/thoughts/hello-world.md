@@ -1,11 +1,11 @@
 ---
 title: Hello world
-locked: true
+subtitle: I've been planning this post for a long time, but struggled to find a topic to begin with.
 ---
 
 I've been planning this post for a long time, but struggled to find a topic to begin with. 
 
-> It must be something super catchy. Something valuable and shareable. Possibly something containing dog gifs?
+It must be something super catchy. Something valuable and shareable. Possibly [something containing dog gifs](http://gph.is/179uvJa)?
 
 But in reality, it isn't the topic I'm struggling for, it's the actual barrier in my head to just start writing. To break this procrastination barrier, I wrote the article you are currently reading.
 

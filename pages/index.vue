@@ -69,8 +69,7 @@
       <div class="container-inner">
         <h5 class="condensed">My Thoughts</h5>
         <p>
-          Besides my work you can find me travelling the austrian alps or
-          northern europe. Furthermore I'm a bit of a coffee & football junkie.
+          Besides my work I'll try to write down my thoughts. I've just started but I'll do my very best to keep things updated.
         </p>
         <nuxt-link
           :to="{ name: 'thoughts-slug', params: { slug: thought.slug } }"
