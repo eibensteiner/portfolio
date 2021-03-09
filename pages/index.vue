@@ -129,6 +129,10 @@ export default {
     position: relative;
     @include flex(flex-start, center, row);
 
+    &:first-of-type {
+      margin-top: 40px !important
+    }
+
     &:not(:first-child) {
       margin-top: 24px;
       @include viewport(sm) {

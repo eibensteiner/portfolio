@@ -25,11 +25,11 @@ export default {
       { name: "twitter:card", content: "summary_large_image" },
     ],
     link: [
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
       {
         hid: "canonical",
         rel: "canonical",
-        href: process.env.BASE_URL,
+        href: 'https://dowu.xyz',
       },
     ],
   },
