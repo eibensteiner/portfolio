@@ -1,6 +1,6 @@
 ---
-title: Blockpit Rebranding
-subtitle: Explore any website through a lightweight and centralized navigation system
+title: dhGuB+9Grz
+subtitle: ff970580 7faa09dec 3a73cdf d210 949b 0edf1525324 77723dc ce925e826 c86ac
 img: blockpit.svg
 alt: Article 2
 color: 1B1F23

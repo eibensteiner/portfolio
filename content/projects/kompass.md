@@ -1,6 +1,6 @@
 ---
-title: Kompass
-subtitle: Explore any website with a lightweight and personalized command center
+title: dhGuB+9Grz
+subtitle: ff970580 7faa09dec 3a73cdf d210 949b 0edf1525324 77723dc ce925e826 c86ac
 img: kompass.svg
 thumbnail: kompass-thumbnail.svg
 url: kompass.com
