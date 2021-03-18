@@ -60,3 +60,22 @@ hr {
     margin: 32px 0;
   }
 }
+
+ul {
+  padding-left: 24px;
+
+  li {
+    &:not(:first-child) {
+      margin-top: 0.75rem;
+    }
+  }
+}
+
+figure {
+  margin: inherit;
+  figcaption {
+    text-align: center;
+    font-size: 0.889rem;
+    color: rgba(var(--grey-500), 1);
+  }
+}

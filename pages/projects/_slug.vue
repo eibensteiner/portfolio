@@ -46,37 +46,36 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.project-image {
-  border-radius: 8px;
-  height: 200px;
-  width: 100%;
-  overflow: hidden;
-  @include flex(center, center, row);
-}
-
 ::v-deep .nuxt-content {
   &-container {
     width: 100%;
   }
 
   & > * {
-    &:not(img) {
+    &:not(figure) {
       margin-left: 32px;
       margin-right: 32px;
     }
   }
 
-  & > img {
+  & > figure {
     margin-bottom: 2rem;
   }
 
   & > h1,
-  & > h2,
+  & > h2 {
+    margin-top: 4rem;
+
+    a {
+      display: none;
+    }
+  }
+
   & > h3,
   & > h4,
   & > h5,
   & > h6 {
-    margin: 4rem 0 0 0;
+    margin-top: 2.5rem;
 
     a {
       display: none;

@@ -40,6 +40,10 @@ h4 {
   font-size: var(--scale-7);
   font-weight: map_get($font-weight, semi-bold);
   line-height: map_get($line-height, md);
+
+  & + p {
+    margin-top: 0.75rem;
+  }
 }
 
 h5 {
@@ -80,7 +84,18 @@ a {
   }
 }
 
-p, span {
+p,
+li {
+  a {
+    color: rgba(var(--black), 1);
+    text-decoration: underline;
+    text-underline-offset: 1px;
+    text-decoration-color: rgba(var(--grey-300), 1);
+  }
+}
+
+p,
+span {
   color: rgba(var(--grey-700), 1);
 }
 
@@ -88,13 +103,6 @@ p {
   letter-spacing: -0.33px;
   font-size: var(--scale-6);
   margin: 0;
-
-  a {
-    color: rgba(var(--black), 1);
-    text-decoration: underline;
-    text-underline-offset: 1px;
-    text-decoration-color: rgba(var(--grey-300), 1);
-  }
 
   code {
     margin: 0 4px;
@@ -105,21 +113,12 @@ p {
     @include padding(0 8px);
   }
 
-  & + h1,
-  & + h2,
-  & + h3,
-  & + h4,
-  & + h5,
-  & + h6 {
-    margin-top: 3rem !important;
-  }
-
   & + p {
-    margin: 2rem 0 0 0 !important;
+    margin-top: 2rem !important;
   }
 
   & + a {
-    margin: 1.5rem 0 0 0 !important;
+    margin-top: 1.5rem !important;
 
     & ~ a {
       margin-top: 4px;

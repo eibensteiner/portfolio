@@ -72,7 +72,8 @@ export default {
 
   & > * {
     &:not(img) {
-      @include padding(0 32px);
+      margin-left: 32px;
+      margin-right: 32px;
     }
   }
 

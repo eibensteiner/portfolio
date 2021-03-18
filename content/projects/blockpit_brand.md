@@ -17,12 +17,14 @@ Blockpit is a Startup from Linz, Austria focussing on compliance for digital ass
 <callout :title="'Currently brewing ...'" :text="'This page is a placeholder by now. A detailed case study is already in progress and should be released soon.'"></callout>
 
 ## The team & my role
-I am working at Blockpit since June 2018 having the chance to shape the future of the company as one of their very first employees there. From the beginning I have been responsible for the Brand & Product Design. Additionally I have been supporting our Developers with the Frontend as "CSS Guru & Mentor".
+I am working at [Blockpit](https://blockpit.io) since June 2018 having the chance to shape the future of the company as one of their very first employees there. From the beginning I have been responsible for the Brand & Product Design. Additionally I have been supporting our Developers with the Frontend as "CSS Guru & Mentor".
 
 The HQ of Blockpit is located in the Tabakfabrik Linz, but there are also employees working remotely from Graz, Vienna, Munich and Kiev. As part of the core team I am working from the office in Linz.
 
 ## My usual design process
 The design process needs to be compatible with the company structure and development speed, everyone would agree to that. One can't implement a highly structured design process and strategy when you should be mainly focussing on shipping features and products.
+
+<blog-image :src="'process.svg'" :caption="'The basic process I used for the ost of our bigger projects'"></blog-image>
 
 With that in mind, the design process at Blockpit needs to be as slick and agile as possible. We are mostly following the trial and error principle combined with the benefits of the core-human-centered-design process.
 
@@ -44,8 +46,8 @@ With that in mind, i designed and built a completely reconsidered Blog in 2020, 
 ### Design System
 Usually a Design System consists of two different parts: **The Styleguide** and the **Component Library**. We are mainly using a mixture of Notion and Figma for all our assets & documentation.
 
-- **Figma**: I promise, everyone that uses Figma, falls immediately in love with it. We too. I use it for the actual designing, for simple prototyping tasks as well as to collect feedback.
-- **Notion**: We use Notion mainly as a documentation tool for our Branding Guidelines. This includes the correct usage of Colors, Logos, Imagery, Iconography and Typography.
+- [Figma](https://figma.com): I promise, everyone that uses Figma, falls immediately in love with it. We too. I use it for the actual designing, for simple prototyping tasks as well as to collect feedback.
+- [Notion](https://notion.so): We use Notion mainly as a documentation tool for our Branding Guidelines. This includes the correct usage of Colors, Logos, Imagery, Iconography and Typography.
 
 ### Rebranding
 When Merging the companies CryptoTax and Blockpit in 2020 we decided to create a new identity. It should transport a simplistic, serious but also modern and agile vibe.
