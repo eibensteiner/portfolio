@@ -5,12 +5,7 @@
       :subtitle="{ date: project.createdAt, url: project.url }"
     />
     <div class="container-outer">
-      <div
-        class="project-image"
-        :style="{ backgroundColor: '#' + project.color }"
-      >
-        <img :src="require(`~/assets/img/${project.img}`)" />
-      </div>
+      <hr />
       <project-summary
         v-if="project.summary"
         :problem="project.summary.problem"
@@ -25,7 +20,7 @@
 
 <script>
 export default {
-    head() {
+  head() {
     return {
       title: this.project.title,
       meta: [
@@ -60,20 +55,19 @@ export default {
 }
 
 ::v-deep .nuxt-content {
-  margin: 48px 0;
-
   &-container {
     width: 100%;
   }
 
   & > * {
     &:not(img) {
-      @include padding(0 32px);
+      margin-left: 32px;
+      margin-right: 32px;
     }
+  }
 
-    &:first-child {
-      margin-top: 0;
-    }
+  & > img {
+    margin-bottom: 2rem;
   }
 
   & > h1,
@@ -83,6 +77,10 @@ export default {
   & > h5,
   & > h6 {
     margin: 4rem 0 0 0;
+
+    a {
+      display: none;
+    }
   }
 
   & > p,
