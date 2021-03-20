@@ -4,7 +4,7 @@ subtitle: ff970580 7faa09dec 3a73cdf d210 949b 0edf1525324 77723dc ce925e826 c86
 img: blockpit.svg
 alt: Article 2
 color: 1B1F23
-url: https://blockpit.io
+url: blockpit.io
 tags: 
   - nuxtjs
   - web development
@@ -36,6 +36,8 @@ In 2020 Blockpit joined forces with the former concurrent CryptoTax, who made a 
 
 ### Landing page
 The last major redesign of our landing page was in 2020, just before the redesign of our blog. The goal was to align our appearance visually with our product. And of course: improving the conversion and interaction drastically.
+
+<blog-image :src="'landingpage.png'" :caption="'The basic process I used for the ost of our bigger projects'"></blog-image>
 
 ### Blog
 Blogs should usually reflect the company-wide knowledge and should serve as the heart of the company's content-marketing. In my opinion blogs should also be designed to support the user at discovering new content.

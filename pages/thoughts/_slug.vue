@@ -55,37 +55,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.project-image {
-  border-radius: 8px;
-  height: 200px;
-  width: 100%;
-  overflow: hidden;
-  @include flex(center, center, row);
-}
-
-::v-deep .nuxt-content {
-  &-container {
-    width: 100%;
-  }
-
-  & > * {
-    &:not(img) {
-      margin-left: 32px;
-      margin-right: 32px;
-    }
-  }
-
-  & > h1,
-  & > h2,
-  & > h3,
-  & > h4,
-  & > h5,
-  & > h6 {
-    a {
-      display: none;
-    }
-  }
-}
-</style>
