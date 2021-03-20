@@ -10,14 +10,14 @@ tags:
   - web development
 ---
 
-<blog-image :src="'blockpit-cover.svg'"></blog-image>
-
 Blockpit is a Startup from Linz, Austria focussing on compliance for digital assets by offering a tool for portfolio monitoring and tax calculation.
 
 <callout :title="'Currently brewing ...'" :text="'This page is a placeholder by now. A detailed case study is already in progress and should be released soon.'"></callout>
 
 ## The team & my role
 I am working at [Blockpit](https://blockpit.io) since June 2018 having the chance to shape the future of the company as one of their very first employees there. From the beginning I have been responsible for the Brand & Product Design. Additionally I have been supporting our Developers with the Frontend as "CSS Guru & Mentor".
+
+<blog-image :src="'tabakfabrik.jpg'" :caption="'The basic process I used for the ost of our bigger projects'"></blog-image>
 
 The HQ of Blockpit is located in the Tabakfabrik Linz, but there are also employees working remotely from Graz, Vienna, Munich and Kiev. As part of the core team I am working from the office in Linz.
 
@@ -27,7 +27,6 @@ The design process needs to be compatible with the company structure and develop
 <blog-image :src="'process.svg'" :caption="'The basic process I used for the ost of our bigger projects'"></blog-image>
 
 With that in mind, the design process at Blockpit needs to be as slick and agile as possible. We are mostly following the trial and error principle combined with the benefits of the core-human-centered-design process.
-
 
 ## Projects
 As you can imagine, within the last 3 years I found myself in many different projects. Some needed more attention, some less. The largest part of my time though went in our main product: Cryptotax.
@@ -51,3 +50,5 @@ Usually a Design System consists of two different parts: **The Styleguide** and 
 
 ### Rebranding
 When Merging the companies CryptoTax and Blockpit in 2020 we decided to create a new identity. It should transport a simplistic, serious but also modern and agile vibe.
+
+<blog-image :src="'rebranding.svg'" :caption="'The basic process I used for the ost of our bigger projects'"></blog-image>
