@@ -37,7 +37,7 @@ In 2020 Blockpit joined forces with the former concurrent CryptoTax, who made a 
 ### Landing page
 The last major redesign of our landing page was in 2020, just before the redesign of our blog. The goal was to align our appearance visually with our product. And of course: improving the conversion and interaction drastically.
 
-<blog-image :src="'projects/blockpit/landingpage.png'" :caption="'The basic process I used for the ost of our bigger projects'"></blog-image>
+<blog-image :src="'projects/blockpit/landingpage.jpg'" :caption="'The basic process I used for the ost of our bigger projects'"></blog-image>
 
 ### Blog
 Blogs should usually reflect the company-wide knowledge and should serve as the heart of the company's content-marketing. In my opinion blogs should also be designed to support the user at discovering new content.
