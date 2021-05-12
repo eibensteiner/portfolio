@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <h1 class="title">{{ title }}</h1>
+    <h1 class="text-2xl font-semibold mb-8 leading-10">{{ title }}</h1>
     <div
       class="header-meta"
       v-if="$route.name != 'index' && $route.name != 'about'"
@@ -59,35 +59,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.header {
-  width: 100%;
-  margin-top: 136px;
-  @include padding(0 32px);
-  @include viewport(sm) {
-    margin-top: 32px;
-  }
-
-  &-meta {
-    margin-top: 8px;
-    @include flex(flex-start, flex-end, row);
-
-    & > * {
-      white-space: nowrap;
-
-      &:not(:last-child) {
-        margin-right: 16px;
-        padding-right: 16px;
-        border-right: 1px solid rgba(var(--grey-200), 1);
-      }
-    }
-
-    & > a {
-      .icon {
-        margin: 0 12px 0 0 !important;
-      }
-    }
-  }
-}
-</style>

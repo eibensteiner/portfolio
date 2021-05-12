@@ -33,22 +33,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.project-summary {
-  margin-top: 32px;
-
-  &-element {
-    width: 33.33%;
-    @include padding(32px 32px 24px 32px);
-
-    &:not(:last-child) {
-      border-right: 1px solid rgba(var(--grey-200), 1);
-    }
-
-    .icon {
-      margin-bottom: 8px;
-    }
-  }
-}
-</style>

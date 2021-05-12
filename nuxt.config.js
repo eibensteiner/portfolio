@@ -29,18 +29,13 @@ export default {
       {
         hid: "canonical",
         rel: "canonical",
-        href: 'https://dowu.xyz',
+        href: "https://dowu.xyz",
       },
     ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-    "@/assets/scss/fonts.scss",
-    "@/assets/scss/typo.scss",
-    "@/assets/scss/main.scss",
-    "@/assets/scss/utilities.scss",
-  ],
+  css: [],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [],
@@ -51,6 +46,7 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/typescript
+    "@nuxtjs/tailwindcss",
     "@nuxt/typescript-build",
   ],
 
@@ -62,8 +58,8 @@ export default {
     "@nuxtjs/style-resources",
   ],
 
-  styleResources: {
-    scss: ["./assets/scss/variables.scss", "./assets/scss/mixins.scss"],
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css'
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
@@ -72,7 +68,7 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
   sitemap: {
-    hostname: 'https://dowu.xyz',
+    hostname: "https://dowu.xyz",
     routes() {
       return getRoutes();
     },

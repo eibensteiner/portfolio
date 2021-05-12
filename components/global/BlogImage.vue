@@ -23,10 +23,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.image {
-  width: 100%;
-  border-radius: 4px;
-}
-</style>

@@ -5,9 +5,7 @@
       :subtitle="{ date: project.createdAt, url: project.url }"
     />
     <div class="container-outer">
-      <hr />
       <nuxt-content :document="project" />
-      <hr/>
     </div>
   </main>
 </template>

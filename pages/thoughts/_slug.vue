@@ -2,9 +2,7 @@
   <main class="main">
     <Header :title="thought.title" :subtitle="{ date: thought.createdAt }" />
     <div class="container-outer">
-      <hr />
       <nuxt-content :document="thought" />
-      <hr />
     </div>
   </main>
 </template>

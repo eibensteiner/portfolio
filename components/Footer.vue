@@ -36,14 +36,3 @@
     </p>
   </footer>
 </template>
-
-<style lang="scss" scoped>
-.footer {
-  margin: 0 0 136px 0;
-  @include padding(0 32px);
-  @include flex(center, flex-start, column);
-  @include viewport(sm) {
-    margin-bottom: 32px;
-  }
-}
-</style>

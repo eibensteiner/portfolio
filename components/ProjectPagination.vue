@@ -23,26 +23,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.project-pagination {
-  &-element {
-    transition: background-color 0.2s;
-    width: 100%;
-    @include padding(24px 32px);
-
-    &:not(:last-child) {
-      border-right: 1px solid rgba(var(--grey-200), 1);
-    }
-
-    &:hover {
-      background-color: rgba(var(--grey-000), 1);
-    }
-
-    p {
-      font-weight: 500;
-      @include flex(space-between, center, row);
-    }
-  }
-}
-</style>

@@ -6,7 +6,6 @@ thumbnail: kompass-thumbnail.svg
 url: kompass.com
 alt: Article 2
 color: C8D4EE
-locked: true
 tags: 
   - nuxtjs
   - web development
