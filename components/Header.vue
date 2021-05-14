@@ -1,8 +1,7 @@
 <template>
-  <header class="header">
+  <header>
     <h1 class="text-2xl font-semibold mb-8 leading-10">{{ title }}</h1>
     <div
-      class="header-meta"
       v-if="$route.name != 'index' && $route.name != 'about'"
     >
       <nuxt-link to="/">
