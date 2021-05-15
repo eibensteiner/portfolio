@@ -10,8 +10,8 @@ module.exports = {
     },
     extend: {
       minWidth: {
-        '24': '6rem'
-      }
+        "24": "6rem",
+      },
     },
   },
   variants: {

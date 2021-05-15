@@ -1,8 +1,7 @@
 ---
-title: dhGuB+9Grz
-subtitle: ff970580 7faa09dec 3a73cdf d210 949b 0edf1525324 77723dc ce925e826 c86ac
+title: Kompass
+subtitle: Kompass is a UI component for Vue to improve both Accessibility as well as Efficiency for Power Users. I realized the project together with Frederic Köberl in Early 2021.
 img: projects/kompass/kompass.svg
-thumbnail: kompass-thumbnail.svg
 url: kompass.com
 alt: Article 2
 color: C8D4EE
@@ -15,9 +14,12 @@ summary:
   role: How can we collect feedback that is specific, measurable, and actionable?
 ---
 
-**Kompass is a UI component for Vue to improve both Accessibility as well as Efficiency for Power Users. I realized the project together with Frederic Köberl in Early 2021.**
+## Kompass - A new way of navigating the web
 
-## Internet vs Accessibility
+Kompass is a UI component for Vue to improve both Accessibility as well as Efficiency for Power Users. I realized the project together with Frederic Köberl in Early 2021.
+
+
+### Internet vs Accessibility
 
 Have you ever wondered why we are mainly using the Mouse as an input method while browsing through the web? Yes? 
 
@@ -28,7 +30,7 @@ Studies are showing a quite similar picture. The Nucleus Research Institure, for
 And this despite the fact that there are more than 7 million people with visual disabilities in the USA alone, according to the National Federation of the Blind.
 
 
-## A Usability Framework
+### A Usability Framework
 
 With Kompass we wanted to tackle this problem by providing a Usability Framework to improve the whole UX of a Product or Website by applying Ben Shneiderman’s "Eight Golden Rules of Interface Design“.
 
@@ -45,6 +47,6 @@ You want to execute simple scripts like copying a email address? Open Kompass.
 You want to navigate through the pages of a website? Open Kompass.
 
 
-## The Team
+### The Team
 
 The team consisted of me and Frederic Köberl. While I was mainly responsible for the conceptual part and the prototyping as well as the actual designing, Frederic helped me out, to turn the idea in a solid working component.

@@ -59,7 +59,7 @@ export default {
   ],
 
   tailwindcss: {
-    cssPath: '~/assets/css/tailwind.css'
+    cssPath: "~/assets/css/tailwind.css",
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)

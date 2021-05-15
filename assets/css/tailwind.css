@@ -3,7 +3,27 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        @apply antialiased;
-    }
+  body {
+    @apply antialiased;
+  }
+
+  p {
+    @apply leading-8 text-gray-700;
+  }
+
+  p + p {
+    @apply mt-5;
+  }
+
+  hr {
+    @apply my-16 border-gray-100;
+  }
+
+  h2 {
+    @apply font-semibold text-gray-900 text-xl leading-10 mb-4;
+  }
+
+  h3 {
+    @apply font-semibold text-gray-900 text-lg leading-8 mb-4 mt-12;
+  }
 }

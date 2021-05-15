@@ -9,57 +9,77 @@
     <div>
       <div>
         <p class="leading-8 text-gray-700">
+          Originally I grew up in a small town near Linz, Upper Austria
+        </p>
+        <p class="leading-8 text-gray-700 mt-5">
+          In 2015 I started my studies in Hagenberg at the
+          <a
+            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
+          >
+            University of Applied Sciences Upper Austria
+          </a>
+          and graduated with a BA.
+        </p>
+        <p class="leading-8 text-gray-700 mt-5">
           Since 2018 I'm working as a Product & Brand Designer at
           <a
-            href="https://blockpit.io"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="font-medium text-gray-900 hover:text-gray-600 transition"
-            >Blockpit</a
+            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
+          >
+            Blockpit</a
           >, supporting thousands of Users with their crypto taxes. As one of
           the very first employees I had the chance to shape the overall design
           strategy of the startup.
         </p>
       </div>
-      <hr class="my-16 border-gray-100"/>
+
+      <hr class="my-16 border-gray-100" />
+
       <div>
-        <h2 class="font-semibold text-gray-900 text-lg leading-8 mb-3">Selected Work</h2>
-        <p class="leading-8 text-gray-700 mb-12">
-          You can find some of my recent work below. I'm currently working
-          intensively to transform projects i worked on into case studies.
-        </p>
-        <nuxt-link
-          :to="{ name: 'projects-slug', params: { slug: project.slug } }"
-          :class="'flex items-center mt-5'"
-          v-for="project of projects"
-          :key="project.slug"
-        >
-          <div class="w-24 min-w-24 h-24 rounded-md border border-gray-200 bg-gray-50 flex justify-center items-center mr-8">
-            <img :src="require(`~/assets/img/${project.img}`)" />
-          </div>
-          <div class="w-auto">
-            <h3 class="leading-8 mb-1 text-gray-900 font-semibold">
-              {{ project.title }}
-            </h3>
-            <p class="leading-8 text-gray-700">
-              {{ project.subtitle }}
-            </p>
-          </div>
-        </nuxt-link>
-      </div>
-      <hr class="my-16 border-gray-100"/>
-      <div>
-        <h2 class="font-semibold text-gray-900 text-lg leading-8 mb-3">My Thoughts</h2>
+        <h2 class="font-semibold text-gray-900 text-xl leading-10 mb-3">
+          Connect with me
+        </h2>
         <p class="leading-8 text-gray-700">
-          Besides my work I'll try to write down my thoughts. I've just started
-          but I'll do my very best to keep things updated.
+          Please send me a mail to
+          <a
+            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
+          >
+            me@dowu.xyz</a
+          >
+          if you want to get in touch.
         </p>
-        <nuxt-link
-          :to="{ name: 'thoughts-slug', params: { slug: thought.slug } }"
-          :class="[thought.locked ? 'locked' : '']"
-          v-for="thought of thoughts"
-          :key="thought.slug"
-          >{{ thought.title }}
+        <p class="leading-8 text-gray-700 mt-5">
+          I'm usually not taking on freelance projects. But if you think you got
+          a cool idea and you need my help, feel free to contact me.
+        </p>
+        <p class="leading-8 text-gray-700 mt-5">
+          If you want to follow my journey, you can follow me on
+          <a
+            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
+          >
+            Twitter</a
+          >,
+          <a
+            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
+          >
+            LinkedIn</a
+          >,
+          <a
+            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
+          >
+            GitHub</a
+          >
+          and
+          <a class="font-medium text-gray-900 hover:text-gray-600 transition">
+            Dribbble</a
+          >.
+        </p>
+      </div>
+
+      <hr class="my-16 border-gray-100" />
+
+      <div v-for="project of projects"
+          :key="project.slug">
+          <nuxt-content :document="project" />
         </nuxt-link>
       </div>
     </div>
@@ -74,13 +94,8 @@ export default {
       .sortBy("createdAt", "desc")
       .fetch();
 
-    const thoughts = await $content("thoughts", params.slug)
-      .sortBy("createdAt", "desc")
-      .fetch();
-
     return {
       projects,
-      thoughts,
     };
   },
 };
