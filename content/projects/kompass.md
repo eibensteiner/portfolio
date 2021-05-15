@@ -18,6 +18,8 @@ summary:
 
 Kompass is a UI component for Vue to improve both Accessibility as well as Efficiency for Power Users. I realized the project together with Frederic Köberl in Early 2021.
 
+<blog-image :src="'projects/kompass/kompass-overlay.jpg'" :caption="'This is a short caption of the shown image'" :zoomable="true"></blog-image>
+
 
 ### Internet vs Accessibility
 
@@ -28,6 +30,8 @@ Well it seems that Developers are building their products mainly for people who 
 Studies are showing a quite similar picture. The Nucleus Research Institure, for example, found out that about [70% of all websites lack in terms of accessibility](https://accessibility.deque.com/nucleus-accessibility-research-2019). Even only 1% of the internet fits most widely used accessibility standards.
 
 And this despite the fact that there are more than 7 million people with visual disabilities in the USA alone, according to the National Federation of the Blind.
+
+<blog-image :src="'projects/blockpit/figma-notion.svg'" :caption="'This is a short caption of the shown image'" :zoomable="true"></blog-image>
 
 
 ### A Usability Framework

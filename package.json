@@ -16,6 +16,7 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "core-js": "^3.6.5",
+    "medium-zoom": "^1.0.6",
     "nuxt": "^2.15.5"
   },
   "devDependencies": {

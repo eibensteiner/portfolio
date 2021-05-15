@@ -26,4 +26,20 @@
   h3 {
     @apply font-semibold text-gray-900 text-lg leading-8 mb-4 mt-12;
   }
+
+  p + figure {
+    @apply mt-12;
+  }
+
+  figure + * {
+    @apply mt-16;
+  }
+
+  figure > img {
+    @apply border-gray-100 bg-gray-50;
+  }
+
+  figure > figcaption {
+      @apply mt-5 text-sm leading-6 text-gray-500;
+  }
 }

@@ -1,7 +1,12 @@
 <template>
   <figure>
-    <img :src="imageSrc()" :alt="alt" :class="'image'" />
-    <figcaption v-if="caption">{{caption}}</figcaption>
+    <img
+      :srcset="imageSrc()"
+      :alt="alt"
+      :class="'image'"
+      :data-zoomable="this.zoomable"
+    />
+    <figcaption v-if="caption">{{ caption }}</figcaption>
   </figure>
 </template>
 
@@ -11,6 +16,7 @@ export default {
     src: String,
     alt: String,
     caption: String,
+    zoomable: Boolean,
   },
   methods: {
     imageSrc() {
