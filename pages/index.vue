@@ -9,69 +9,45 @@
     <div>
       <div>
         <p class="leading-8 text-gray-700">
-          Originally I grew up in a small town near Linz, Upper Austria
+          Currently I’m working as a Product & Brand Designer at <a
+            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
+          >
+            Blockpit
+          </a>, supporting thousands of Users with their crypto taxes. As one of the very first employees I had the chance to shape the overall design strategy.
         </p>
         <p class="leading-8 text-gray-700 mt-5">
-          In 2015 I started my studies in Hagenberg at the
-          <a
+          Previously I worked as a UX Engineer at <a
+            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
+          >
+            Storyclash
+          </a> and graduated from the <a
             class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
           >
             University of Applied Sciences Upper Austria
+          </a>.
+        </p>
+        <p class="leading-8 text-gray-700 mt-5">
+          If you want to follow my journey elsewhere, you can do so on <a
+            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
+          >
+            Twitter
+          </a>, <a
+            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
+          >
+            LinkedIn
+          </a>, <a
+            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
+          >
+            GitHub
+          </a> or <a
+            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
+          >
+            Dribbble
+          </a>. You can also reach out to me by sending a message to <a
+            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
+          >
+            me@dowu.xyz
           </a>
-          and graduated with a BA.
-        </p>
-        <p class="leading-8 text-gray-700 mt-5">
-          Since 2018 I'm working as a Product & Brand Designer at
-          <a
-            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
-          >
-            Blockpit</a
-          >, supporting thousands of Users with their crypto taxes. As one of
-          the very first employees I had the chance to shape the overall design
-          strategy of the startup.
-        </p>
-      </div>
-
-      <hr class="my-16 border-gray-100" />
-
-      <div>
-        <h2 class="font-semibold text-gray-900 text-xl leading-10 mb-3">
-          Connect with me
-        </h2>
-        <p class="leading-8 text-gray-700">
-          Please send me a mail to
-          <a
-            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
-          >
-            me@dowu.xyz</a
-          >
-          if you want to get in touch.
-        </p>
-        <p class="leading-8 text-gray-700 mt-5">
-          I'm usually not taking on freelance projects. But if you think you got
-          a cool idea and you need my help, feel free to contact me.
-        </p>
-        <p class="leading-8 text-gray-700 mt-5">
-          If you want to follow my journey, you can follow me on
-          <a
-            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
-          >
-            Twitter</a
-          >,
-          <a
-            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
-          >
-            LinkedIn</a
-          >,
-          <a
-            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
-          >
-            GitHub</a
-          >
-          and
-          <a class="font-medium text-gray-900 hover:text-gray-600 transition">
-            Dribbble</a
-          >.
         </p>
       </div>
 
@@ -79,6 +55,10 @@
 
       <div v-for="project of projects"
           :key="project.slug">
+          <h2>{{ project.title }}
+
+            <badge v-if="!project.completed" :text="'WIP'"/>
+          </h2>
           <nuxt-content :document="project" />
         </nuxt-link>
       </div>
