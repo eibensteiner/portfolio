@@ -32,6 +32,6 @@ export default {
 
 <style lang="scss" scoped>
   .image {
-    @apply border;
+    @apply border rounded;
   }
 </style>

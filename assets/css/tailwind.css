@@ -28,11 +28,11 @@
   }
 
   p + figure {
-    @apply mt-12;
+    @apply mt-10;
   }
 
   figure + * {
-    @apply mt-16;
+    @apply mt-14;
   }
 
   figure > img {
