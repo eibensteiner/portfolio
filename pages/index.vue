@@ -1,64 +1,29 @@
 <template>
   <main>
-    <Header
-      :title="'I\'m Dominik, a coding Designer from Austria, striving for visual clarity and simplicity.'"
-    >
-    </Header>
+    <h1>I'm Dominik, a coding Designer from Austria, striving for visual clarity and simplicity.</h1>
     <div>
       <div>
-        <p class="leading-8 text-gray-700">
-          Currently I’m working as a Product & Brand Designer at
-          <a
-            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
-          >
-            Blockpit </a
-          >, supporting thousands of Users with their crypto taxes. Previously I worked as a UX Engineer at
-          <a
-            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
-          >
-            Storyclash
-          </a>.
+        <p>
+          Currently I’m working as a <strong>Product & Brand Designer</strong> at
+          <a> Blockpit </a>, supporting thousands of Users with their crypto
+          taxes. Previously I worked as a <strong>UX Engineer</strong> at <a> Storyclash </a>.
         </p>
-        <p class="leading-8 text-gray-700 mt-5">
+        <p>
           If you want to follow my journey elsewhere, you can do so on
-          <a
-            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
-          >
-            Twitter </a
-          >,
-          <a
-            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
-          >
-            LinkedIn </a
-          >,
-          <a
-            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
-          >
-            GitHub
-          </a>
+          <a> Twitter </a>, <a> LinkedIn </a>,
+          <a> GitHub </a>
           or
-          <a
-            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
-          >
-            Dribbble </a
-          >. You can also reach out to me by sending a message to
-          <a
-            class="font-medium text-gray-900 hover:text-gray-600 transition cursor-pointer"
-          >
-            me@dowu.xyz
-          </a>
+          <a> Dribbble </a>. You can also reach out to me by <strong>sending a message</strong>
+          to
+          <a> me@dowu.xyz </a>
         </p>
       </div>
 
-      <hr class="my-16 border-gray-100" />
-
       <div v-for="article of articles" :key="article.slug">
-        <nuxt-link
-          :to="{ name: 'blog-slug', params: { slug: article.slug } }"
-        >
-          <h2 class="hover:text-gray-600 transition cursor-pointer">
+        <nuxt-link :to="{ name: 'slug', params: { slug: article.slug } }">
+          <h2>
             {{ article.title }}
-            <badge v-if="!article.completed" :text="'WIP'" />
+            <code v-if="!article.completed" class="ml-2">WIP</code>
           </h2>
         </nuxt-link>
         <nuxt-content :document="article" />
@@ -71,7 +36,7 @@
 export default {
   // gets markdown files from /content
   async asyncData({ $content, params }) {
-    const articles = await $content("blog", params.slug)
+    const articles = await $content(params.slug)
       .sortBy("createdAt", "desc")
       .fetch();
 

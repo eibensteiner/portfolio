@@ -1,32 +1,21 @@
 <template>
   <div>
-    <h2 class="relative">
+    <h1 class="relative inline-flex items-center">
       <nuxt-link
         :to="'/'"
         :class="'rounded-full bg-gray-50 border-gray-200 border h-7 w-7 flex items-center justify-center absolute -left-14 hover:bg-gray-100 transition cursor-pointer'"
       >
-      <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-4 w-4 text-gray-700"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
-            clip-rule="evenodd"
-          />
-        </svg>
+        <icon-arrow-left />
       </nuxt-link>
       {{ article.title }}
-      <badge v-if="!article.completed" :text="'WIP'" />
-    </h2>
+      <code v-if="!article.completed" class="ml-3">WIP</code>
+    </h1>
     <nuxt-content :document="article" />
   </div>
 </template>
 
 <script>
-import getMeta from "../../utils/getMeta";
+import getMeta from "../utils/getMeta";
 export default {
   computed: {
     meta() {
@@ -64,8 +53,14 @@ export default {
     };
   },
   async asyncData({ $content, params }) {
-    const article = await $content("blog", params.slug).fetch();
+    const article = await $content(params.slug).fetch();
     return { article };
   },
 };
 </script>
+
+<style scoped>
+::v-deep .nuxt-content h3 {
+  @apply text-lg text-gray-900 font-semibold w-full mb-3 mt-14;
+}
+</style>

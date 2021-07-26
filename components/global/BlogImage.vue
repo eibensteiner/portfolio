@@ -1,10 +1,9 @@
 <template>
-  <figure>
+  <figure class="my-10">
     <img
-      :srcset="imageSrc()"
+      :src="imageSrc()"
       :alt="alt"
       :class="'image'"
-      :data-zoomable="this.zoomable"
     />
     <figcaption v-if="caption">{{ caption }}</figcaption>
   </figure>
@@ -16,7 +15,6 @@ export default {
     src: String,
     alt: String,
     caption: String,
-    zoomable: Boolean,
   },
   methods: {
     imageSrc() {
@@ -30,8 +28,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-  .image {
+<style scoped>
+.image {
     @apply border rounded;
   }
 </style>
