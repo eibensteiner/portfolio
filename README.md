@@ -1,4 +1,4 @@
-# portfolio
+# Portfolio
 My portfolio is currently under development, but it's built with the following stack:
 * [Vue.js](https://vuejs.org) – I love the simplicity and extensibility of Vue.js.
 * [Nuxt.js](https://nuxtjs.org) – Nuxt.js is a Framework built on top of Vue.js.
@@ -7,12 +7,11 @@ My portfolio is currently under development, but it's built with the following s
 ## Local development
 To try it live install all dependencies first with
 ```sh
-npm install
+$ yarn install
 ```
 Afterwards you can run it locally with
-
 ```sh
-npm run dev
+$ yarn dev
 ```
 
 ## Feedback, Typos and more
