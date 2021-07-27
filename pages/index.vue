@@ -5,14 +5,14 @@
       <div>
         <p>
           Currently I’m working as a <strong>Product & Brand Designer</strong> at
-          <a> Blockpit </a>, supporting thousands of Users with their crypto
-          taxes. Previously I worked as a <strong>UX Engineer</strong> at <a> Storyclash </a>.
+          <a href="https://blockpit.io" target="_blank"> Blockpit </a>, supporting thousands of Users with their crypto
+          taxes. Previously I worked as a <strong>UX Engineer</strong> at <a href="https://storyclash.com" target="_blank"> Storyclash </a>.
         </p>
         <p>
           If you want to follow my journey, you can do so on
-          <a> Twitter </a>, <a> LinkedIn </a> or
-          <a> GitHub </a>. You can also send me a message to
-          <a> me@dowu.xyz </a>.
+          <a href="https://twitter.com/wurmdo" target="_blank"> Twitter </a>, <a href="www.linkedin.com/in/dowu" target="_blank"> LinkedIn </a> or
+          <a href="https://github.com/dowu" target="_blank"> GitHub </a>. You can also send me a message to
+          <a href="mailto:me@dowu.xyz" target="_blank"> me@dowu.xyz </a>.
         </p>
       </div>
 
