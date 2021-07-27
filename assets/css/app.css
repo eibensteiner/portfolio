@@ -18,7 +18,7 @@ blockquote {
   @apply leading-7 text-gray-500 font-normal mb-5 border-l-4 pl-4;
 }
 
-a {
+p a {
   box-shadow: rgb(17, 25, 36, 0.2) 0px 1px 0px;
   @apply text-gray-800 font-medium transition-colors hover:text-black cursor-pointer;
 }
