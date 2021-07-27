@@ -9,13 +9,10 @@
           taxes. Previously I worked as a <strong>UX Engineer</strong> at <a> Storyclash </a>.
         </p>
         <p>
-          If you want to follow my journey elsewhere, you can do so on
-          <a> Twitter </a>, <a> LinkedIn </a>,
-          <a> GitHub </a>
-          or
-          <a> Dribbble </a>. You can also reach out to me by <strong>sending a message</strong>
-          to
-          <a> me@dowu.xyz </a>
+          If you want to follow my journey, you can do so on
+          <a> Twitter </a>, <a> LinkedIn </a> or
+          <a> GitHub </a>. You can also send me a message to
+          <a> me@dowu.xyz </a>.
         </p>
       </div>
 

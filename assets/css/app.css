@@ -7,7 +7,7 @@ h2 {
 }
 
 h3 {
-    @apply text-base text-gray-900 font-semibold w-full mb-2 mt-12;
+  @apply text-base text-gray-900 font-semibold w-full mb-2 mt-12;
 }
 
 p {
@@ -19,7 +19,8 @@ blockquote {
 }
 
 a {
-  @apply text-blue-600;
+  box-shadow: rgb(17, 25, 36, 0.2) 0px 1px 0px;
+  @apply text-gray-800 font-medium transition-colors hover:text-black cursor-pointer;
 }
 
 pre {
@@ -30,10 +31,12 @@ p strong {
   @apply text-gray-800 font-medium;
 }
 
-p code, h2 code, h1 code {
+p code,
+h2 code,
+h1 code {
   @apply bg-gray-100 text-sm h-6 rounded px-1 inline-flex items-center font-normal;
 }
 
 .icon.variant-first {
-    @apply text-gray-700;
+  @apply text-gray-700;
 }
