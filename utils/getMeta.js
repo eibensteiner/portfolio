@@ -1,5 +1,5 @@
 const type = "website";
-const url = "https://dowu.xyz";
+const url = "https://dominik.is";
 const title = "Dominik Wurm";
 const description =
   "I'm Dominik, a coding Designer from Austria, striving for visual clarity, simplicity and minimalism.";

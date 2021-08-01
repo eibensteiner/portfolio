@@ -11,8 +11,7 @@
         <p>
           If you want to follow my journey, you can do so on
           <a href="https://twitter.com/wurmdo" target="_blank"> Twitter </a>, <a href="www.linkedin.com/in/dowu" target="_blank"> LinkedIn </a> or
-          <a href="https://github.com/dowu" target="_blank"> GitHub </a>. You can also send me a message to
-          <a href="mailto:me@dowu.xyz" target="_blank"> me@dowu.xyz </a>.
+          <a href="https://github.com/dowu" target="_blank"> GitHub </a>
         </p>
       </div>
 

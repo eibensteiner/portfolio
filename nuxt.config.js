@@ -8,7 +8,7 @@ export default {
   loading: false,
   head: {
     htmlAttrs: {
-      lang: "en"
+      lang: "en",
     },
     title: "Dominik Wurm",
     meta: [
@@ -20,16 +20,16 @@ export default {
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { name: "twitter:site", content: "@wurmdo" },
-      { name: "twitter:card", content: "summary_large_image" }
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     link: [
-      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "icon", type: "image/png", href: "/favicons/favicon.png" },
       {
         hid: "canonical",
         rel: "canonical",
-        href: "https://dowu.xyz"
-      }
-    ]
+        href: "https://dominik.is",
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -44,14 +44,14 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
-    "@nuxtjs/tailwindcss"
+    "@nuxtjs/tailwindcss",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/content
     "@nuxt/content",
-    "@nuxtjs/sitemap"
+    "@nuxtjs/sitemap",
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
@@ -62,9 +62,9 @@ export default {
 
   // Sitemap
   sitemap: {
-    hostname: "https://dowu.xyz",
+    hostname: "https://dominik.is",
     routes() {
       return getRoutes();
-    }
-  }
+    },
+  },
 };
