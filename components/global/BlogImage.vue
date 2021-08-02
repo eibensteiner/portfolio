@@ -1,11 +1,7 @@
 <template>
   <figure class="my-10">
-    <img
-      :src="imageSrc()"
-      :alt="alt"
-      :class="'image'"
-    />
-    <figcaption v-if="caption">{{ caption }}</figcaption>
+    <img :src="imageSrc()" :alt="alt" class="image" :class="hasBorder ? 'border' : ''" />
+    <figcaption v-if="caption" class="caption">{{ caption }}</figcaption>
   </figure>
 </template>
 
@@ -15,6 +11,7 @@ export default {
     src: String,
     alt: String,
     caption: String,
+    hasBorder: String,
   },
   methods: {
     imageSrc() {
@@ -30,6 +27,10 @@ export default {
 
 <style scoped>
 .image {
-    @apply border rounded;
-  }
+  @apply rounded;
+}
+
+.caption {
+  @apply mt-6 text-sm text-gray-500;
+}
 </style>

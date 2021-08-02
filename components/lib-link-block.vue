@@ -10,7 +10,7 @@
         <span class="leading-7 font-semibold text-gray-900 text-sm"
           >{{title}}</span
         >
-        <span class="leading-6 text-gray-600 text-sm font-medium">{{subtitle}}</span>
+        <span class="leading-6 text-gray-500 text-sm">{{subtitle}}</span>
       </div>
     </div>
   </a>
@@ -29,6 +29,10 @@ export default {
 <style scoped>
 .link-block {
   @apply w-full flex;
+}
+
+.link-block:hover .illustration {
+  @apply bg-gray-50 transition-colors bg-opacity-50;
 }
 
 .illustration {

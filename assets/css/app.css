@@ -27,7 +27,7 @@ p a {
   @apply text-gray-800 font-medium transition-colors hover:text-black cursor-pointer;
 }
 
-h2 a {
+h2 a, h3 a {
   box-shadow: rgb(17, 25, 36, 0.2) 0px 1px 0px;
   @apply text-gray-800 font-semibold transition-colors hover:text-black cursor-pointer;
 }
@@ -41,8 +41,9 @@ strong {
 }
 
 p code,
+h1 code,
 h2 code,
-h1 code {
+h3 code {
   @apply bg-gray-100 text-sm h-6 rounded px-1 inline-flex items-center font-normal;
 }
 

@@ -5,7 +5,7 @@ completed: false
 
 I’m excited to announce **Sandbox**. Sidebox is an **auto-generated open source design system** tailored to the needs of small organizations.
 
-<blog-image :src="'projects/sandbox/app.jpg'"></blog-image>
+<blog-image :src="'projects/sandbox/app.jpg'" :hasBorder="true"></blog-image>
 
 Building a Sandbox for your company or project couldn't be easier. Checkout a new branch, paste your `tailwind.config.js` in the root, and that's it.
 

@@ -6,28 +6,25 @@
     </h1>
     <div>
       <div>
-        <p>
-          Friends and colleagues would probably describe me as a
-          <strong>multidisciplinary designer</strong> with a high interest in
-          <strong>DesignOps</strong> and <strong>frontend development</strong>.
-        </p>
-        <p>
-          Besides Design <strong>I love to travel</strong> (especially to
-          northern europe) and <strong>tinker on my own projects</strong>.
-        </p>
+        <blockquote>
+          I'm currently not actively searching for a new position but I'm always
+          open for exciting opportunities.
+        </blockquote>
         <lib-link-block
           class="mt-8"
           :title="'Download resume'"
-          :subtitle="'specific subtitle for the resume'"
+          :subtitle="'Get an adjusted version of this page'"
           :url="'#'"
         ></lib-link-block>
       </div>
 
       <div>
-        <h2>
-          Product & Brand Designer <a href="#">@blockpit</a>
-          <code class="ml-2">2018 to present</code>
-        </h2>
+        <h2>Experience</h2>
+        <h3>
+          Product & Brand Designer at
+          <a href="https://blockpit.io">Blockpit</a>
+          <code class="ml-2">2018 to now</code>
+        </h3>
         <p>
           I joined <a href="https:/blockpit.io/">Blockpit</a> in 2018 as one of
           their very first employees. In this phase I had a
@@ -39,13 +36,14 @@
             >$10m Series A</a
           >.
         </p>
-      </div>
-
-      <div>
-        <h2>
-          UX Engineer <a href="#">@storyclash</a>
+        <blog-image
+          :src="'about/bp.jpg'"
+          :caption="'Me and Christina. The latest addition to the design team.'"
+        />
+        <h3>
+          UX Engineer at <a href="https://storyclash.com">Storyclash</a>
           <code class="ml-2">2017 to 2018</code>
-        </h2>
+        </h3>
         <p>
           In 2017 I made my
           <strong>first steps as a designer & frontend developer</strong> by
@@ -55,10 +53,12 @@
       </div>
 
       <div>
-        <h2>
-          Communication & Knowledge Media <a href="#">@fhooe</a>
+        <h2>Education</h2>
+        <h3>
+          <a href=""> Comm. & Knowledge Media</a> at
+          <a href="">UAS Upper Austria</a>
           <code class="ml-2">2015 to 2018</code>
-        </h2>
+        </h3>
         <p>
           After my A-levels I wanted to follow my passion for technology and
           design by studying <a>Communication & Knowledge Media</a> at the
@@ -73,6 +73,10 @@
 </template>
 
 <style scoped>
+h2 + h3 {
+  @apply mt-8;
+}
+
 .link-block {
   @apply w-full flex;
 }
