@@ -1,14 +1,14 @@
 <template>
-  <figure class="my-10">
-    <picture>
-      <source :data-srcset="imageSrc()" />
+  <figure class="my-10 w-full">
+    <div class="rounded w-full overflow-hidden">
       <img
+        :src="isLowQuality ? imageSrc() : ''"
         :data-src="imageSrc()"
-        :alt="alt"
-        class="image lazyload"
+        :alt="handleAlt()"
+        class="image lazyload w-full"
         :class="hasBorder ? 'border' : ''"
       />
-    </picture>
+    </div>
     <figcaption v-if="caption" class="caption">{{ caption }}</figcaption>
   </figure>
 </template>
@@ -21,6 +21,13 @@ export default {
     caption: String,
     hasBorder: Boolean,
   },
+
+  data() {
+    return {
+      isLowQuality: this.checkImageQuality(),
+    }
+  },
+
   methods: {
     imageSrc() {
       try {
@@ -29,13 +36,29 @@ export default {
         console.log(e);
       }
     },
+
+    checkImageQuality() {
+      if (this.src.includes("-low")) {
+        return true;
+      } else return false;
+    },
+
+    handleAlt() {
+      if (this.alt) return this.alt;
+      else if (!this.alt && this.caption) return this.caption;
+      else return "";
+    },
   },
 };
 </script>
 
 <style scoped>
-.image {
-  @apply rounded;
+.lazyload {
+  @apply blur;
+}
+
+.lazyload:not([src]) {
+	@apply invisible;
 }
 
 .caption {
