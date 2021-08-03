@@ -1,6 +1,14 @@
 <template>
   <figure class="my-10">
-    <img :src="imageSrc()" :alt="alt" class="image" :class="hasBorder ? 'border' : ''" />
+    <picture>
+      <source :data-srcset="imageSrc()" />
+      <img
+        :data-src="imageSrc()"
+        :alt="alt"
+        class="image lazyload"
+        :class="hasBorder ? 'border' : ''"
+      />
+    </picture>
     <figcaption v-if="caption" class="caption">{{ caption }}</figcaption>
   </figure>
 </template>
@@ -11,7 +19,7 @@ export default {
     src: String,
     alt: String,
     caption: String,
-    hasBorder: String,
+    hasBorder: Boolean,
   },
   methods: {
     imageSrc() {

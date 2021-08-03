@@ -33,16 +33,16 @@ export default {
     script: [
       {
         src: "https://cdn.splitbee.io/sb.js",
-        async: true
-      }
-    ]
+        async: true,
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["@/assets/css/app.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ["~/plugins/lazysizes.client.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -51,6 +51,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
+    "@aceforth/nuxt-optimized-images",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -64,7 +65,14 @@ export default {
   content: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    extend(config, { isDev, isClient, loaders: { vue } }) {
+      if (isClient) {
+        vue.transformAssetUrls.img = ["data-src", "src"];
+        vue.transformAssetUrls.source = ["data-srcset", "srcset"];
+      }
+    },
+  },
 
   // Sitemap
   sitemap: {
@@ -72,5 +80,10 @@ export default {
     routes() {
       return getRoutes();
     },
+  },
+
+  // Optimize Images
+  optimizedImages: {
+    optimizeImages: true,
   },
 };
