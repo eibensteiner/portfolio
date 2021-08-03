@@ -21,17 +21,17 @@
       <div>
         <h2>
           Product & Brand Designer at
-          <a href="https://blockpit.io">Blockpit</a>
+          <a href="https://blockpit.io" target="_blank" rel="noopener">Blockpit</a>
           <code class="ml-2">2018 to now</code>
         </h2>
         <p>
-          I joined <a href="https:/blockpit.io/">Blockpit</a> in 2018 as one of
+          I joined <a href="https:/blockpit.io/" target="_blank" rel="noopener">Blockpit</a> in 2018 as one of
           their very first employees. In this phase I had a
           <strong>huge influence</strong> and
           <strong>responsibility scope</strong> and supported the team to the
           road of the
           <a
-            href="https://blog.blockpit.io/en/blockpit-receives-over-10-million-dollar-series-a-investment"
+            href="https://blog.blockpit.io/en/blockpit-receives-over-10-million-dollar-series-a-investment" target="_blank" rel="noopener"
             >$10m Series A</a
           >.
         </p>
@@ -40,7 +40,7 @@
           :caption="'Me and Christina. The latest addition to the design team.'"
         />
         <h2>
-          UX Engineer at <a href="https://storyclash.com">Storyclash</a>
+          UX Engineer at <a href="https://storyclash.com" target="_blank" rel="noopener">Storyclash</a>
           <code class="ml-2">2017 to 2018</code>
         </h2>
         <p>
