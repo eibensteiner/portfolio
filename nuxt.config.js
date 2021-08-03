@@ -30,6 +30,12 @@ export default {
         href: "https://dominik.is",
       },
     ],
+    script: [
+      {
+        src: "https://cdn.splitbee.io/sb.js",
+        async: true
+      }
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

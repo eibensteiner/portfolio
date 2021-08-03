@@ -19,12 +19,11 @@
       </div>
 
       <div>
-        <h2>Experience</h2>
-        <h3>
+        <h2>
           Product & Brand Designer at
           <a href="https://blockpit.io">Blockpit</a>
           <code class="ml-2">2018 to now</code>
-        </h3>
+        </h2>
         <p>
           I joined <a href="https:/blockpit.io/">Blockpit</a> in 2018 as one of
           their very first employees. In this phase I had a
@@ -40,10 +39,10 @@
           :src="'about/bp.jpg'"
           :caption="'Me and Christina. The latest addition to the design team.'"
         />
-        <h3>
+        <h2>
           UX Engineer at <a href="https://storyclash.com">Storyclash</a>
           <code class="ml-2">2017 to 2018</code>
-        </h3>
+        </h2>
         <p>
           In 2017 I made my
           <strong>first steps as a designer & frontend developer</strong> by
@@ -53,12 +52,37 @@
       </div>
 
       <div>
-        <h2>Education</h2>
-        <h3>
+        <h2>About me</h2>
+        <p>Hey there, I'm Dominik, 26 and currently living in Linz, Austria. Friends and colleagues would probably describe me as a multidisciplinary designer with a high interest in DesignOps and Frontend development.</p>
+        <p>I started my design career as a small child when drawing images all the time. I was a quite silent, but talented kid according to quite everybody.</p>
+        <p>
+          The relationship with design began when at 12 years old, I started
+          doing soccer wallpapers. I've done tons of it. It was a way to spend
+          time at home.
+        </p>
+        <p>
+          It all changed around 8 years ago when I discovered Dribbble. That was
+          my gate to this world. I started copying designs and trying to
+          implement them with HTML and CSS. I never thought that someday I could
+          do this for a living.
+        </p>
+        <p>
+          At the age of 18, I landed my first design position: Jr. UX/UI
+          Designer at Aerolab. I'll be forever grateful to them for giving me
+          the opportunity.
+        </p>
+        <p>
+          Nowadays, I'm working at Linear as a Product Designer. If my profile
+          fits, I can also work with you. Drop me a word, and let's talk.
+        </p>
+      </div>
+
+      <div>
+        <h2>
           <a href=""> Comm. & Knowledge Media</a> at
           <a href="">UAS Upper Austria</a>
           <code class="ml-2">2015 to 2018</code>
-        </h3>
+        </h2>
         <p>
           After my A-levels I wanted to follow my passion for technology and
           design by studying <a>Communication & Knowledge Media</a> at the
