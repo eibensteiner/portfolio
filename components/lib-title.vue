@@ -15,6 +15,6 @@ export default {
 
 <style scoped>
 .title {
-    @apply relative inline-flex items-center;
+    @apply sm:relative inline-flex items-center;
 }
 </style>

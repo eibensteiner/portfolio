@@ -43,7 +43,7 @@
     </p>
     <h3>
       Product & Brand Designer at
-      <lib-link :href="'https://blockpit.io'">Blockpit</lib-link>
+      <lib-link :href="'https://blockpit.io'" :is-title="true">Blockpit</lib-link>
       <code class="ml-2">2018 to now</code>
     </h3>
     <p>
@@ -65,7 +65,7 @@
     />
     <h3>
       UX Engineer at
-      <lib-link :href="'https://storyclash.com'">Storyclash</lib-link>
+      <lib-link :href="'https://storyclash.com'" :is-title="true">Storyclash</lib-link>
       <code class="ml-2">2017 to 2018</code>
     </h3>
     <p>
