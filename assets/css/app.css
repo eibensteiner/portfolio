@@ -27,7 +27,8 @@ p a {
   @apply text-gray-800 font-medium transition-colors hover:text-black cursor-pointer;
 }
 
-h2 a, h3 a {
+h2 a,
+h3 a {
   box-shadow: rgb(17, 25, 36, 0.2) 0px 1px 0px;
   @apply text-gray-800 font-semibold transition-colors hover:text-black cursor-pointer;
 }
@@ -49,4 +50,14 @@ h3 code {
 
 .icon.variant-first {
   @apply text-gray-700;
+}
+
+@media print {
+  @page {
+    margin: 20mm 0 10mm 0;
+  }
+
+  code {
+    -webkit-print-color-adjust: exact !important;
+  }
 }
