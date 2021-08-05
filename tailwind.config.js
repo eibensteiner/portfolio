@@ -5,10 +5,10 @@ module.exports = {
     extend: {},
     fontFamily: {
       sans: ["Inter", "ui-sans-serif", "system-ui"],
-    }
+    },
   },
   variants: {
-    extend: {}
+    extend: {},
   },
-  plugins: []
+  plugins: [],
 };

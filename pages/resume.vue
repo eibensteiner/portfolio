@@ -35,8 +35,8 @@
             >$10m Series A</a
           >.
         </p>
-        <blog-image
-          :src="'about/bp.jpg'"
+        <lib-image
+          :high-src="'about/bp.jpg'" :low-src="'about/bp-low.jpg'"
           :caption="'Me and Christina. The latest addition to the design team.'"
         />
         <h2>

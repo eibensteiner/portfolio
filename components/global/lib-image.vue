@@ -2,8 +2,8 @@
   <figure class="my-10 w-full">
     <div class="rounded w-full overflow-hidden">
       <img
-        :src="isLowQuality ? imageSrc() : ''"
-        :data-src="imageSrc()"
+        :src="require(`~/assets/img/${this.lowSrc}`)"
+        :data-src="require(`~/assets/img/${this.highSrc}`)"
         :alt="handleAlt()"
         class="image lazyload w-full"
         :class="hasBorder ? 'border' : ''"
@@ -16,33 +16,14 @@
 <script>
 export default {
   props: {
-    src: String,
+    lowSrc: String,
+    highSrc: String,
     alt: String,
     caption: String,
     hasBorder: Boolean,
   },
 
-  data() {
-    return {
-      isLowQuality: this.checkImageQuality(),
-    }
-  },
-
   methods: {
-    imageSrc() {
-      try {
-        return require(`~/assets/img/${this.src}`);
-      } catch (e) {
-        console.log(e);
-      }
-    },
-
-    checkImageQuality() {
-      if (this.src.includes("-low")) {
-        return true;
-      } else return false;
-    },
-
     handleAlt() {
       if (this.alt) return this.alt;
       else if (!this.alt && this.caption) return this.caption;
