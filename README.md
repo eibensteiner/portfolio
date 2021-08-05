@@ -1,6 +1,6 @@
 # Portfolio
 
-The site is built on top of [Nuxt.js](https://nuxtjs.org). Extended with [Tailwind CSS](https://tailwindcss.com), deployed on [Netlify](https://www.netlify.com) and tracked via [Splitbee](https://splitbee.io).
+The site is built on top of [Nuxt.js](https://nuxtjs.org), extended with [Tailwind CSS](https://tailwindcss.com), deployed on [Netlify](https://www.netlify.com) and tracked via [Splitbee](https://splitbee.io).
 
 ## Plugins & Modules
 
