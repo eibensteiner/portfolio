@@ -1,12 +1,11 @@
 <template>
   <figure class="my-10 w-full">
-    <div class="rounded w-full overflow-hidden">
+    <div class="rounded w-full overflow-hidden" :class="hasBorder ? 'border' : ''">
       <img
         :src="require(`~/assets/img/${this.lowSrc}`)"
         :data-src="require(`~/assets/img/${this.highSrc}`)"
         :alt="handleAlt()"
-        class="image lazyload w-full"
-        :class="hasBorder ? 'border' : ''"
+        class="image w-full lazyload"
       />
     </div>
     <figcaption v-if="caption" class="caption">{{ caption }}</figcaption>
@@ -34,8 +33,12 @@ export default {
 </script>
 
 <style scoped>
+.image {
+  @apply transition-filter;
+}
+
 .lazyload {
-  @apply blur;
+  @apply filter blur;
 }
 
 .lazyload:not([src]) {

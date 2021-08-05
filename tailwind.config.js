@@ -2,7 +2,11 @@ module.exports = {
   purge: [],
   darkMode: "class", // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      transitionProperty: {
+        filter: "filter",
+      },
+    },
     fontFamily: {
       sans: ["Inter", "ui-sans-serif", "system-ui"],
     },
