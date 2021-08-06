@@ -5,6 +5,7 @@
       Made with <lib-link>Nuxt.js</lib-link> and
       <lib-link>Tailwind CSS</lib-link>.
     </footer>
+    <lib-command></lib-command>
   </div>
 </template>
 
