@@ -15,16 +15,13 @@
     </div>
     <div class="results">
       <ul class="section">
-        {{
-          result
-        }}
         <li
           class="entry"
           v-for="resultItem in result"
           ref="entry"
           @mousemove="setEntryActive(index)"
         >
-          {{ resultItem.item.title }}
+          {{ resultItem.item ? resultItem.item.title : resultItem.title }}
         </li>
       </ul>
     </div>
@@ -37,12 +34,13 @@ import { commands } from "@/utils/constants";
 
 export default {
   data() {
+      console.log("list im data", this.list);
     return {
       fuse: null,
       isActive: true,
       search: "",
       list: commands,
-      result: this.list,
+      result: commands,
       counter: 0,
     };
   },
@@ -54,9 +52,7 @@ export default {
       maxPatternLength: 32,
       keys: ["title", "author.firstName"],
     };
-    console.log(this.result);
     this.fuse = new Fuse(this.list, options);
-    this.result = this.list;
   },
 
   watch: {
