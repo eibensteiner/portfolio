@@ -13,11 +13,11 @@
         ref="search"
       />
     </div>
-    <div class="results">
+    <div class="results" ref="results">
       <ul class="section">
         <li
           class="entry"
-          v-for="resultItem in result"
+          v-for="(resultItem, index) in result"
           ref="entry"
           @mousemove="setEntryActive(index)"
         >
@@ -29,19 +29,20 @@
 </template>
 
 <script>
+import tinykeys from "tinykeys";
 import Fuse from "fuse.js";
 import { commands } from "@/utils/constants";
 
 export default {
   data() {
-      console.log("list im data", this.list);
     return {
       fuse: null,
-      isActive: true,
+      isActive: false,
       search: "",
       list: commands,
       result: commands,
       counter: 0,
+      openOn: "$mod+KeyK",
     };
   },
 
@@ -52,20 +53,62 @@ export default {
       maxPatternLength: 32,
       keys: ["title", "author.firstName"],
     };
+
+    // Initialize Fuse
     this.fuse = new Fuse(this.list, options);
+
+    // Keybinding
+    tinykeys(window, {
+      [this.openOn]: (event) => {
+        event.preventDefault();
+        if (!this.isActive) {
+          this.setActive();
+        } else {
+          this.setInactive();
+        }
+      },
+
+      ArrowDown: (event) => {
+        if (this.isActive && this.counter < this.result.length - 1) {
+          event.preventDefault();
+          this.setNextEntryActive();
+        }
+      },
+
+      ArrowUp: (event) => {
+        if (this.isActive && this.counter > 0) {
+          event.preventDefault();
+          this.setPreviousEntryActive();
+        }
+      },
+
+      Escape: (event) => {
+        if (this.isActive) {
+          event.preventDefault();
+          this.setInactive();
+        }
+      },
+
+      Enter: (event) => {
+        if (this.isActive) {
+          event.preventDefault();
+        }
+      },
+    });
   },
 
   watch: {
     search() {
       if (this.search.trim() === "") {
         this.result = this.list;
-        console.log(this.result);
       } else {
         this.result = this.fuse.search(this.search.trim());
         console.log(this.result);
-        setTimeout(() => {
-          this.setFirstEntryActive();
-        }, 1);
+        if (this.result.length !== 0) {
+          setTimeout(() => {
+            this.setFirstEntryActive();
+          }, 1);
+        }
       }
     },
   },
@@ -99,7 +142,10 @@ export default {
       this.$refs.entry[this.counter].classList.remove("active");
       this.counter = 0;
       this.$refs.entry[this.counter].classList.add("active");
-      this.$refs.entry[this.counter].scrollIntoView();
+      this.$refs.results.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     },
 
     setNextEntryActive() {
@@ -139,11 +185,17 @@ export default {
 }
 
 .search > input {
-  @apply h-14 bg-transparent flex-1 ml-3;
+  @apply h-14 bg-transparent flex-1 ml-3 focus-visible:outline-none;
 }
 
 .results {
   @apply max-h-80 overflow-y-auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.results::-webkit-scrollbar {
+  @apply hidden;
 }
 
 .results:empty {
@@ -159,7 +211,7 @@ export default {
 }
 
 .entry {
-  @apply h-12 flex items-center justify-between cursor-pointer transition-colors;
+  @apply h-12 flex items-center justify-between cursor-pointer;
 }
 
 .entry.active {

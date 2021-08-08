@@ -12,7 +12,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      outline: ["focus-visible"],
+    },
   },
   plugins: [],
 };

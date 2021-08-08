@@ -14,7 +14,8 @@
     "core-js": "^3.15.1",
     "fuse.js": "^6.4.6",
     "lazysizes": "^5.3.2",
-    "nuxt": "^2.15.7"
+    "nuxt": "^2.15.7",
+    "tinykeys": "^1.2.0"
   },
   "devDependencies": {
     "@aceforth/nuxt-optimized-images": "^1.4.0",
