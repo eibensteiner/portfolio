@@ -1,29 +1,31 @@
 <template>
-  <div
-    class="panel"
-    ref="panel"
-    :class="isActive ? 'visible opacity-100' : 'invisible opacity-0'"
-  >
-    <div class="search">
-      <icon-search></icon-search>
-      <input
-        type="text"
-        v-model="search"
-        :placeholder="'Search for something'"
-        ref="search"
-      />
-    </div>
-    <div class="results" ref="results">
-      <ul class="section">
-        <li
-          class="entry"
-          v-for="(resultItem, index) in result"
-          ref="entry"
-          @mousemove="setEntryActive(index)"
-        >
-          {{ resultItem.item ? resultItem.item.title : resultItem.title }}
-        </li>
-      </ul>
+  <div class="background" @click="setInactive()">
+    <div
+      class="panel"
+      ref="panel"
+      :class="isActive ? 'visible opacity-100' : 'invisible opacity-0'" @click.stop=""
+    >
+      <div class="search">
+        <icon-search></icon-search>
+        <input
+          type="text"
+          v-model="search"
+          :placeholder="'Search for something'"
+          ref="search"
+        />
+      </div>
+      <div class="results" ref="results">
+        <ul class="section">
+          <li
+            class="entry"
+            v-for="(resultItem, index) in result"
+            ref="entry"
+            @mousemove="setEntryActive(index)"
+          >
+            {{ resultItem.item ? resultItem.item.title : resultItem.title }}
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -172,8 +174,12 @@ export default {
 </script>
 
 <style scoped>
+.background {
+  @apply fixed top-0 right-0 bottom-0 left-0 max-w-full flex justify-center items-start;
+}
+
 .panel {
-  @apply bg-white fixed shadow-xl flex flex-col rounded-lg max-w-lg border transition-opacity overflow-hidden;
+  @apply mt-24 bg-white shadow-xl flex flex-col rounded-lg max-w-lg w-full border transition-opacity overflow-hidden;
 }
 
 .panel > * {
@@ -204,6 +210,10 @@ export default {
 
 .section {
   @apply flex flex-col py-2;
+}
+
+.section:not(:last-child) {
+  @apply border-b;
 }
 
 .section > * {
