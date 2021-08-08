@@ -3,7 +3,8 @@
     <div
       class="panel"
       ref="panel"
-      :class="isActive ? 'visible opacity-100' : 'invisible opacity-0'" @click.stop=""
+      :class="isActive ? 'visible opacity-100' : 'invisible opacity-0'"
+      @click.stop=""
     >
       <div class="search">
         <icon-search></icon-search>
@@ -14,17 +15,19 @@
           ref="search"
         />
       </div>
-      <div class="results" ref="results">
-        <ul class="section">
-          <li
-            class="entry"
-            v-for="(resultItem, index) in result"
-            ref="entry"
-            @mousemove="setEntryActive(index)"
-          >
-            {{ resultItem.item ? resultItem.item.title : resultItem.title }}
-          </li>
-        </ul>
+      <div class="results">
+        <div class="content" ref="content">
+          <ul class="section">
+            <li
+              class="entry"
+              v-for="(resultItem, index) in result"
+              ref="entry"
+              @mousemove="setEntryActive(index)"
+            >
+              {{ resultItem.item ? resultItem.item.title : resultItem.title }}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -106,6 +109,7 @@ export default {
       } else {
         this.result = this.fuse.search(this.search.trim());
         console.log(this.result);
+        console.log(this.$refs.entry);
         if (this.result.length !== 0) {
           setTimeout(() => {
             this.setFirstEntryActive();
@@ -144,10 +148,7 @@ export default {
       this.$refs.entry[this.counter].classList.remove("active");
       this.counter = 0;
       this.$refs.entry[this.counter].classList.add("active");
-      this.$refs.results.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      this.$refs.content.scrollIntoView();
     },
 
     setNextEntryActive() {
