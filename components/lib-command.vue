@@ -7,7 +7,7 @@
       @click.stop=""
     >
       <div class="search">
-        <icon-search></icon-search>
+        <icon-search class="text-gray-400"></icon-search>
         <input
           type="text"
           v-model="search"
@@ -17,13 +17,29 @@
       </div>
       <div class="results">
         <div class="content" ref="content">
-          <ul class="section">
+          <ul class="section" v-for="sectionItem in result">
+            <span
+              v-if="
+                sectionItem.item ? sectionItem.item.title : sectionItem.title
+              "
+              class="leading-6 font-normal text-gray-400 text-sm mt-3 mb-2"
+              >{{
+                sectionItem.item ? sectionItem.item.title : sectionItem.title
+              }}</span
+            >
             <li
               class="entry"
-              v-for="(resultItem, index) in result"
+              v-for="(resultItem, index) in sectionItem.item
+                ? sectionItem.item.entries
+                : sectionItem.entries"
               ref="entry"
               @mousemove="setEntryActive(index)"
             >
+              <template
+                v-html="
+                  resultItem.item ? resultItem.item.icon : resultItem.icon
+                "
+              ></template>
               {{ resultItem.item ? resultItem.item.title : resultItem.title }}
             </li>
           </ul>
@@ -56,11 +72,12 @@ export default {
       shouldSort: true,
       threshold: 0.3,
       maxPatternLength: 32,
-      keys: ["title", "author.firstName"],
+      keys: ["entries.title"],
     };
 
     // Initialize Fuse
     this.fuse = new Fuse(this.list, options);
+    console.log(this.list);
 
     // Keybinding
     tinykeys(window, {
@@ -74,9 +91,15 @@ export default {
       },
 
       ArrowDown: (event) => {
-        if (this.isActive && this.counter < this.result.length - 1) {
+        if (this.isActive && this.counter < this.$refs.entry.length - 1) {
           event.preventDefault();
           this.setNextEntryActive();
+        } else if (
+          this.isActive &&
+          this.counter === this.$refs.entry.length - 1
+        ) {
+          event.preventDefault();
+          this.setFirstEntryActive();
         }
       },
 
@@ -84,6 +107,9 @@ export default {
         if (this.isActive && this.counter > 0) {
           event.preventDefault();
           this.setPreviousEntryActive();
+        } else if (this.isActive && this.counter === 0) {
+          event.preventDefault();
+          this.setLastEntryActive();
         }
       },
 
@@ -148,7 +174,18 @@ export default {
       this.$refs.entry[this.counter].classList.remove("active");
       this.counter = 0;
       this.$refs.entry[this.counter].classList.add("active");
-      this.$refs.content.scrollIntoView();
+      this.$refs.content.scrollIntoView({
+        behavior: "smooth",
+      });
+    },
+
+    setLastEntryActive() {
+      this.$refs.entry[this.counter].classList.remove("active");
+      this.counter = this.$refs.entry.length - 1;
+      this.$refs.entry[this.counter].classList.add("active");
+      this.$refs.entry[this.counter].scrollIntoView({
+        behavior: "smooth",
+      });
     },
 
     setNextEntryActive() {
@@ -180,7 +217,7 @@ export default {
 }
 
 .panel {
-  @apply mt-24 bg-white shadow-xl flex flex-col rounded-lg max-w-lg w-full border transition-opacity overflow-hidden;
+  @apply mt-24 bg-gray-800 shadow-xl flex flex-col rounded-lg max-w-lg w-full transition-opacity overflow-hidden;
 }
 
 .panel > * {
@@ -188,11 +225,15 @@ export default {
 }
 
 .search {
-  @apply border-b px-5 flex items-center;
+  @apply border-b border-gray-700 px-5 flex items-center;
 }
 
 .search > input {
-  @apply h-14 bg-transparent flex-1 ml-3 focus-visible:outline-none;
+  @apply h-14 bg-transparent flex-1 ml-3 focus-visible:outline-none text-white;
+}
+
+.search > input::placeholder {
+  @apply text-gray-400;
 }
 
 .results {
@@ -210,26 +251,22 @@ export default {
 }
 
 .section {
-  @apply flex flex-col py-2;
+  @apply flex flex-col p-2;
 }
 
 .section:not(:last-child) {
-  @apply border-b;
+  @apply border-b border-gray-700;
 }
 
 .section > * {
-  @apply w-full px-5;
+  @apply w-full px-4;
 }
 
 .entry {
-  @apply h-12 flex items-center justify-between cursor-pointer;
+  @apply h-12 flex items-center justify-between cursor-pointer text-gray-200 rounded-md;
 }
 
 .entry.active {
-  @apply bg-gray-50;
-}
-
-.entry.active {
-  @apply bg-gray-50;
+  @apply bg-gray-700 text-white bg-opacity-50;
 }
 </style>
