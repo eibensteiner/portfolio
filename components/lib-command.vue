@@ -33,7 +33,7 @@
                 ? sectionItem.item.entries
                 : sectionItem.entries"
               ref="entry"
-              @mousemove="setEntryActive(index)"
+              @mousemove="setEntryActive(resultItem, index)"
             >
               <template
                 v-html="
@@ -136,7 +136,7 @@ export default {
         this.result = this.fuse.search(this.search.trim());
         console.log(this.result);
         console.log(this.$refs.entry);
-        if (this.result.length !== 0) {
+        if (this.$refs.entry.length !== 0) {
           setTimeout(() => {
             this.setFirstEntryActive();
           }, 1);
@@ -164,9 +164,10 @@ export default {
       }, 50);
     },
 
-    setEntryActive(index) {
+    setEntryActive(resultItem, index) {
+    const newElement = this.$refs.entry.findIndex(item => item.innerText === resultItem.title);
       this.$refs.entry[this.counter].classList.remove("active");
-      this.counter = index;
+      this.counter = newElement;
       this.$refs.entry[this.counter].classList.add("active");
     },
 
