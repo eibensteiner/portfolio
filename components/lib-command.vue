@@ -17,8 +17,6 @@
       </div>
       <div class="results">
         <div class="content" ref="content">
-          {{ result }}
-
           <ul class="section" v-for="sectionItem in result">
             <span
               v-if="
@@ -32,26 +30,18 @@
             <li
               class="entry"
               v-for="(resultItem, index) in sectionItem.item
-                ? sectionItem.item.entries
+                ? sectionItem.matches
                 : sectionItem.entries"
               ref="entry"
               @mousemove="setEntryActive(resultItem, index)"
             >
-              <template
-                v-html="
-                  resultItem.item ? resultItem.item.icon : resultItem.icon
-                "
-              ></template>
 
-          <template v-if="result !== undefined">
-            {{ result[0].matches ? result[0].matches[0].value : 'sow'}}
-          </template>
+
               {{
-                resultItem.item
-                  ? sectionItem.matches[0].value
+                resultItem.value
+                  ? resultItem.value
                   : resultItem.title
               }}
-            
             </li>
           </ul>
         </div>
