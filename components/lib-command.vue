@@ -17,6 +17,8 @@
       </div>
       <div class="results">
         <div class="content" ref="content">
+          {{ result }}
+
           <ul class="section" v-for="sectionItem in result">
             <span
               v-if="
@@ -40,7 +42,16 @@
                   resultItem.item ? resultItem.item.icon : resultItem.icon
                 "
               ></template>
-              {{ resultItem.item ? resultItem.item.title : resultItem.title }}
+
+          <template v-if="result !== undefined">
+            {{ result[0].matches ? result[0].matches[0].value : 'sow'}}
+          </template>
+              {{
+                resultItem.item
+                  ? sectionItem.matches[0].value
+                  : resultItem.title
+              }}
+            
             </li>
           </ul>
         </div>
@@ -69,9 +80,11 @@ export default {
 
   mounted() {
     let options = {
-      shouldSort: true,
+      shouldSort: false,
       threshold: 0.3,
       maxPatternLength: 32,
+      includeScore: true,
+      includeMatches: true,
       keys: ["entries.title"],
     };
 
@@ -129,6 +142,12 @@ export default {
   },
 
   watch: {
+    /*
+    Sorting of results doesn't work yet. Try typing 't' and navigate with the arrow key down.
+    You will notice a broken order.
+    We should not try to fix that by changing the sorting algorithm but by changing how the results are going to be served or ideally by changing the way how we set commands active (not via refs)
+    */
+
     search() {
       if (this.search.trim() === "") {
         this.result = this.list;
@@ -165,7 +184,9 @@ export default {
     },
 
     setEntryActive(resultItem, index) {
-    const newElement = this.$refs.entry.findIndex(item => item.innerText === resultItem.title);
+      const newElement = this.$refs.entry.findIndex(
+        (item) => item.innerText === resultItem.title
+      );
       this.$refs.entry[this.counter].classList.remove("active");
       this.counter = newElement;
       this.$refs.entry[this.counter].classList.add("active");
