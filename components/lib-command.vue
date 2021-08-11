@@ -1,5 +1,9 @@
 <template>
-  <div class="background" @click="setInactive()">
+  <div
+    class="background"
+    @click="setInactive()"
+    :class="isActive ? 'visible opacity-100' : 'invisible opacity-0'"
+  >
     <div
       class="panel"
       ref="panel"
@@ -33,15 +37,9 @@
                 ? sectionItem.matches
                 : sectionItem.entries"
               ref="entry"
-              @mousemove="setEntryActive(resultItem, index)"
+              @mousemove="setEntryActive(resultItem)"
             >
-
-
-              {{
-                resultItem.value
-                  ? resultItem.value
-                  : resultItem.title
-              }}
+              {{ resultItem.value ? resultItem.value : resultItem.title }}
             </li>
           </ul>
         </div>
@@ -141,15 +139,16 @@ export default {
     search() {
       if (this.search.trim() === "") {
         this.result = this.list;
+        setTimeout(() => {
+          this.setFirstEntryActive();
+        }, 1);
       } else {
         this.result = this.fuse.search(this.search.trim());
-        console.log(this.result);
-        console.log(this.$refs.entry);
-        if (this.$refs.entry.length !== 0) {
-          setTimeout(() => {
+        setTimeout(() => {
+          if (this.$refs.entry.length !== 0) {
             this.setFirstEntryActive();
-          }, 1);
-        }
+          }
+        }, 1);
       }
     },
   },
@@ -158,7 +157,9 @@ export default {
     setActive() {
       this.isActive = true;
       this.focusOnSearch();
-      this.setFirstEntryActive();
+      setTimeout(() => {
+        this.setFirstEntryActive();
+      }, 1);
     },
 
     setInactive() {
@@ -170,25 +171,24 @@ export default {
       this.search = "";
       setTimeout(() => {
         this.$refs.search.focus();
-      }, 50);
+      }, 1);
     },
 
-    setEntryActive(resultItem, index) {
+    setEntryActive(resultItem) {
+      const filterTitle = resultItem.title ?? resultItem.value;
       const newElement = this.$refs.entry.findIndex(
-        (item) => item.innerText === resultItem.title
+        (item) => item.innerText === filterTitle
       );
       this.$refs.entry[this.counter].classList.remove("active");
-      this.counter = newElement;
+      this.counter = newElement !== -1 ? newElement : 0;
       this.$refs.entry[this.counter].classList.add("active");
     },
 
     setFirstEntryActive() {
-      this.$refs.entry[this.counter].classList.remove("active");
+      this.$refs.entry[this.counter]?.classList.remove("active");
       this.counter = 0;
-      this.$refs.entry[this.counter].classList.add("active");
-      this.$refs.content.scrollIntoView({
-        behavior: "smooth",
-      });
+      this.$refs.entry[this.counter]?.classList.add("active");
+      this.$refs.content.scrollIntoView();
     },
 
     setLastEntryActive() {
