@@ -3,7 +3,7 @@ const url = "https://dominik.is";
 const title = "Dominik Wurm";
 const description =
   "I'm Dominik, a coding Designer from Austria, striving for visual clarity, simplicity and minimalism.";
-const image = "/img/shareimage.jpg";
+const image = "https://dominik.is/img/shareimage.jpg";
 
 export default (meta) => {
   return [
