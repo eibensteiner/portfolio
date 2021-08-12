@@ -21,11 +21,6 @@ export default {
       { property: "og:image:height", content: "630" },
       { name: "twitter:site", content: "@wurmdo" },
       { name: "twitter:card", content: "summary_large_image" },
-      {
-        name: "twitter:image",
-        content:
-          "https://res.cloudinary.com/redfern-web/image/upload/v1611268293/redfern-dev/png/redfern-dev.png",
-      },
     ],
     link: [
       { rel: "icon", type: "image/png", href: "/favicons/favicon.png" },
