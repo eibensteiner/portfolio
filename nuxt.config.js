@@ -23,7 +23,8 @@ export default {
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:image",
-        content: "https://dominik.is/img/shareimage.jpg",
+        content:
+          "https://res.cloudinary.com/redfern-web/image/upload/v1611268293/redfern-dev/png/redfern-dev.png",
       },
     ],
     link: [
