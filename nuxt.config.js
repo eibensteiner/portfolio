@@ -21,6 +21,10 @@ export default {
       { property: "og:image:height", content: "630" },
       { name: "twitter:site", content: "@wurmdo" },
       { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:image",
+        content: "https://dominik.is/img/shareimage.jpg",
+      },
     ],
     link: [
       { rel: "icon", type: "image/png", href: "/favicons/favicon.png" },
