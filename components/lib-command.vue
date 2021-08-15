@@ -1,13 +1,13 @@
 <template>
   <div
     class="background"
-    @click="setInactive()"
-    :class="isActive ? 'is-active' : 'is-inactive'"
+    @click="toggleVisibility()"
+    :class="isVisible ? 'is-visible' : 'is-invisible'"
   >
     <div
       class="panel"
       ref="panel"
-      :class="isActive ? 'is-active' : 'is-inactive'"
+      :class="isVisible ? 'is-visible' : 'is-invisible'"
       @click.stop=""
     >
       <div class="search">
@@ -15,25 +15,22 @@
         <input
           type="text"
           v-model="search"
-          :placeholder="'Search for something'"
+          :placeholder="placeholder"
           ref="search"
         />
       </div>
       <div class="results">
         <div class="content" ref="content">
-          <ul class="section" v-for="sectionItem in result">
-            <span class="section-title">{{
-              sectionItem.item ? sectionItem.item.title : sectionItem.title
+          <ul v-for="section in result">
+            <span>{{
+              section.item ? section.item.title : section.title
             }}</span>
             <li
-              class="entry"
-              v-for="resultItem in sectionItem.item
-                ? sectionItem.matches
-                : sectionItem.entries"
               ref="entry"
-              @mousemove="setEntryActive(resultItem)"
+              v-for="entry in section.item ? section.matches : section.entries"
+              @mousemove="setEntryActive(entry)"
             >
-              {{ resultItem.value ? resultItem.value : resultItem.title }}
+              {{ entry.value ? entry.value : entry.title }}
             </li>
           </ul>
         </div>
@@ -51,10 +48,11 @@ export default {
   data() {
     return {
       fuse: null,
-      isActive: false,
+      isVisible: false,
       search: "",
       list: commands,
       result: commands,
+      placeholder: "Search for something ...",
       counter: 0,
       openOn: "$mod+KeyK",
     };
@@ -62,16 +60,13 @@ export default {
 
   mounted() {
     this.fuse = new Fuse(this.list, options); // Initialize Fuse
+    console.log(this.$refs);
 
     // Keybinding
     tinykeys(window, {
       [this.openOn]: (event) => {
         event.preventDefault();
-        if (!this.isActive) {
-          this.setActive();
-        } else {
-          this.setInactive();
-        }
+        this.toggleVisibility();
       },
 
       ArrowDown: (event) => {
@@ -85,23 +80,23 @@ export default {
 
       ArrowUp: (event) => {
         event.preventDefault();
-        if (this.isActive && this.counter > 0) {
+        if (this.isVisible && this.counter > 0) {
           this.setPreviousEntryActive();
-        } else if (this.isActive && this.counter === 0) {
+        } else if (this.isVisible && this.counter === 0) {
           this.setLastEntryActive();
         }
       },
 
       Escape: (event) => {
         event.preventDefault();
-        if (this.isActive) {
-          this.setInactive();
+        if (this.isVisible) {
+          this.toggleVisibility();
         }
       },
 
       Enter: (event) => {
         event.preventDefault();
-        if (this.isActive) {
+        if (this.isVisible) {
           // Entry should be selected
         }
       },
@@ -110,7 +105,6 @@ export default {
 
   watch: {
     search() {
-      console.log(this.result);
       if (this.search.trim() === "") {
         this.result = this.list;
         setTimeout(() => {
@@ -118,27 +112,24 @@ export default {
         }, 1);
       } else {
         this.result = this.fuse.search(this.search.trim());
-        setTimeout(() => {
-          if (this.result.length !== 0) {
+        if (this.result.length !== 0) {
+          setTimeout(() => {
             this.setFirstEntryActive();
-          }
-        }, 1);
+          }, 1);
+        }
       }
     },
   },
 
   methods: {
-    setActive() {
-      this.isActive = true;
-      this.focusOnSearch();
-      setTimeout(() => {
-        this.setFirstEntryActive();
-      }, 1);
-    },
-
-    setInactive() {
-      this.isActive = false;
-      this.result = this.list; // Reset Subcommands Array
+    toggleVisibility() {
+      this.isVisible = !this.isVisible;
+      if (this.isVisible) {
+        this.focusOnSearch();
+        setTimeout(() => {
+          this.setFirstEntryActive();
+        }, 1);
+      } else this.result = this.list;
     },
 
     focusOnSearch() {
@@ -195,7 +186,7 @@ export default {
     },
 
     isLastEntry() {
-      return this.isActive && this.counter === this.$refs.entry.length - 1;
+      return this.isVisible && this.counter === this.$refs.entry.length - 1;
     },
   },
 };
@@ -210,20 +201,16 @@ export default {
   @apply mt-24 bg-gray-800 shadow-xl flex flex-col rounded-lg max-w-lg w-full transition-opacity overflow-hidden;
 }
 
-.panel > * {
-  @apply w-full;
-}
-
-.is-active {
+.is-visible {
   @apply visible opacity-100;
 }
 
-.is-inactive {
+.is-invisible {
   @apply invisible opacity-0;
 }
 
 .search {
-  @apply border-b border-gray-700 px-5 flex items-center;
+  @apply border-b border-gray-700 px-5 flex items-center w-full;
 }
 
 .search > input {
@@ -235,7 +222,7 @@ export default {
 }
 
 .results {
-  @apply max-h-80 overflow-y-auto;
+  @apply max-h-80 w-full overflow-y-auto empty:hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -244,32 +231,23 @@ export default {
   @apply hidden;
 }
 
-.results:empty,
-.section-title:empty {
-  @apply hidden;
-}
-
-.section {
+ul {
   @apply flex flex-col p-2;
 }
 
-.section:not(:last-child) {
+ul:not(:last-child) {
   @apply border-b border-gray-700;
 }
 
-.section > * {
-  @apply w-full px-4;
+ul > span {
+  @apply font-normal text-gray-400 text-sm mt-3 mb-2 w-full px-4 empty:hidden;
 }
 
-.section-title {
-  @apply font-normal text-gray-400 text-sm mt-3 mb-2;
+li {
+  @apply h-12 w-full px-4 flex items-center justify-between cursor-pointer text-gray-200 rounded-md;
 }
 
-.entry {
-  @apply h-12 flex items-center justify-between cursor-pointer text-gray-200 rounded-md;
-}
-
-.entry.active {
+li.active {
   @apply bg-gray-700 text-white bg-opacity-50;
 }
 </style>
