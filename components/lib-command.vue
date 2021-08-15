@@ -2,12 +2,12 @@
   <div
     class="background"
     @click="setInactive()"
-    :class="isActive ? 'visible opacity-100' : 'invisible opacity-0'"
+    :class="isActive ? 'is-active' : 'is-inactive'"
   >
     <div
       class="panel"
       ref="panel"
-      :class="isActive ? 'visible opacity-100' : 'invisible opacity-0'"
+      :class="isActive ? 'is-active' : 'is-inactive'"
       @click.stop=""
     >
       <div class="search">
@@ -22,18 +22,12 @@
       <div class="results">
         <div class="content" ref="content">
           <ul class="section" v-for="sectionItem in result">
-            <span
-              v-if="
-                sectionItem.item ? sectionItem.item.title : sectionItem.title
-              "
-              class="font-normal text-gray-400 text-sm mt-3 mb-2"
-              >{{
-                sectionItem.item ? sectionItem.item.title : sectionItem.title
-              }}</span
-            >
+            <span class="section-title">{{
+              sectionItem.item ? sectionItem.item.title : sectionItem.title
+            }}</span>
             <li
               class="entry"
-              v-for="(resultItem, index) in sectionItem.item
+              v-for="resultItem in sectionItem.item
                 ? sectionItem.matches
                 : sectionItem.entries"
               ref="entry"
@@ -51,7 +45,7 @@
 <script>
 import tinykeys from "tinykeys";
 import Fuse from "fuse.js";
-import { commands } from "@/utils/constants";
+import { commands, options } from "@/utils/constants";
 
 export default {
   data() {
@@ -67,18 +61,7 @@ export default {
   },
 
   mounted() {
-    let options = {
-      shouldSort: false,
-      threshold: 0.3,
-      maxPatternLength: 32,
-      includeScore: true,
-      includeMatches: true,
-      keys: ["entries.title"],
-    };
-
-    // Initialize Fuse
-    this.fuse = new Fuse(this.list, options);
-    console.log(this.list);
+    this.fuse = new Fuse(this.list, options); // Initialize Fuse
 
     // Keybinding
     tinykeys(window, {
@@ -92,51 +75,42 @@ export default {
       },
 
       ArrowDown: (event) => {
-        if (this.isActive && this.counter < this.$refs.entry.length - 1) {
-          event.preventDefault();
+        event.preventDefault();
+        if (!this.isLastEntry()) {
           this.setNextEntryActive();
-        } else if (
-          this.isActive &&
-          this.counter === this.$refs.entry.length - 1
-        ) {
-          event.preventDefault();
+        } else if (this.isLastEntry()) {
           this.setFirstEntryActive();
         }
       },
 
       ArrowUp: (event) => {
+        event.preventDefault();
         if (this.isActive && this.counter > 0) {
-          event.preventDefault();
           this.setPreviousEntryActive();
         } else if (this.isActive && this.counter === 0) {
-          event.preventDefault();
           this.setLastEntryActive();
         }
       },
 
       Escape: (event) => {
+        event.preventDefault();
         if (this.isActive) {
-          event.preventDefault();
           this.setInactive();
         }
       },
 
       Enter: (event) => {
+        event.preventDefault();
         if (this.isActive) {
-          event.preventDefault();
+          // Entry should be selected
         }
       },
     });
   },
 
   watch: {
-    /*
-    Sorting of results doesn't work yet. Try typing 't' and navigate with the arrow key down.
-    You will notice a broken order.
-    We should not try to fix that by changing the sorting algorithm but by changing how the results are going to be served or ideally by changing the way how we set commands active (not via refs)
-    */
-
     search() {
+      console.log(this.result);
       if (this.search.trim() === "") {
         this.result = this.list;
         setTimeout(() => {
@@ -145,7 +119,7 @@ export default {
       } else {
         this.result = this.fuse.search(this.search.trim());
         setTimeout(() => {
-          if (this.$refs.entry.length !== 0) {
+          if (this.result.length !== 0) {
             this.setFirstEntryActive();
           }
         }, 1);
@@ -219,6 +193,10 @@ export default {
         behavior: "smooth",
       });
     },
+
+    isLastEntry() {
+      return this.isActive && this.counter === this.$refs.entry.length - 1;
+    },
   },
 };
 </script>
@@ -234,6 +212,14 @@ export default {
 
 .panel > * {
   @apply w-full;
+}
+
+.is-active {
+  @apply visible opacity-100;
+}
+
+.is-inactive {
+  @apply invisible opacity-0;
 }
 
 .search {
@@ -258,7 +244,8 @@ export default {
   @apply hidden;
 }
 
-.results:empty {
+.results:empty,
+.section-title:empty {
   @apply hidden;
 }
 
@@ -272,6 +259,10 @@ export default {
 
 .section > * {
   @apply w-full px-4;
+}
+
+.section-title {
+  @apply font-normal text-gray-400 text-sm mt-3 mb-2;
 }
 
 .entry {
