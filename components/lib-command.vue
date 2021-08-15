@@ -26,7 +26,7 @@
               v-if="
                 sectionItem.item ? sectionItem.item.title : sectionItem.title
               "
-              class="leading-6 font-normal text-gray-400 text-sm mt-3 mb-2"
+              class="font-normal text-gray-400 text-sm mt-3 mb-2"
               >{{
                 sectionItem.item ? sectionItem.item.title : sectionItem.title
               }}</span
@@ -241,7 +241,7 @@ export default {
 }
 
 .search > input {
-  @apply h-14 bg-transparent flex-1 ml-3 focus-visible:outline-none text-white;
+  @apply h-14 bg-transparent flex-1 ml-3 focus-visible:outline-none focus:outline-none text-white;
 }
 
 .search > input::placeholder {

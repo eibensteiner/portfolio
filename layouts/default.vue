@@ -19,6 +19,6 @@
 }
 
 .footer {
-  @apply leading-7 font-normal text-gray-500 mt-8;
+  @apply font-normal text-gray-500 mt-8 text-base;
 }
 </style>

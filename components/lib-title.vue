@@ -1,8 +1,10 @@
 <template>
-  <h1 class="title">
-    <lib-back-button v-if="hasBackButton"></lib-back-button>
-    <slot></slot>
-  </h1>
+  <div>
+    <h1 class="title">
+      <lib-back-button v-if="hasBackButton"></lib-back-button>
+      <slot></slot>
+    </h1>
+  </div>
 </template>
 
 <script>
@@ -15,6 +17,6 @@ export default {
 
 <style scoped>
 .title {
-    @apply sm:relative inline-flex items-center;
+  @apply sm:relative inline-flex items-center;
 }
 </style>

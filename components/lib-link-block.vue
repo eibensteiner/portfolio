@@ -32,11 +32,11 @@ export default {
 }
 
 .title {
-  @apply leading-7 font-medium text-gray-900 text-sm;
+  @apply font-medium text-gray-900 text-sm;
 }
 
 .subtitle {
-  @apply leading-6 font-normal text-gray-500 text-sm;
+  @apply font-normal text-gray-500 text-sm;
 }
 
 .link-block:hover .illustration {
