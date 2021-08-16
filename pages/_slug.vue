@@ -7,10 +7,10 @@
       >
         <icon-arrow-left />
       </nuxt-link>
-      {{ article.title }}
-      <code v-if="!article.completed" class="ml-3">WIP</code>
+      {{article.type}} from {{ formatDate(article.createdAt) }}
     </h1>
     <nuxt-content :document="article" />
+    <lib-link-block v-if="prev" class="mt-8" :title="'Read previous Article'" :subtitle="prev.title" :href="{ name: 'slug', params: { slug: prev.slug } }"/>
   </div>
 </template>
 
@@ -27,6 +27,12 @@ export default {
         mainImage: this.article.image,
       };
       return getMeta(metaData);
+    },
+  },
+  methods: {
+    formatDate(date) {
+      const options = { year: "numeric", month: "long", day: "numeric" };
+      return new Date(date).toLocaleDateString("en", options);
     },
   },
   head() {
@@ -54,7 +60,12 @@ export default {
   },
   async asyncData({ $content, params }) {
     const article = await $content(params.slug).fetch();
-    return { article };
+    const [prev, next] = await $content()
+      .only(['title', 'slug'])
+      .sortBy('createdAt', 'asc')
+      .surround(params.slug)
+      .fetch()
+    return { article, prev, next };
   },
 };
 </script>

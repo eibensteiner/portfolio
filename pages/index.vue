@@ -1,16 +1,11 @@
 <template>
   <main>
-    <lib-title>
-      I'm Dominik, a coding Designer from Austria, striving for visual clarity
-      and simplicity.
-    </lib-title>
+    <p>I'm <strong>Dominik</strong>, a coding <strong>designer based in Linz, Austria</strong>.</p>
     <p>
       Currently I’m working as a
       <strong>Product & Brand Designer</strong> at
       <lib-link :href="'https://blockpit.io'">Blockpit</lib-link>, supporting
-      thousands of Users with their crypto taxes. Previously I worked as a
-      <strong>UX Engineer</strong> at
-      <lib-link :href="'https://storyclash.com'">Storyclash</lib-link>.
+      thousands of Users with their crypto taxes.
     </p>
     <p>
       If you want to follow my journey, you can do so on
@@ -24,9 +19,8 @@
     <template v-for="article of articles">
       <h2>
         <nuxt-link :to="{ name: 'slug', params: { slug: article.slug } }">
-          {{ article.title }}
+          {{article.type}} from {{ formatDate(article.createdAt) }}
         </nuxt-link>
-        <code v-if="!article.completed" class="ml-2">WIP</code>
       </h2>
       <nuxt-content :document="article" />
     </template>
@@ -44,6 +38,13 @@ export default {
     return {
       articles,
     };
+  },
+
+  methods: {
+    formatDate(date) {
+      const options = { year: "numeric", month: "long", day: "numeric" };
+      return new Date(date).toLocaleDateString("en", options);
+    },
   },
 };
 </script>

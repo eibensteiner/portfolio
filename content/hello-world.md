@@ -1,6 +1,8 @@
 ---
 title: Hello World
+type: Thought
 completed: true
+categories: [introduction]
 ---
 
 I've been planning this post for a long time, but struggled to find a topic to begin with.

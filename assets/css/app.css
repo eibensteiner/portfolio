@@ -3,11 +3,11 @@ h1 {
 }
 
 h2 {
-  @apply text-xl text-gray-900 font-semibold w-full mb-4 mt-16;
+  @apply text-lg text-gray-900 font-semibold w-full mb-3 mt-16;
 }
 
 h3 {
-  @apply text-base text-gray-900 font-semibold w-full mb-2 mt-12;
+  @apply text-base text-gray-900 font-semibold w-full mb-2 mt-10;
 }
 
 p {
@@ -41,10 +41,7 @@ strong {
   @apply text-gray-800 font-medium;
 }
 
-p code,
-h1 code,
-h2 code,
-h3 code {
+p code {
   @apply bg-gray-100 text-sm h-6 rounded px-1 inline-flex items-center font-normal;
 }
 
@@ -54,6 +51,14 @@ h3 code {
 
 .icon svg {
   @apply w-full h-full;
+}
+
+.meta {
+  @apply flex items-center mb-6;
+}
+
+.meta span {
+  @apply font-normal text-gray-500;
 }
 
 @media print {
