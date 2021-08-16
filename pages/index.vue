@@ -20,12 +20,6 @@
       or
       <lib-link :href="'https://github.com/dowu'">GitHub</lib-link>
     </p>
-    <lib-link-block
-      class="mt-8"
-      :title="'Learn more about me'"
-      :subtitle="'Experience, education & hobbies'"
-      :href="'/about'"
-    ></lib-link-block>
 
     <template v-for="article of articles">
       <h2>

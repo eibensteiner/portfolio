@@ -3,7 +3,7 @@ h1 {
 }
 
 h2 {
-  @apply text-lg text-gray-900 font-semibold w-full mb-3 mt-14;
+  @apply text-xl text-gray-900 font-semibold w-full mb-4 mt-16;
 }
 
 h3 {
