@@ -1,13 +1,17 @@
 h1 {
-  @apply text-2xl text-gray-900 font-semibold mb-6;
+  @apply text-xl text-gray-900 font-semibold mb-4;
+}
+
+* + h1 {
+  @apply mt-20
 }
 
 h2 {
-  @apply text-lg text-gray-900 font-semibold w-full mb-3 mt-16;
+  @apply text-base text-gray-900 font-semibold w-full mb-2 mt-10;
 }
 
 h3 {
-  @apply text-base text-gray-900 font-semibold w-full mb-2 mt-10;
+  @apply text-base text-gray-900 font-semibold w-full mb-2 mt-9;
 }
 
 p {
@@ -24,7 +28,7 @@ blockquote {
 
 p a {
   box-shadow: rgb(17, 25, 36, 0.2) 0px 1px 0px;
-  @apply text-gray-800 font-medium transition-colors hover:text-black cursor-pointer;
+  @apply text-gray-800 font-medium transition-colors hover:text-black cursor-pointer inline-block leading-6;
 }
 
 h2 a,
@@ -59,6 +63,18 @@ p code {
 
 .meta span {
   @apply font-normal text-gray-500;
+}
+
+ul {
+  @apply list-disc;
+}
+
+ul li {
+  @apply list-item ml-5;
+}
+
+ul li:not(:first-child) {
+  @apply mt-1
 }
 
 @media print {

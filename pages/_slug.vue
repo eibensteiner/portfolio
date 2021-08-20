@@ -1,16 +1,14 @@
 <template>
   <div>
     <h1 class="relative inline-flex items-center">
-      <nuxt-link
-        :to="'/'"
-        :class="'rounded-full bg-gray-50 border-gray-200 border h-7 w-7 flex items-center justify-center absolute -left-14 hover:bg-gray-100 transition cursor-pointer'"
-      >
-        <icon-arrow-left />
-      </nuxt-link>
-      {{article.type}} from {{ formatDate(article.createdAt) }}
+      {{ article.title }}
     </h1>
     <nuxt-content :document="article" />
-    <lib-link-block v-if="prev" class="mt-8" :title="'Read previous Article'" :subtitle="prev.title" :href="{ name: 'slug', params: { slug: prev.slug } }"/>
+    <lib-link-block
+      :title="'Bring me back'"
+      :href="'/'"
+      class="mt-8"
+    ></lib-link-block>
   </div>
 </template>
 
@@ -31,7 +29,7 @@ export default {
   },
   methods: {
     formatDate(date) {
-      const options = { year: "numeric", month: "long", day: "numeric" };
+      const options = { weekday: 'long', year: "numeric", month: "short", day: "numeric" };
       return new Date(date).toLocaleDateString("en", options);
     },
   },
@@ -61,10 +59,10 @@ export default {
   async asyncData({ $content, params }) {
     const article = await $content(params.slug).fetch();
     const [prev, next] = await $content()
-      .only(['title', 'slug'])
-      .sortBy('createdAt', 'asc')
+      .only(["title", "slug"])
+      .sortBy("createdAt", "asc")
       .surround(params.slug)
-      .fetch()
+      .fetch();
     return { article, prev, next };
   },
 };

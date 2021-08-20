@@ -1,6 +1,5 @@
 ---
 title: Introducing Sandbox
-type: Sideproject
 ---
 
 I’m excited to announce **Sandbox**. An **auto-generated open source design system** tailored to the needs of small organizations.
@@ -9,12 +8,12 @@ I’m excited to announce **Sandbox**. An **auto-generated open source design sy
 
 Building a design system with Sandbox couldn't be easier. Clone the project, paste your `tailwind.config.js` in the root, and that's it.
 
-### Vision
+## Problem & Vision
 
 I often see the **problem of keeping design systems up to date**. Especially in smaller organizations we want to keep the design system **as small and tidy** but also **as powerful as possible** for our use cases.
 
 Sandbox is trying to tackle this issue. It **auto-generates your design system out of your design tokens** just by adding one simple file everybody works with.
 
-### Rolling out
+## Rolling out
 
 Sandbox is **currently in development** and not public. The MVP will include auto-generated **typography, color & resources pages**. Components and more will follow.

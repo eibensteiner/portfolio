@@ -6,11 +6,10 @@
         <div class="w-2/3 bg-gray-300"></div>
         <div class="w-5/6 bg-gray-200"></div>
       </div>
-      <div class="flex flex-col">
+      <div class="flex flex-col items-start">
         <span class="title"
           >{{title}}</span
         >
-        <span class="subtitle">{{subtitle}}</span>
       </div>
     </div>
   </nuxt-link>
@@ -32,11 +31,12 @@ export default {
 }
 
 .title {
-  @apply font-medium text-gray-900 text-sm;
+  box-shadow: rgb(17, 25, 36, 0.2) 0px 1px 0px;
+  @apply font-medium text-gray-800;
 }
 
 .subtitle {
-  @apply font-normal text-gray-500 text-sm;
+  @apply font-normal text-gray-700 mt-1;
 }
 
 .link-block:hover .illustration {
@@ -48,7 +48,7 @@ export default {
 }
 
 .illustration {
-  @apply w-11 h-14 border rounded-md shadow-sm bg-white p-2 mr-5;
+  @apply w-8 h-10 border rounded-md shadow-sm bg-white p-1.5 mr-5;
 }
 
 .illustration div {
