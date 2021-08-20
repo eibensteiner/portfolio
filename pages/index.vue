@@ -20,7 +20,7 @@
     </p>
 
     <lib-link-block
-      :title="'Learn more about me'"
+      :title="'Learn more about me & my story'"
       :href="'/about'"
       class="mt-8"
     ></lib-link-block>

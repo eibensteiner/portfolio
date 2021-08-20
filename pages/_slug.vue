@@ -3,6 +3,15 @@
     <h1 class="relative inline-flex items-center">
       {{ article.title }}
     </h1>
+    <div class="flex items-center mb-8">
+      <lib-link-block
+        :title="'Bring me back'"
+        :href="'/'"
+        class="mr-2"
+      ></lib-link-block>
+      <span class="mr-2 text-gray-300 font-normal text-base">-</span>
+      <span class="text-gray-700 font-normal text-base">{{ formatDate(article.createdAt) }}</span>
+    </div>
     <nuxt-content :document="article" />
     <lib-link-block
       :title="'Bring me back'"
@@ -29,7 +38,12 @@ export default {
   },
   methods: {
     formatDate(date) {
-      const options = { weekday: 'long', year: "numeric", month: "short", day: "numeric" };
+      const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      };
       return new Date(date).toLocaleDateString("en", options);
     },
   },

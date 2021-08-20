@@ -27,7 +27,7 @@ export default {
 
 <style scoped>
 .link-block {
-  @apply w-full flex;
+  @apply flex;
 }
 
 .title {
@@ -48,7 +48,7 @@ export default {
 }
 
 .illustration {
-  @apply w-8 h-10 border rounded-md shadow-sm bg-white p-1.5 mr-5;
+  @apply w-8 h-10 border rounded-md shadow-sm bg-white p-1.5 mr-4;
 }
 
 .illustration div {
