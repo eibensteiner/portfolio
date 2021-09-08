@@ -65,15 +65,15 @@ p code {
   @apply font-normal text-gray-500;
 }
 
-ul {
+p + ul {
   @apply list-disc;
 }
 
-ul li {
+p + ul li {
   @apply list-item ml-5;
 }
 
-ul li:not(:first-child) {
+p + ul li:not(:first-child) {
   @apply mt-1
 }
 

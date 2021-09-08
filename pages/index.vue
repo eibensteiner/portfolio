@@ -18,12 +18,7 @@
       or
       <lib-link :href="'https://github.com/dowu'">GitHub</lib-link>
     </p>
-
-    <lib-link-block
-      :title="'Learn more about me & my story'"
-      :href="'/about'"
-      class="mt-8"
-    ></lib-link-block>
+    <p>If you want to discover all pages, you can simply hit <code>cmd k</code>literally anywhere</p>
 
     <template v-for="article of articles">
       <h1>
@@ -32,11 +27,17 @@
         </nuxt-link>
       </h1>
       <nuxt-content :document="article" />
-      <lib-link-block
-        :title="'Read on a seperate Page'"
-        :href="''"
-        class="mt-8"
-      ></lib-link-block>
+      <div class="flex items-center mt-9">
+        <lib-link-block
+          :title="'Read on a seperate Page'"
+          :href="'/'"
+          class="mr-2"
+        ></lib-link-block>
+        <span class="mr-2 text-gray-300 font-normal text-base">-</span>
+        <span class="text-gray-700 font-normal text-base"
+          >Posted on {{ formatDate(article.createdAt) }}</span
+        >
+      </div>
     </template>
   </main>
 </template>
@@ -46,7 +47,6 @@ export default {
   // gets markdown files from /content
   async asyncData({ $content, params }) {
     const articles = await $content(params.slug)
-      .where({ slug: { $ne: "about" } })
       .sortBy("createdAt", "desc")
       .fetch();
 
