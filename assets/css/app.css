@@ -11,15 +11,15 @@ h1 {
 }
 
 h2 {
-  @apply text-base text-gray-900 font-semibold w-full mb-2 mt-10;
+  @apply text-lg text-gray-900 font-semibold w-full mb-2;
 }
 
 h3 {
-  @apply text-base text-gray-900 font-semibold w-full mb-2 mt-9;
+  @apply text-lg text-gray-900 font-semibold w-full mb-2;
 }
 
 p {
-  @apply text-gray-700 font-normal mb-5 text-base;
+  @apply text-gray-700 font-normal text-lg;
 }
 
 li {
@@ -97,4 +97,8 @@ button {
   code {
     -webkit-print-color-adjust: exact !important;
   }
+}
+
+.card {
+  @apply w-full rounded-xl p-8 relative overflow-hidden flex flex-col;
 }

@@ -1,12 +1,5 @@
 <template>
   <main>
-    <div class="flex items-center mb-8">
-      <img src="@/assets/img/about/me.jpg" class="w-8 h-8 rounded-full mr-3" />
-      <p class="m-0 flex">
-        <a class="mr-2">@dmnk</a><span class="mr-2">-</span
-        ><span>Coding Designer</span>
-      </p>
-    </div>
     <p>
       I'm <strong>Dominik</strong>, a coding
       <strong>designer based in Linz, Austria</strong>.
@@ -17,21 +10,16 @@
       <lib-link :href="'https://blockpit.io'">Blockpit</lib-link>, supporting
       thousands of Users with their crypto taxes.
     </p>
-    <p>
-      If you want to follow my journey, you can do so on
-      <lib-link :href="'https://twitter.com/wurmdo'">Twitter</lib-link>,
-      <lib-link :href="'https://dribbble.com/dowu'">Dribbble</lib-link>,
-      <lib-link :href="'https://linkedin.com/in/dowu'">LinkedIn</lib-link>
-      or
-      <lib-link :href="'https://github.com/dowu'">GitHub</lib-link>
-    </p>
-    <div class="flex items-center mt-10">
-      <button class=" mr-3">
-        <icon-sparkles class="mr-2" />
-        Discover all sites
-      </button>
-      or hit
-      <div class="badge">⌘ K</div>
+    <div class="flex flex-wrap gap-6 mt-20">
+      <div class="flex flex-col flex-1 gap-6">
+        <card-about></card-about>
+        <div class="card bg-gray-900 h-80">a</div>
+        <card-gallery></card-gallery>
+      </div>
+      <div class="flex flex-col flex-1 gap-6">
+        <div class="card bg-gray-100 h-80">a</div>
+        <div class="card bg-gray-100 h-146">a</div>
+      </div>
     </div>
 
     <template v-for="article of articles">
