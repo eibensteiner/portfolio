@@ -1,3 +1,7 @@
+body {
+  @apply bg-gray-50;
+}
+
 h1 {
   @apply text-xl text-gray-900 font-semibold mb-4;
 }
@@ -75,6 +79,14 @@ p + ul li {
 
 p + ul li:not(:first-child) {
   @apply mt-1
+}
+
+button {
+  @apply h-9 px-3 border shadow-sm rounded-md flex items-center justify-center bg-white hover:bg-gray-50 hover:bg-opacity-50 transition-colors;
+}
+
+.badge {
+  @apply bg-gray-100 text-sm h-6 rounded px-1.5 inline-flex items-center font-normal ml-2;
 }
 
 @media print {

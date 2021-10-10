@@ -1,5 +1,12 @@
 <template>
   <main>
+    <div class="flex items-center mb-8">
+      <img src="@/assets/img/about/me.jpg" class="w-8 h-8 rounded-full mr-3" />
+      <p class="m-0 flex">
+        <a class="mr-2">@dmnk</a><span class="mr-2">-</span
+        ><span>Coding Designer</span>
+      </p>
+    </div>
     <p>
       I'm <strong>Dominik</strong>, a coding
       <strong>designer based in Linz, Austria</strong>.
@@ -18,7 +25,14 @@
       or
       <lib-link :href="'https://github.com/dowu'">GitHub</lib-link>
     </p>
-    <p>If you want to discover all pages, you can simply hit <code>cmd k</code>literally anywhere</p>
+    <div class="flex items-center mt-10">
+      <button class=" mr-3">
+        <icon-sparkles class="mr-2" />
+        Discover all sites
+      </button>
+      or hit
+      <div class="badge">⌘ K</div>
+    </div>
 
     <template v-for="article of articles">
       <h1>
