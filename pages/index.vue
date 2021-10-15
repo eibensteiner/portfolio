@@ -1,27 +1,28 @@
 <template>
   <main>
-    <p>
-      I'm <strong>Dominik</strong>, a coding
-      <strong>designer based in Linz, Austria</strong>.
-    </p>
-    <p>
+    <h1>Let's make this digital age more humane</h1>
+    <p class="mt-6">
       Currently I’m working as a
       <strong>Product & Brand Designer</strong> at
       <lib-link :href="'https://blockpit.io'">Blockpit</lib-link>, supporting
       thousands of Users with their crypto taxes.
     </p>
+    <div class="flex items-center mt-10">
+      <lib-button>Discover</lib-button>
+      <p class="mx-4">or hit</p>
+      <lib-badge :variant="'box'">⌘ K</lib-badge>
+    </div>
     <div class="flex flex-wrap gap-6 mt-20">
       <div class="flex flex-col flex-1 gap-6">
         <card-about></card-about>
-        <div class="card bg-gray-900 h-80">a</div>
         <card-gallery></card-gallery>
       </div>
       <div class="flex flex-col flex-1 gap-6">
-        <div class="card bg-gray-100 h-80">a</div>
-        <div class="card bg-gray-100 h-146">a</div>
+        <card-command></card-command>
       </div>
     </div>
 
+    <!--
     <template v-for="article of articles">
       <h1>
         <nuxt-link :to="{ name: 'slug', params: { slug: article.slug } }">
@@ -41,6 +42,8 @@
         >
       </div>
     </template>
+    -->
+
   </main>
 </template>
 

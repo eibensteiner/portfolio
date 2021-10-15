@@ -1,9 +1,5 @@
-body {
-  @apply bg-gray-50;
-}
-
 h1 {
-  @apply text-xl text-gray-900 font-semibold mb-4;
+  @apply text-3xl text-gray-900 font-semibold mb-4;
 }
 
 * + h1 {
@@ -11,15 +7,15 @@ h1 {
 }
 
 h2 {
-  @apply text-lg text-gray-900 font-semibold w-full mb-2;
+  @apply text-lg text-gray-900 font-semibold mb-2;
 }
 
 h3 {
-  @apply text-lg text-gray-900 font-semibold w-full mb-2;
+  @apply text-lg text-gray-900 font-semibold mb-2;
 }
 
 p {
-  @apply text-gray-700 font-normal text-lg;
+  @apply text-gray-700 font-medium text-lg antialiased;
 }
 
 li {
@@ -81,14 +77,6 @@ p + ul li:not(:first-child) {
   @apply mt-1
 }
 
-button {
-  @apply h-9 px-3 border shadow-sm rounded-md flex items-center justify-center bg-white hover:bg-gray-50 hover:bg-opacity-50 transition-colors;
-}
-
-.badge {
-  @apply bg-gray-100 text-sm h-6 rounded px-1.5 inline-flex items-center font-normal ml-2;
-}
-
 @media print {
   @page {
     margin: 20mm 0 10mm 0;
@@ -100,5 +88,5 @@ button {
 }
 
 .card {
-  @apply w-full rounded-xl p-8 relative overflow-hidden flex flex-col;
+  @apply w-full rounded-xl p-8 relative overflow-hidden flex flex-col cursor-pointer border border-transparent hover:bg-opacity-80 hover:border-gray-200 transition-colors;
 }
