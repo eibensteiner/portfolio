@@ -1,7 +1,7 @@
 <template>
   <main>
     <h1>Let's make this digital age more humane</h1>
-    <p class="mt-6">
+    <p class="mt-7">
       Currently I’m working as a
       <strong>Product & Brand Designer</strong> at
       <lib-link :href="'https://blockpit.io'">Blockpit</lib-link>, supporting

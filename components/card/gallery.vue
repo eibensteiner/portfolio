@@ -24,7 +24,7 @@
 }
 
 img {
-  @apply w-5/6 absolute shadow-lg transition-transform rounded-md select-none;
+  @apply w-5/6 absolute shadow-sm transition-transform rounded-md select-none;
 }
 
 img:first-child {
