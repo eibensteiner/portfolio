@@ -27,12 +27,16 @@
         </div>
       </div>
     </div>
+
+    <div class="notification">
+        Hit <lib-badge class="mx-2" :variant="'box'">⌘ K</lib-badge> to try it
+    </div>
   </div>
 </template>
 
 <style scoped>
-.card:hover .panel {
-    @apply -translate-y-0.5;
+.card:hover .notification {
+    @apply translate-y-0;
 }
 
 .panel {
@@ -79,5 +83,9 @@ li {
 
 li.active {
   @apply bg-gray-700 text-white bg-opacity-50;
+}
+
+.notification {
+    @apply bg-white rounded-3xl h-11 z-10 absolute bottom-6 flex items-center justify-center translate-y-20 transition-transform text-lg px-6 text-gray-600 -translate-x-1/2 left-1/2 whitespace-nowrap;
 }
 </style>

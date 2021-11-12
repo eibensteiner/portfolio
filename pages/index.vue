@@ -8,9 +8,7 @@
       thousands of Users with their crypto taxes.
     </p>
     <div class="flex items-center mt-10">
-      <lib-button>Discover</lib-button>
-      <p class="mx-4">or hit</p>
-      <lib-badge :variant="'box'">⌘ K</lib-badge>
+      <lib-button>Follow Me</lib-button>
     </div>
     <div class="flex flex-wrap gap-6 mt-20">
       <div class="flex flex-col flex-1 gap-6">
