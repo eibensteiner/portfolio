@@ -1,5 +1,5 @@
-body {
-  @apply bg-gray-50;
+* {
+  @apply antialiased font-medium;
 }
 
 h1 {
@@ -19,15 +19,15 @@ h3 {
 }
 
 p {
-  @apply text-gray-700 font-normal mb-5 text-base;
+  @apply text-gray-700 font-medium mb-5 text-base;
 }
 
 li {
-  @apply text-gray-700 font-normal text-base;
+  @apply text-gray-700 font-medium text-base;
 }
 
 blockquote {
-  @apply text-gray-500 font-normal mb-5 border-l-4 pl-4 text-base;
+  @apply text-gray-500 font-medium mb-5 border-l-4 pl-4 text-base;
 }
 
 p a {
@@ -50,7 +50,7 @@ strong {
 }
 
 p code {
-  @apply bg-gray-100 text-sm h-6 rounded px-1 inline-flex items-center font-normal;
+  @apply bg-gray-100 text-sm h-6 rounded px-1 inline-flex items-center font-medium;
 }
 
 .icon.variant-first {
@@ -66,7 +66,7 @@ p code {
 }
 
 .meta span {
-  @apply font-normal text-gray-500;
+  @apply font-medium text-gray-500;
 }
 
 p + ul {
@@ -86,7 +86,7 @@ button {
 }
 
 .badge {
-  @apply bg-gray-100 text-sm h-6 rounded px-1.5 inline-flex items-center font-normal ml-2;
+  @apply bg-gray-100 text-sm h-6 rounded px-1.5 inline-flex items-center font-medium ml-2;
 }
 
 @media print {

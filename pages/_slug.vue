@@ -23,8 +23,8 @@
         :href="'/'"
         class="mr-2"
       ></lib-link-block>
-      <span class="mr-2 text-gray-300 font-normal text-base">-</span>
-      <span class="text-gray-700 font-normal text-base"
+      <span class="mr-2 text-gray-300 font-medium text-base">-</span>
+      <span class="text-gray-700 font-medium text-base"
         >Posted on {{ formatDate(article.createdAt) }}</span
       >
     </div>

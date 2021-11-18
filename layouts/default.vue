@@ -1,16 +1,12 @@
 <template>
   <div class="default">
-    <Nuxt/>
+    <Nuxt class="w-full max-w-xl py-28" />
     <lib-command></lib-command>
   </div>
 </template>
 
 <style scoped>
 .default {
-  @apply w-full flex items-center flex-col py-6 sm:py-32 px-6 sm:px-0;
-}
-
-.default > * {
-  @apply w-full max-w-xl;
+  @apply w-full flex items-start justify-center px-6 sm:px-0;
 }
 </style>

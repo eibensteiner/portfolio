@@ -36,7 +36,7 @@ export default {
 }
 
 .subtitle {
-  @apply font-normal text-gray-700 mt-1;
+  @apply font-medium text-gray-700 mt-1;
 }
 
 .link-block:hover .illustration {

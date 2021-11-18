@@ -1,12 +1,6 @@
 <template>
   <main>
-    <div class="flex items-center mb-8">
-      <img src="@/assets/img/about/me.jpg" class="w-8 h-8 rounded-full mr-3" />
-      <p class="m-0 flex">
-        <a class="mr-2">@dmnk</a><span class="mr-2">-</span
-        ><span>Coding Designer</span>
-      </p>
-    </div>
+    <h1>I'm Dominik, a coding Designer from Austria, striving for visual clarity and simplicity.</h1>
     <p>
       I'm <strong>Dominik</strong>, a coding
       <strong>designer based in Linz, Austria</strong>.
@@ -25,13 +19,13 @@
       or
       <lib-link :href="'https://github.com/dowu'">GitHub</lib-link>
     </p>
-    <div class="flex items-center mt-10">
-      <button class=" mr-3">
-        <icon-sparkles class="mr-2" />
-        Discover all sites
-      </button>
-      or hit
-      <div class="badge">⌘ K</div>
+
+    <div class="flex items-center mt-12">
+      <div class="w-52 h-32 rounded-lg shadow-sm border bg-gray-50"></div>
+      <div class="ml-10">
+        <h2 class="mt-0">More about Me</h2>
+        <p  class="mb-0">This Section is part of the now page movement by me.</p>
+      </div>
     </div>
 
     <template v-for="article of articles">
@@ -47,8 +41,8 @@
           :href="'/'"
           class="mr-2"
         ></lib-link-block>
-        <span class="mr-2 text-gray-300 font-normal text-base">-</span>
-        <span class="text-gray-700 font-normal text-base"
+        <span class="mr-2 text-gray-300 font-medium text-base">-</span>
+        <span class="text-gray-700 font-medium text-base"
           >Posted on {{ formatDate(article.createdAt) }}</span
         >
       </div>

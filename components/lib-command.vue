@@ -240,7 +240,7 @@ ul:not(:last-child) {
 }
 
 ul > span {
-  @apply font-normal text-gray-400 text-sm mt-3 mb-2 w-full px-4 empty:hidden;
+  @apply font-medium text-gray-400 text-sm mt-3 mb-2 w-full px-4 empty:hidden;
 }
 
 li {
