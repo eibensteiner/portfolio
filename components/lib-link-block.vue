@@ -2,9 +2,9 @@
   <nuxt-link class="link-block" :to="href">
     <div class="flex items-center">
       <div class="illustration">
-        <div class="w-full bg-gray-400"></div>
-        <div class="w-2/3 bg-gray-300"></div>
-        <div class="w-5/6 bg-gray-200"></div>
+        <div class="w-full "></div>
+        <div class="w-2/3 "></div>
+        <div class="w-5/6"></div>
       </div>
       <div class="flex flex-col items-start">
         <span class="title"
@@ -32,19 +32,19 @@ export default {
 
 .title {
   box-shadow: rgb(17, 25, 36, 0.2) 0px 1px 0px;
-  @apply font-medium text-gray-800;
+  @apply font-medium text-white;
 }
 
 .subtitle {
-  @apply font-medium text-gray-700 mt-1;
+  @apply font-medium mt-1;
 }
 
 .link-block:hover .illustration {
-  @apply bg-gray-50 transition-colors bg-opacity-50;
+  @apply  transition-colors bg-opacity-50;
 }
 
 .link-block:hover .title {
-  @apply text-black transition-colors;
+  @apply text-white transition-colors;
 }
 
 .illustration {

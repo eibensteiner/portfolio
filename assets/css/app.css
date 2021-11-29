@@ -1,9 +1,13 @@
+body {
+  @apply bg-slate-dark-1;
+}
+
 * {
   @apply antialiased font-medium;
 }
 
 h1 {
-  @apply text-xl text-gray-900 font-semibold mb-4;
+  @apply text-2xl text-white font-semibold mb-6 font-serif;
 }
 
 * + h1 {
@@ -11,62 +15,40 @@ h1 {
 }
 
 h2 {
-  @apply text-base text-gray-900 font-semibold w-full mb-2 mt-10;
+  @apply text-xl text-white font-semibold w-full mb-4 font-serif;
 }
 
 h3 {
-  @apply text-base text-gray-900 font-semibold w-full mb-2 mt-9;
+  @apply text-lg text-white font-semibold w-full mb-2 mt-6 font-serif;
 }
 
 p {
-  @apply text-gray-700 font-medium mb-5 text-base;
+  @apply text-slate-dark-11 font-medium mb-4 text-base;
+}
+
+em {
+  @apply font-serif text-slate-dark-12;
 }
 
 li {
-  @apply text-gray-700 font-medium text-base;
-}
-
-blockquote {
-  @apply text-gray-500 font-medium mb-5 border-l-4 pl-4 text-base;
+  @apply text-slate-dark-12 font-medium text-base;
 }
 
 p a {
-  box-shadow: rgb(17, 25, 36, 0.2) 0px 1px 0px;
-  @apply text-gray-800 font-medium transition-colors hover:text-black cursor-pointer inline-block leading-6;
-}
-
-h2 a,
-h3 a {
-  box-shadow: rgb(17, 25, 36, 0.2) 0px 1px 0px;
-  @apply text-gray-800 font-semibold transition-colors hover:text-black cursor-pointer;
+  box-shadow: rgb(255, 255, 255, 0.2) 0px 1px 0px;
+  @apply text-white font-medium transition-colors hover:text-white cursor-pointer inline-block leading-6;
 }
 
 pre {
-  @apply text-sm bg-gray-50 border rounded my-6 px-5 py-4;
-}
-
-strong {
-  @apply text-gray-800 font-medium;
+  @apply text-sm bg-slate-dark-2 border rounded my-6 px-5 py-4;
 }
 
 p code {
-  @apply bg-gray-100 text-sm h-6 rounded px-1 inline-flex items-center font-medium;
-}
-
-.icon.variant-first {
-  @apply text-gray-700;
+  @apply bg-slate-dark-2 text-sm h-6 rounded px-1 inline-flex items-center font-medium;
 }
 
 .icon svg {
   @apply w-full h-full;
-}
-
-.meta {
-  @apply flex items-center mb-6;
-}
-
-.meta span {
-  @apply font-medium text-gray-500;
 }
 
 p + ul {
@@ -82,11 +64,11 @@ p + ul li:not(:first-child) {
 }
 
 button {
-  @apply h-9 px-3 border shadow-sm rounded-md flex items-center justify-center bg-white hover:bg-gray-50 hover:bg-opacity-50 transition-colors;
+  @apply h-10 px-4 border border-slate-dark-4 shadow-sm rounded-md flex items-center justify-center text-white bg-slate-dark-3 hover:bg-slate-dark-2 hover:bg-opacity-50 transition-colors;
 }
 
-.badge {
-  @apply bg-gray-100 text-sm h-6 rounded px-1.5 inline-flex items-center font-medium ml-2;
+hr {
+  @apply my-12;
 }
 
 @media print {

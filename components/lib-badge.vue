@@ -4,6 +4,6 @@
 
 <style scoped>
 .badge {
-    @apply h-6 rounded-md px-1.5 bg-gray-200 text-gray-700 text-sm;
+    @apply h-6 rounded-md px-1.5 bg-slate-dark-2 text-slate-dark-11 text-sm;
 }
 </style>

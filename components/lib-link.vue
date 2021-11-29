@@ -15,7 +15,7 @@ export default {
 
 <style scoped>
 .link {
-    box-shadow: rgb(17, 25, 36, 0.2) 0px 1px 0px;
-    @apply text-gray-800 transition-colors hover:text-black cursor-pointer;
+    box-shadow: rgb(255, 255, 255, 0.1) 0px 1.5px 0px;
+    @apply text-slate-dark-12 transition-colors hover:text-white cursor-pointer leading-5;
 }
 </style>

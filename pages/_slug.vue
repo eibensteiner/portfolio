@@ -18,13 +18,8 @@
       </template>
     </lib-banner>
     <div class="flex items-center mt-9">
-      <lib-link-block
-        :title="'Bring me back'"
-        :href="'/'"
-        class="mr-2"
-      ></lib-link-block>
-      <span class="mr-2 text-gray-300 font-medium text-base">-</span>
-      <span class="text-gray-700 font-medium text-base"
+      <span class="mr-2  font-medium text-base">-</span>
+      <span class=" font-medium text-base"
         >Posted on {{ formatDate(article.createdAt) }}</span
       >
     </div>
@@ -94,6 +89,6 @@ export default {
 
 <style scoped>
 ::v-deep .nuxt-content h3 {
-  @apply text-lg text-gray-900 font-semibold w-full mb-3 mt-14;
+  @apply text-lg font-semibold w-full mb-3 mt-14;
 }
 </style>

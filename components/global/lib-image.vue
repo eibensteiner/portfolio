@@ -1,6 +1,6 @@
 <template>
   <figure class="my-10 w-full">
-    <div class="rounded w-full overflow-hidden" :class="hasBorder ? 'border' : ''">
+    <div class="rounded-lg w-full overflow-hidden" :class="hasBorder ? 'border' : ''">
       <img
         :src="require(`~/assets/img/${this.lowSrc}`)"
         :data-src="require(`~/assets/img/${this.highSrc}`)"
@@ -46,6 +46,6 @@ export default {
 }
 
 .caption {
-  @apply mt-6 text-sm text-gray-500;
+  @apply mt-6 text-sm text-slate-dark-11;
 }
 </style>

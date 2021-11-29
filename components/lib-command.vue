@@ -11,7 +11,7 @@
       @click.stop=""
     >
       <div class="search">
-        <icon-search class="text-gray-400"></icon-search>
+        <icon-search class="text-slate-dark-10"></icon-search>
         <input
           type="text"
           v-model="search"
@@ -198,7 +198,7 @@ export default {
 }
 
 .panel {
-  @apply mt-24 bg-gray-800 shadow-xl flex flex-col rounded-lg max-w-lg w-full transition-opacity overflow-hidden;
+  @apply mt-24 bg-slate-dark-3 shadow-xl flex flex-col rounded-lg max-w-lg w-full transition-opacity overflow-hidden;
 }
 
 .is-visible {
@@ -210,7 +210,7 @@ export default {
 }
 
 .search {
-  @apply border-b border-gray-700 px-5 flex items-center w-full;
+  @apply border-b border-slate-dark-4 px-5 flex items-center w-full;
 }
 
 .search > input {
@@ -218,7 +218,7 @@ export default {
 }
 
 .search > input::placeholder {
-  @apply text-gray-400;
+  @apply text-slate-dark-10;
 }
 
 .results {
@@ -236,18 +236,18 @@ ul {
 }
 
 ul:not(:last-child) {
-  @apply border-b border-gray-700;
+  @apply border-b border-slate-dark-4;
 }
 
 ul > span {
-  @apply font-medium text-gray-400 text-sm mt-3 mb-2 w-full px-4 empty:hidden;
+  @apply font-medium text-slate-dark-12 text-sm mt-3 mb-2 w-full px-4 empty:hidden;
 }
 
 li {
-  @apply h-12 w-full px-4 flex items-center justify-between cursor-pointer text-gray-200 rounded-md;
+  @apply h-12 w-full px-4 flex items-center justify-between cursor-pointer text-slate-dark-12 rounded-md;
 }
 
 li.active {
-  @apply bg-gray-700 text-white bg-opacity-50;
+  @apply bg-slate-dark-4 text-white bg-opacity-50;
 }
 </style>

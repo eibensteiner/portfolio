@@ -5,7 +5,7 @@ const meta = getMeta();
 
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
-  target: 'static',
+  target: "static",
   loading: false,
   head: {
     htmlAttrs: {
@@ -52,6 +52,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
+    "@nuxtjs/google-fonts",
     "@aceforth/nuxt-optimized-images",
   ],
 
@@ -80,6 +81,14 @@ export default {
     hostname: "https://dominik.is",
     routes() {
       return getRoutes();
+    },
+  },
+
+  googleFonts: {
+    families: {
+      Inter: true,
+      Newsreader: true,
+      "IBM+Plex+Serif": true,
     },
   },
 
