@@ -22,6 +22,10 @@ h3 {
   @apply text-lg text-white font-semibold w-full mb-2 mt-6 font-serif;
 }
 
+h4 {
+  @apply text-base text-white font-semibold w-full font-serif;
+}
+
 p {
   @apply text-slate-dark-11 font-medium mb-4 text-base;
 }
@@ -68,7 +72,7 @@ button {
 }
 
 hr {
-  @apply my-12;
+  @apply my-16;
 }
 
 @media print {

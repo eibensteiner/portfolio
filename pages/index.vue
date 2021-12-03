@@ -22,40 +22,15 @@
       <lib-link :href="'https://github.com/dowu'">GitHub</lib-link>
     </p>
 
-    <hr />
-
-    <div class="featured-article">
-      <div
-        class="
-          w-40
-          h-28
-          bg-slate-dark-3
-          rounded-lg
-          shadow-sm
-          border border-slate-dark-5
-          flex
-          items-center
-          justify-center
-          relative
-          overflow-hidden
-        "
-      >
-        <img src="@/assets/img/about/me_vector.svg" class="z-20 -rotate-6" />
-      </div>
-      <div class="ml-10 flex-1">
-        <h3 class="mt-0">More about Me</h3>
-        <p class="mb-0">
-          Building a design system with Sandbox couldn't be easier.
-        </p>
-      </div>
-    </div>
-
     <template v-for="article of articles">
       <hr />
       <section class="article relative">
         <nuxt-link :to="{ name: 'slug', params: { slug: article.slug } }">
-          <h1 class="mt-3 mb-3 relative">
+          <h1 class="mt-0 mb-3 relative">
             {{ article.title }}
+            <div class="pill">
+              Pinned
+            </div>
             <div class="overlay">
               <button>
                 <icon-arrow-right :variant="'first'"></icon-arrow-right>
@@ -67,7 +42,7 @@
       </section>
     </template>
 
-    <hr />
+    <!--<hr />
 
     <div class="banner">
       <div class="banner-left">
@@ -78,7 +53,7 @@
       <div class="banner-right">
         <img src="@/assets/img/about/chat_bubbles.svg" />
       </div>
-    </div>
+    </div>-->
   </main>
 </template>
 
@@ -122,7 +97,7 @@ export default {
 }
 
 .article h1 {
-  @apply text-xl text-white font-semibold mb-4 font-serif inline-flex;
+  @apply text-xl text-white font-semibold mb-4 font-serif inline-flex items-center;
 }
 
 .article h2 {
@@ -139,5 +114,9 @@ export default {
 
 .banner-left button {
   @apply mt-6;
+}
+
+.pill {
+  @apply text-sm bg-slate-dark-4 rounded-2xl h-6 px-2 font-sans text-slate-dark-11 ml-3;
 }
 </style>
