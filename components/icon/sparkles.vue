@@ -1,8 +1,7 @@
 <template>
-  <div class="icon" :class="'variant-' + variant">
+  <div class="icon" :class="['variant-' + variant, isButton ? 'is-button' : '']">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="h-5 w-5"
       viewBox="0 0 20 20"
       fill="currentColor"
     >
@@ -22,9 +21,3 @@ export default {
   mixins: [iconMixin],
 };
 </script>
-
-<style scoped>
-.icon {
-  @apply flex justify-center items-center w-4 h-4;
-}
-</style>

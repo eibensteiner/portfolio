@@ -1,5 +1,12 @@
 <template>
-    <icon-duplicate :is-button="true" @click="copy()" ref="copy"/></a>
+  <div @click="copy()">
+    <icon-duplicate :is-button="true" ref="copy"></icon-duplicate>
+    <icon-check
+      :is-button="true"
+      ref="check"
+      class="!hidden"
+    ></icon-check>
+  </div>
 </template>
 
 <script>
@@ -7,17 +14,23 @@ export default {
   props: {
     value: String,
   },
-  data(){
-      return {
-          dataValue: this.value,
-      }
+  data() {
+    return {
+      dataValue: this.value,
+    };
   },
   methods: {
     copy() {
+      const checkIcon = this.$refs.check.$el;
+      const copyIcon = this.$refs.copy.$el;
+
       navigator.clipboard.writeText(this.dataValue);
-      this.$refs.copy.innerText = "Copied";
+      checkIcon.classList.remove("!hidden");
+      copyIcon.classList.add("!hidden");
+
       setTimeout(() => {
-        this.$refs.copy.innerText = "Copy";
+        checkIcon.classList.add("!hidden");
+        copyIcon.classList.remove("!hidden");
       }, 2000);
     },
   },

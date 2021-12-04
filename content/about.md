@@ -12,3 +12,4 @@ But in reality, it isn't the topic I'm struggling for, it's the actual *barrier 
 Digital workers are dealing with lots of different, and confusing stuff in their everyday business. Sitting down once in a while and thinking about some things seems to be a a good resolution for me. Especially in these hard times.
 
 <lib-link-block :href="'https://google.com/testitest'" :title="'testtitle'" :subtitle="'The subtitle is a little bit longer here'"></lib-link-block>
+<lib-list-block></lib-list-block>

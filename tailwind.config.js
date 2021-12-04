@@ -11,7 +11,7 @@ module.exports = {
       },
       transitionProperty: {
         filter: "filter",
-      },
+      }
     },
     colors: {
       white: "#ffffff",

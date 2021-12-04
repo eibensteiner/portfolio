@@ -24,51 +24,13 @@
 
     <template v-for="article of pinned">
       <hr />
-      <section class="article relative">
-        <nuxt-link :to="{ name: 'slug', params: { slug: article.slug } }">
-          <h1 class="mt-0 mb-3 relative">
-            {{ article.title }}
-            <lib-badge :label="'Pinned'" class="ml-3"/>
-            <div class="overlay">
-              <button>
-                <icon-arrow-right :variant="'first'"></icon-arrow-right>
-              </button>
-            </div>
-          </h1>
-        </nuxt-link>
-        <nuxt-content :document="article" />
-      </section>
+      <lib-article :is-pinned="true" :content="article"></lib-article>
     </template>
 
     <template v-for="article of articles">
       <hr />
-      <section class="article relative">
-        <nuxt-link :to="{ name: 'slug', params: { slug: article.slug } }">
-          <h1 class="mt-0 mb-3 relative">
-            {{ article.title }}
-            <div class="overlay">
-              <button>
-                <icon-arrow-right :variant="'first'"></icon-arrow-right>
-              </button>
-            </div>
-          </h1>
-        </nuxt-link>
-        <nuxt-content :document="article" />
-      </section>
+      <lib-article :content="article"></lib-article>
     </template>
-
-    <!--<hr />
-
-    <div class="banner">
-      <div class="banner-left">
-        <h2>Writing</h2>
-        <p>This Section is part of the now page movement by Dominik.</p>
-        <button>Contact Me</button>
-      </div>
-      <div class="banner-right">
-        <img src="@/assets/img/about/chat_bubbles.svg" />
-      </div>
-    </div>-->
   </main>
 </template>
 
@@ -87,50 +49,5 @@ export default {
       pinned,
     };
   },
-
-  methods: {
-    formatDate(date) {
-      const options = { year: "numeric", month: "short", day: "numeric" };
-      return new Date(date).toLocaleDateString("en", options);
-    },
-  },
 };
 </script>
-
-<style scoped>
-.featured-article {
-  @apply flex items-center mt-10;
-}
-
-.article h1 .overlay {
-  @apply absolute right-0 bottom-0 top-0 bg-gradient-to-l from-slate-dark-1 rounded-lg invisible opacity-0 transition-all flex items-center justify-end w-full;
-}
-
-.article h1 button {
-  @apply w-6 h-6 flex justify-center items-center p-0;
-}
-
-.article h1:hover .overlay {
-  @apply opacity-100 visible;
-}
-
-.article h1 {
-  @apply text-xl text-white font-semibold mb-4 font-serif inline-flex items-center;
-}
-
-.article h2 {
-  @apply text-base text-white font-semibold w-full mb-2 mt-6 font-serif;
-}
-
-.banner {
-  @apply flex justify-between items-center bg-slate-dark-2 border rounded-lg mt-12;
-}
-
-.banner-left {
-  @apply p-6 max-w-xs;
-}
-
-.banner-left button {
-  @apply mt-6;
-}
-</style>
