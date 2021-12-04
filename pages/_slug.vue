@@ -4,25 +4,6 @@
       {{ article.title }}
     </h1>
     <nuxt-content :document="article" />
-    <lib-banner class="mt-10">
-      <template v-slot:title>
-        <h3 class="mt-0">Feedback or Questions?</h3>
-      </template>
-      <template v-slot:subtitle>
-        <p class="mb-0">
-          Do you have any questions or comments about this post? Just drop me a
-          line on
-          <lib-link :href="'https://twitter.com/wurmdo'">Twitter</lib-link> or
-          <lib-link :href="'mailto:me@dowu.xyz'">send me a mail</lib-link>.
-        </p>
-      </template>
-    </lib-banner>
-    <div class="flex items-center mt-9">
-      <span class="mr-2  font-medium text-base">-</span>
-      <span class=" font-medium text-base"
-        >Posted on {{ formatDate(article.createdAt) }}</span
-      >
-    </div>
   </div>
 </template>
 

@@ -22,15 +22,30 @@
       <lib-link :href="'https://github.com/dowu'">GitHub</lib-link>
     </p>
 
+    <template v-for="article of pinned">
+      <hr />
+      <section class="article relative">
+        <nuxt-link :to="{ name: 'slug', params: { slug: article.slug } }">
+          <h1 class="mt-0 mb-3 relative">
+            {{ article.title }}
+            <lib-badge :label="'Pinned'" class="ml-3"/>
+            <div class="overlay">
+              <button>
+                <icon-arrow-right :variant="'first'"></icon-arrow-right>
+              </button>
+            </div>
+          </h1>
+        </nuxt-link>
+        <nuxt-content :document="article" />
+      </section>
+    </template>
+
     <template v-for="article of articles">
       <hr />
       <section class="article relative">
         <nuxt-link :to="{ name: 'slug', params: { slug: article.slug } }">
           <h1 class="mt-0 mb-3 relative">
             {{ article.title }}
-            <div class="pill">
-              Pinned
-            </div>
             <div class="overlay">
               <button>
                 <icon-arrow-right :variant="'first'"></icon-arrow-right>
@@ -61,12 +76,15 @@
 export default {
   // gets markdown files from /content
   async asyncData({ $content, params }) {
+    const pinned = await $content(params.slug).where({ pinned: true }).fetch();
     const articles = await $content(params.slug)
+      .where({ pinned: { $ne: true } })
       .sortBy("createdAt", "desc")
       .fetch();
 
     return {
       articles,
+      pinned,
     };
   },
 
@@ -114,9 +132,5 @@ export default {
 
 .banner-left button {
   @apply mt-6;
-}
-
-.pill {
-  @apply text-sm bg-slate-dark-4 rounded-2xl h-6 px-2 font-sans text-slate-dark-11 ml-3;
 }
 </style>

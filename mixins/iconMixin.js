@@ -3,6 +3,7 @@ export default {
     variant: {
         default: 'first',
         type: String,
-    }
+    },
+    isButton: Boolean,
   }
 };

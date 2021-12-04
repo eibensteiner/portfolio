@@ -15,6 +15,7 @@
     "fuse.js": "^6.4.6",
     "lazysizes": "^5.3.2",
     "nuxt": "^2.15.7",
+    "sass": "^1.44.0",
     "tinykeys": "^1.2.0"
   },
   "devDependencies": {
