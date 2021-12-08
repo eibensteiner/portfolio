@@ -2,7 +2,7 @@
   <nuxt-link class="link-block" :to="href">
     <img
       :src="'https://cdn.pocket-lint.com/r/s/970x/assets/images/158682-smartwatches-review-apple-watch-series-7-all-about-the-screen-image2-ggnlijys37-jpg.webp'"
-      class="h-24 w-3/12 bg-slate-dark-4 object-cover object-center"
+      class="h-28 w-3/12 bg-slate-dark-4 object-cover object-center"
     />
     <div class="flex w-9/12 flex-col items-start justify-center px-7">
       <h4 class="inline-flex items-center">{{ title }}<icon-link :is-button="true" class="ml-3" /></h4>

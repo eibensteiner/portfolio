@@ -13,8 +13,8 @@
     </div>
     <div class="column flex flex-1 flex-col items-start">
       <h4>More</h4>
-      <a>Resume</a>
-      <a>RSS</a>
+      <a class="disabled">Resume<lib-badge :label="'Soon'" class="ml-3"/></a>
+      <a class="disabled">RSS<lib-badge :label="'Soon'" class="ml-3"/></a>
     </div>
     <div class="column flex flex-1 flex-col items-end">
       <nuxt-link :to="'/'">
@@ -44,15 +44,11 @@
     img {
       @apply hover:scale-105 hover:opacity-80 transition-all;
     }
-
-    span {
-      @apply ml-2 text-slate-dark-9 invisible opacity-0 transition-opacity;
-    }
   }
-}
 
-.footer a:hover span {
-  @apply visible opacity-100;
+  a.disabled {
+    @apply text-slate-dark-8 cursor-wait;
+  }
 }
 
 .footer a:not(:first-child) {

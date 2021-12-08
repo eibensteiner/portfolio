@@ -13,14 +13,6 @@
       <lib-link :href="'https://blockpit.io'">Blockpit</lib-link>, supporting
       thousands of Users with their crypto taxes.
     </p>
-    <p>
-      If you want to follow my journey, you can do so on
-      <lib-link :href="'https://twitter.com/wurmdo'">Twitter</lib-link>,
-      <lib-link :href="'https://dribbble.com/dowu'">Dribbble</lib-link>,
-      <lib-link :href="'https://linkedin.com/in/dowu'">LinkedIn</lib-link>
-      or
-      <lib-link :href="'https://github.com/dowu'">GitHub</lib-link>
-    </p>
 
     <template v-for="article of pinned">
       <hr />

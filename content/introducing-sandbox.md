@@ -14,6 +14,8 @@ I often see the *problem of keeping design systems up to date*. Especially in sm
 
 Sandbox is trying to tackle this issue. It *auto-generates your design system out of your design tokens* just by adding one simple file everybody works with.
 
+<lib-link-block :href="'https://google.com/testitest'" :title="'testtitle'" :subtitle="'The subtitle is a little bit longer here'"></lib-link-block>
+
 ## Rolling out
 
 Sandbox is *currently in development* and not public. The MVP will include auto-generated *typography, color & resources pages*. Components and more will follow.

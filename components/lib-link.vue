@@ -1,5 +1,5 @@
 <template>
-    <a class="link" :href="href" :class="isTitle ? 'font-semibold' : 'font-medium'" target="_blank" rel="noopener">
+    <a class="link" :href="href" target="_blank" rel="noopener">
         <slot></slot>
     </a>
 </template>
@@ -8,7 +8,6 @@
 export default {
     props: {
         href: String,
-        isTitle: Boolean
     }
 }
 </script>
