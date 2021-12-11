@@ -1,7 +1,6 @@
 module.exports = {
   mode: "jit",
-  purge: ["./src/**/*.html", "./src/**/*.vue", "./src/**/*.jsx"],
-  darkMode: "class",
+  content: ["./src/**/*.html", "./src/**/*.vue", "./src/**/*.jsx"],
   theme: {
     extend: {
       fontSize: {
@@ -49,18 +48,9 @@ module.exports = {
         },
       },
     },
-    borderColor: (theme) => ({
-      ...theme("colors"),
-      DEFAULT: theme("colors.slate.dark.3", "currentColor"),
-    }),
     fontFamily: {
       sans: ["Inter", "Helvetica Neue", "ui-sans-serif", "system-ui"],
       serif: ["IBM PLex Serif", "Georgia", "serif"],
-    },
-  },
-  variants: {
-    extend: {
-      outline: ["focus-visible"],
     },
   },
   plugins: [],

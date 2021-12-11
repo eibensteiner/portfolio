@@ -3,7 +3,7 @@
     <nuxt-link :to="{ name: 'slug', params: { slug: content.slug } }">
       <h1 class="mt-0 mb-3 relative">
         {{ content.title }}
-        <lib-badge :label="'Pinned'" class="ml-3" v-if="isPinned" />
+        <base-badge :label="'Pinned'" class="ml-3" v-if="isPinned" />
         <div class="overlay">
           <icon-arrow-right
             :variant="'first'"

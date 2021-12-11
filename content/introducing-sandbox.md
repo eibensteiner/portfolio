@@ -4,7 +4,7 @@ title: Introducing Sandbox
 
 I’m excited to announce *Sandbox*. An *auto-generated open source design system* tailored to the needs of small organizations.
 
-<lib-image :low-src="'projects/sandbox/app-low.jpg'" :high-src="'projects/sandbox/app.jpg'" :has-border="true" :alt="'Project specific typography page'"></lib-image>
+<base-image :low-src="'projects/sandbox/app-low.jpg'" :high-src="'projects/sandbox/app.jpg'" :has-border="true" :alt="'Project specific typography page'"></base-image>
 
 Building a design system with Sandbox couldn't be easier. Clone the project, paste your `tailwind.config.js` in the root, and that's it.
 
@@ -14,7 +14,7 @@ I often see the *problem of keeping design systems up to date*. Especially in sm
 
 Sandbox is trying to tackle this issue. It *auto-generates your design system out of your design tokens* just by adding one simple file everybody works with.
 
-<lib-link-block :href="'https://google.com/testitest'" :title="'testtitle'" :subtitle="'The subtitle is a little bit longer here'"></lib-link-block>
+<link-block :href="'https://google.com/testitest'" :title="'testtitle'" :subtitle="'The subtitle is a little bit longer here'"></link-block>
 
 ## Rolling out
 

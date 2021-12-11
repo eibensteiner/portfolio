@@ -1,6 +1,6 @@
 <template>
   <figure class="my-10 w-full">
-    <div class="rounded-lg w-full overflow-hidden" :class="hasBorder ? 'border' : ''">
+    <div class="rounded-lg w-full overflow-hidden" :class="hasBorder ? 'border border-slate-dark-3' : ''">
       <img
         :src="require(`~/assets/img/${this.lowSrc}`)"
         :data-src="require(`~/assets/img/${this.highSrc}`)"

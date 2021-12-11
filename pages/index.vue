@@ -10,18 +10,18 @@
     <p>
       Currently I’m working as a
       <em>Product & Brand Designer</em> at
-      <lib-link :href="'https://blockpit.io'">Blockpit</lib-link>, supporting
+      <link-external :href="'https://blockpit.io'">Blockpit</link-external>, supporting
       thousands of Users with their crypto taxes.
     </p>
 
     <template v-for="article of pinned">
       <hr />
-      <lib-article :is-pinned="true" :content="article"></lib-article>
+      <article-item :is-pinned="true" :content="article"></article-item>
     </template>
 
     <template v-for="article of articles">
       <hr />
-      <lib-article :content="article"></lib-article>
+      <article-item :content="article"></article-item>
     </template>
   </main>
 </template>

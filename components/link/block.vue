@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss" scoped>
 .link-block {
-  @apply flex w-full border bg-slate-dark-2 rounded-lg overflow-hidden;
+  @apply flex w-full border border-slate-dark-3 bg-slate-dark-2 rounded-lg overflow-hidden;
 }
 
 p {
@@ -35,7 +35,7 @@ a {
 }
 
 img {
-  @apply transition-opacity border-r;
+  @apply transition-opacity border-r border-slate-dark-3;
 }
 
 .link-block:hover {
