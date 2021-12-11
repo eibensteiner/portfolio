@@ -58,9 +58,10 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/content
+    'nuxt-content-body-html',
     "@nuxt/content",
     "@nuxtjs/sitemap",
+    '@nuxtjs/feed',
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
@@ -85,6 +86,36 @@ export default {
       return getRoutes();
     },
   },
+
+  feed: [
+    {
+      create: async feed => {
+        const $content = require('@nuxt/content').$content
+        feed.options = {
+          title: 'Dominik Wurm',
+          link: 'https://dominik.is',
+          description: "I'm Dominik, a coding Designer from Austria, striving for visual clarity, simplicity and minimalism.",
+        }
+
+        const posts = await $content()
+          .sortBy('createdAt', 'desc')
+          .fetch()
+        posts.forEach(post => {
+          const url = `https://dominik.is/${post.slug}`
+          feed.addItem({
+            content: post.bodyHtml,
+            date: new Date(post.createdAt),
+            description: post.description,
+            id: url,
+            link: url,
+            title: post.title,
+          })
+        })
+      },
+      path: '/feed',
+      type: 'rss2',
+    },
+  ],
 
   googleFonts: {
     families: {

@@ -23,9 +23,7 @@
       </div>
       <div class="column flex flex-1 flex-col items-start">
         <h4>More</h4>
-        <link-inline :isDisabled="true" :variant="'second'" :isInternal="false"
-          >RSS<base-badge :label="'Soon'" class="ml-3"
-        /></link-inline>
+        <link-inline :href="'/feed'" :variant="'second'" :isInternal="false">RSS</link-inline>
       </div>
       <div class="column flex flex-1 flex-col items-end">
         <link-inline :href="'/'">
