@@ -14,7 +14,7 @@ I often see the *problem of keeping design systems up to date*. Especially in sm
 
 Sandbox is trying to tackle this issue. It *auto-generates your design system out of your design tokens* just by adding one simple file everybody works with.
 
-<link-block :href="'https://google.com/testitest'" :title="'testtitle'" :subtitle="'The subtitle is a little bit longer here'"></link-block>
+<link-block :href="'https://google.com/testitest'" :title="'testtitle'" :subtitle="'The subtitle is a little bit longer here'" :image="'https://cdn.pocket-lint.com/r/s/970x/assets/images/158682-smartwatches-review-apple-watch-series-7-all-about-the-screen-image2-ggnlijys37-jpg.webp'"></link-block>
 
 ## Rolling out
 

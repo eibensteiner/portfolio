@@ -1,12 +1,9 @@
 <template>
   <nuxt-link class="link-block" :to="href">
-    <img
-      :src="'https://cdn.pocket-lint.com/r/s/970x/assets/images/158682-smartwatches-review-apple-watch-series-7-all-about-the-screen-image2-ggnlijys37-jpg.webp'"
-      class="h-28 w-3/12 bg-slate-dark-4 object-cover object-center"
-    />
-    <div class="flex w-9/12 flex-col items-start justify-center px-7">
-      <h4 class="inline-flex items-center">{{ title }}<icon-link :is-button="true" class="ml-3" /></h4>
-      <p class="mt-2 mb-0">{{ subtitle }}</p>
+    <img v-if="image" :src="image" :alt="title" />
+    <div class="px-7" :class="image ? 'w-9/12' : 'w-full'">
+      <h4 class="title">{{ title }}<icon-link :is-button="true" class="ml-3" /></h4>
+      <p class="subtitle">{{ subtitle }}</p>
     </div>
   </nuxt-link>
 </template>
@@ -17,35 +14,32 @@ export default {
     title: String,
     subtitle: String,
     href: String,
+    image: String,
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .link-block {
-  @apply flex w-full border border-slate-dark-3 bg-slate-dark-2 rounded-lg overflow-hidden;
-}
+  @apply flex items-center w-full h-28 border border-slate-dark-3 bg-slate-dark-2 rounded-lg overflow-hidden transition-colors;
 
-p {
-  @apply whitespace-nowrap overflow-hidden overflow-ellipsis max-w-full;
-}
-
-a {
-  @apply transition-colors;
+  &:hover {
+    img {
+      @apply opacity-80;
+    }
+  }
 }
 
 img {
-  @apply transition-opacity border-r border-slate-dark-3;
+  @apply h-full w-3/12 bg-slate-dark-4 object-cover object-center transition-opacity border-r border-slate-dark-3;
 }
 
-.link-block:hover {
-  a {
-    @apply text-white;
-  }
+.title {
+  @apply inline-flex items-center;
+}
 
-  img {
-    @apply opacity-80;
-  }
+.subtitle {
+  @apply whitespace-nowrap overflow-hidden overflow-ellipsis max-w-full mt-2 mb-0;
 }
 
 @media print {

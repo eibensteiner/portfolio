@@ -23,10 +23,7 @@
       </div>
       <div class="column flex flex-1 flex-col items-start">
         <h4>More</h4>
-        <link-inline :disabled="true" :variant="'second'" :isInternal="false"
-          >Resume<base-badge :label="'Soon'" class="ml-3"
-        /></link-inline>
-        <link-inline :disabled="true" :variant="'second'" :isInternal="false"
+        <link-inline :isDisabled="true" :variant="'second'" :isInternal="false"
           >RSS<base-badge :label="'Soon'" class="ml-3"
         /></link-inline>
       </div>

@@ -1,16 +1,16 @@
 <template>
   <nuxt-link
     v-if="isInternal"
-    class="link"
-    :class="'variant-' + variant"
+    class="link-inline"
+    :class="['variant-' + variant, isDisabled ? 'disabled' : '']"
     :to="href"
   >
     <slot></slot>
   </nuxt-link>
   <a
     v-else
-    class="link"
-    :class="'variant-' + variant"
+    class="link-inline"
+    :class="['variant-' + variant, isDisabled ? 'disabled' : '']"
     :href="href"
     target="_blank"
     rel="noopener"
@@ -27,17 +27,17 @@ export default {
       type: String,
     },
     href: String,
-    disabled: Boolean,
+    isDisabled: Boolean,
     isInternal: {
       default: true,
       type: Boolean,
-    }
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.link {
+.link-inline {
   @apply font-medium transition-all cursor-pointer inline-flex items-center;
 }
 
@@ -52,6 +52,6 @@ export default {
 }
 
 .disabled {
-  @apply text-slate-dark-8 cursor-not-allowed;
+  @apply text-slate-dark-8 pointer-events-none;
 }
 </style>
