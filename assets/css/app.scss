@@ -10,6 +10,16 @@ body {
   }
 }
 
+h2,
+h3,
+h4,
+h5,
+h6 {
+  a {
+    @apply hidden;
+  }
+}
+
 h1 {
   @apply text-2xl text-white font-semibold mb-6 font-serif;
 }
@@ -63,7 +73,7 @@ p + ul li:not(:first-child) {
 }
 
 button {
-  @apply h-10 px-4 border border-slate-dark-4 shadow-sm rounded-md flex items-center justify-center text-white bg-slate-dark-3 hover:bg-slate-dark-2 hover:bg-opacity-50 transition-colors;
+  @apply h-10 px-4 border border-slate-dark-5 hover:border-slate-dark-6 shadow-sm rounded-lg flex items-center justify-center text-slate-dark-12 transition-colors;
 }
 
 hr {
@@ -88,6 +98,17 @@ hr {
 
 .icon:not(.is-button) {
   @apply w-4 h-4;
+}
+
+.divider {
+  background-position: center;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.08)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+  @apply w-full h-16 my-12 relative;
+
+  &:after {
+    content: "";
+    @apply absolute w-full h-full bg-gradient-to-l from-slate-dark-1;
+  }
 }
 
 @media print {

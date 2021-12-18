@@ -1,23 +1,25 @@
 ---
-title: I am Dominik
+title: Me & the Internet
 ---
 
-I’m excited to announce *Sandbox*. An *auto-generated open source design system* tailored to the needs of small organizations.
+I'm a *creative* and I ever have been since i can think of myself. My grandma is still telling me (all the time) how impressed she were of my drawing skills I already had when I was 4 or so.
 
-<base-image :low-src="'projects/sandbox/app-low.jpg'" :high-src="'projects/sandbox/app.jpg'" :has-border="true" :alt="'Project specific typography page'"></base-image>
+And nevertheless, I am not capable of describing her what I am doing today.
 
-Building a design system with Sandbox couldn't be easier. Clone the project, paste your `tailwind.config.js` in the root, and that's it.
+Maybe it's because she doesn't understand anything about the internet and the businesses that came with it.
 
-## Problem & Vision
+But most probably it's difficult because I see myself as a *generalist by heart* with interests in fields like *art, business, psychology and engineering*.
 
-I often see the *problem of keeping design systems up to date*. Especially in smaller organizations we want to keep the design system *as small and tidy* but also *as powerful as possible* for our use cases.
+<base-image :low-src="'projects/sandbox/app-low.jpg'" :high-src="'projects/sandbox/app.jpg'" :has-border="true" :alt="'Project specific typography page'" :caption="'Me, myself and I'"></base-image>
 
-Sandbox is trying to tackle this issue. It *auto-generates your design system out of your design tokens* just by adding one simple file everybody works with.
+## Find me on the Interweb
 
-<link-block :href="'https://google.com/testitest'" :title="'testtitle'" :subtitle="'The subtitle is a little bit longer here'" :image="'https://cdn.pocket-lint.com/r/s/970x/assets/images/158682-smartwatches-review-apple-watch-series-7-all-about-the-screen-image2-ggnlijys37-jpg.webp'"></link-block>
+You can find my bad jokes and daily stuff on Twitter, my work on GitHub and Dribbble or for professional purposes (what's that again?) on LinkedIn.
 
-## Timeline
+You can also drop me a line on me@dominik.is if you prefer.
 
-Sandbox is *currently in development* and not public. The MVP will include auto-generated *typography, color & resources pages*. Components and more will follow.
+<!--## And what else?
 
-<base-timeline></base-timeline>
+If you want to learn more about me & my path I recommend downloading my CV below.
+
+I'm happy to answer any question and inquiry. Just drop me short line to me@dominik.is-->

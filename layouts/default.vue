@@ -2,7 +2,7 @@
   <div class="default">
     <Nuxt />
     <!--<overlay-command></overlay-command>-->
-    <hr />
+    <div class="divider"></div>
     <footer class="footer">
       <div class="column flex flex-1 flex-col items-start">
         <h4>Sites</h4>
@@ -36,7 +36,7 @@
 
 <style lang="scss" scoped>
 .default {
-  @apply w-full flex flex-col items-center justify-center px-6 py-28 sm:px-0;
+  @apply w-full flex flex-col items-center justify-center px-6 py-28 sm:px-0 relative;
 
   & > * {
     @apply w-full max-w-xl;
