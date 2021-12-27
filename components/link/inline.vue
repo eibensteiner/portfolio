@@ -11,7 +11,7 @@
     v-else
     class="link-inline"
     :class="['variant-' + variant, isDisabled ? 'disabled' : '']"
-    :href="href"
+    :href="isEmail ? 'mailto:' + href : href"
     target="_blank"
     rel="noopener"
   >
@@ -32,26 +32,26 @@ export default {
       default: true,
       type: Boolean,
     },
+    isEmail: {
+      default: false,
+      type: Boolean,
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .link-inline {
-  @apply font-medium transition-all cursor-pointer inline-flex items-center;
+  @apply transition-all cursor-pointer inline-flex items-center;
 }
 
 .variant {
   &-first {
-    @apply text-white hover:text-white underline decoration-slate-dark-7 underline-offset-2 hover:decoration-slate-dark-8;
+    @apply text-gray-900 hover:text-black font-medium underline decoration-gray-300 underline-offset-2 hover:decoration-gray-300;
   }
 
   &-second {
-    @apply text-slate-dark-11 hover:text-slate-dark-12;
+    @apply text-gray-600 hover:text-gray-700 font-normal;
   }
-}
-
-.disabled {
-  @apply text-slate-dark-8 pointer-events-none;
 }
 </style>

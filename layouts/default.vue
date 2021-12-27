@@ -2,7 +2,7 @@
   <div class="default">
     <Nuxt />
     <!--<overlay-command></overlay-command>-->
-    <div class="divider"></div>
+    <hr/>
     <footer class="footer">
       <div class="column flex flex-1 flex-col items-start">
         <h4>Sites</h4>
@@ -12,7 +12,7 @@
       <div class="column flex flex-1 flex-col items-start">
         <h4>Connect</h4>
         <link-inline :variant="'second'" :isInternal="false"
-          >Email<button-copy class="ml-3" :value="'me@dowu.xyz'"
+          >Email<button-copy class="ml-2" :value="'me@dowu.xyz'"
         /></link-inline>
         <link-inline :variant="'second'" :isInternal="false"
           >Twitter</link-inline

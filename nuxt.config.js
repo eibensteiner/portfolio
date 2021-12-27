@@ -58,10 +58,10 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    'nuxt-content-body-html',
+    "nuxt-content-body-html",
     "@nuxt/content",
     "@nuxtjs/sitemap",
-    '@nuxtjs/feed',
+    "@nuxtjs/feed",
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
@@ -89,19 +89,18 @@ export default {
 
   feed: [
     {
-      create: async feed => {
-        const $content = require('@nuxt/content').$content
+      create: async (feed) => {
+        const $content = require("@nuxt/content").$content;
         feed.options = {
-          title: 'Dominik Wurm',
-          link: 'https://dominik.is',
-          description: "I'm Dominik, a coding Designer from Austria, striving for visual clarity, simplicity and minimalism.",
-        }
+          title: "Dominik Wurm",
+          link: "https://dominik.is",
+          description:
+            "I'm Dominik, a coding Designer from Austria, striving for visual clarity, simplicity and minimalism.",
+        };
 
-        const posts = await $content()
-          .sortBy('createdAt', 'desc')
-          .fetch()
-        posts.forEach(post => {
-          const url = `https://dominik.is/${post.slug}`
+        const posts = await $content().sortBy("createdAt", "desc").fetch();
+        posts.forEach((post) => {
+          const url = `https://dominik.is/${post.slug}`;
           feed.addItem({
             content: post.bodyHtml,
             date: new Date(post.createdAt),
@@ -109,19 +108,17 @@ export default {
             id: url,
             link: url,
             title: post.title,
-          })
-        })
+          });
+        });
       },
-      path: '/feed',
-      type: 'rss2',
+      path: "/feed",
+      type: "rss2",
     },
   ],
 
   googleFonts: {
     families: {
-      Inter: true,
-      Newsreader: true,
-      "IBM+Plex+Serif": true,
+      Inter: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     },
   },
 

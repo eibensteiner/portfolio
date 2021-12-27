@@ -27,7 +27,7 @@ export default {
 
 <style lang="scss" scoped>
 .article h1 .overlay {
-  @apply absolute right-0 bottom-0 top-0 bg-gradient-to-l from-slate-dark-1 rounded-lg invisible opacity-0 transition-all flex items-center justify-end w-full;
+  @apply absolute right-0 bottom-0 top-0 bg-gradient-to-l from-gray-50 rounded-lg invisible opacity-0 transition-all flex items-center justify-end w-full;
 }
 
 .article h1:hover .overlay {
@@ -35,10 +35,10 @@ export default {
 }
 
 .article h1 {
-  @apply text-xl text-white font-semibold mb-4 font-serif inline-flex items-center;
+  @apply text-xl text-black font-semibold mb-4 inline-flex items-center;
 }
 
 .article h2 {
-  @apply text-base text-white font-semibold w-full mb-2 mt-6 font-serif;
+  @apply text-base text-black font-semibold w-full mb-2 mt-6;
 }
 </style>

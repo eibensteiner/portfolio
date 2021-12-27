@@ -67,9 +67,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-::v-deep .nuxt-content h3 {
-  @apply text-lg font-semibold w-full mb-3 mt-14;
-}
-</style>

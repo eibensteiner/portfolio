@@ -4,20 +4,19 @@
       I'm Dominik, a coding Designer from Austria, striving for visual clarity
       and simplicity.
     </h1>
-    <p>I'm Dominik, a coding <em>designer based in Linz, Austria</em>.</p>
+    <p>I'm Dominik, a coding designer based in Linz, Austria.</p>
     <p>
-      Currently I’m working as a
-      <em>Product & Brand Designer</em> at
+      Currently I’m working as a Product & Brand Designer at
       <link-inline :href="'https://blockpit.io'" :isInternal="false"
         >Blockpit</link-inline
       >, supporting thousands of Users with their crypto taxes.
     </p>
 
-    <div class="divider"></div>
+    <hr />
     <article-item :content="pinned[0]" :isPinned="true"></article-item>
 
     <template v-for="article of articles">
-    <div class="divider"></div>
+      <hr />
       <article-item :content="article"></article-item>
     </template>
   </main>

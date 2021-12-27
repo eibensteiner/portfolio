@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 .link-block {
-  @apply flex items-center w-full h-28 border border-slate-dark-3 bg-slate-dark-2 rounded-lg overflow-hidden transition-colors;
+  @apply flex items-center w-full h-28 border border-gray-200 bg-gray-100 rounded-lg overflow-hidden transition-colors;
 
   &:hover {
     img {
@@ -31,7 +31,7 @@ export default {
 }
 
 img {
-  @apply h-full w-3/12 bg-slate-dark-4 object-cover object-center transition-opacity border-r border-slate-dark-3;
+  @apply h-full w-3/12 object-cover object-center transition-opacity border-r border-gray-200;
 }
 
 .title {
